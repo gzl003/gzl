@@ -5,9 +5,9 @@
     android:id="@+id/activity_ptr_recycle_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gzl.activity.PtrRecycleViewActivity">
+    tools:context="com.zhiguang.li.activity.PtrRecycleViewActivity">
 
-    <com.example.gzl.widget.ptrecycleview.SwipeRefreshRecyclerView
+    <com.zhiguang.li.widget.ptrecycleview.SwipeRefreshRecyclerView
         android:id="@+id/prt_recycleview"
         crl:load_animator="true"
         android:layout_width="match_parent"

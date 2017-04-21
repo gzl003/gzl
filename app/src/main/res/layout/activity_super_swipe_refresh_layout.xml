@@ -4,9 +4,9 @@
     android:id="@+id/activity_super_swipe_refresh_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gzl.activity.SuperSwipeRefreshLayoutActivity">
+    tools:context="com.zhiguang.li.activity.SuperSwipeRefreshLayoutActivity">
 
-    <com.example.gzl.widget.SuperSwipeRefreshLayout
+    <com.zhiguang.li.widget.SuperSwipeRefreshLayout
         android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -15,5 +15,5 @@
             android:id="@+id/My_recycleview"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </com.example.gzl.widget.SuperSwipeRefreshLayout>
+    </com.zhiguang.li.widget.SuperSwipeRefreshLayout>
 </RelativeLayout>

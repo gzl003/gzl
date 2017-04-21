@@ -4,7 +4,7 @@
     android:id="@+id/activity_tab_vp_scr"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gzl.activity.TabVpScrActivity">
+    tools:context="com.zhiguang.li.activity.TabVpScrActivity">
 
     <android.support.v4.app.FragmentTabHost
         android:id="@android:id/tabhost"

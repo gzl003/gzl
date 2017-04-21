@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/flow_view_bg"
-    tools:context="com.example.gzl.activity.FlowViewActivity">
+    tools:context="com.zhiguang.li.activity.FlowViewActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/flow_recycleview"

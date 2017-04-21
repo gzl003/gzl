@@ -10,9 +10,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.gzl.activity.SwichButtonActivity">
+    tools:context="com.zhiguang.li.activity.SwichButtonActivity">
 
-    <com.example.gzl.widget.SwitchButton
+    <com.zhiguang.li.widget.SwitchButton
         android:id="@+id/swich_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,14 +20,14 @@
         app:sb_show_indicator="false"
         app:sb_checked="true"/>
 
-    <com.example.gzl.widget.SwitchButton
+    <com.zhiguang.li.widget.SwitchButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:sb_checked_color="#fdc951"
         app:sb_checked="true"/>
 
-    <com.example.gzl.widget.SwitchButton
+    <com.zhiguang.li.widget.SwitchButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -38,7 +38,7 @@
         app:sb_checked_color="#A36F95"
         app:sb_uncheckcircle_color="#A36F95" />
 
-    <com.example.gzl.widget.SwitchButton
+    <com.zhiguang.li.widget.SwitchButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

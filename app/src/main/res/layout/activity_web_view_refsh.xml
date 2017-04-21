@@ -4,14 +4,14 @@
     android:id="@+id/activity_web_view_refsh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gzl.activity.WebViewRefshActivity">
+    tools:context="com.zhiguang.li.activity.WebViewRefshActivity">
 
     <!--<android.support.v4.widget.SwipeRefreshLayout-->
         <!--android:id="@+id/my_refreshview"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent">-->
 
-        <!-- <com.example.gzl.widget.ScrollWebView
+        <!-- <com.zhiguang.li.widget.ScrollWebView
          android:id="@+id/my_webview"
          android:layout_width="match_parent"
          android:layout_height="match_parent" />-->

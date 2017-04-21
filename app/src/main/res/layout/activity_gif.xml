@@ -8,9 +8,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.gzl.activity.GifActivity">
+    tools:context="com.zhiguang.li.activity.GifActivity">
 
-    <com.example.gzl.widget.GifLoadingView
+    <com.zhiguang.li.widget.GifLoadingView
         android:id="@+id/img_gif"
         android:layout_width="100dp"
         android:layout_height="100dp"

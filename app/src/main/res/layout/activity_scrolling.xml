@@ -4,7 +4,7 @@
     android:id="@+id/nestedview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gzl.activity.ScrollingActivity">
+    tools:context="com.zhiguang.li.activity.ScrollingActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

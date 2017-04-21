@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.gzl.view.SkidDeletaItem xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhiguang.li.view.SkidDeletaItem xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/skid_view"
     android:layout_width="match_parent"
     android:layout_height="100dp"
@@ -32,4 +32,4 @@
             android:background="@color/bootpager_green_color"
             android:text="删除" />
     </LinearLayout>
-</com.example.gzl.view.SkidDeletaItem>
+</com.zhiguang.li.view.SkidDeletaItem>
