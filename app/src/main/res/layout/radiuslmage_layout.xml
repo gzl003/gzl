@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/about_gray_color"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.example.gzl.myapplication.widget.RadiusImageWidget
+            android:id="@+id/redius_img"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image"
+            app:left_bottom_radius="100dip"
+            app:left_top_radius="100dip"
+            app:right_bottom_radius="100dip"
+            app:right_top_radius="100dip" />
+
+        <com.example.gzl.myapplication.widget.RadiusImageWidget
+            android:id="@+id/redius_img1"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image"
+            app:left_bottom_radius="16dip"
+            app:left_top_radius="16dip"
+            app:right_bottom_radius="16dip"
+            app:right_top_radius="16dip" />
+
+        <com.example.gzl.myapplication.widget.RadiusImageWidget
+            android:id="@+id/redius_img2"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image"
+            app:left_bottom_radius="70dip"
+            app:left_top_radius="16dip"
+            app:right_bottom_radius="16dip"
+            app:right_top_radius="70dip" />
+
+        <com.example.gzl.myapplication.widget.RadiusImageWidget
+            android:id="@+id/redius_img3"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image"
+            app:left_bottom_radius="70dip"
+            app:left_top_radius="70dip"
+            app:right_bottom_radius="70dip"
+            app:right_top_radius="70dip" />
+
+        <com.example.gzl.myapplication.widget.RadiusImageWidget
+            android:id="@+id/redius_img4"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image"
+            app:left_bottom_radius="7dip"
+            app:left_top_radius="80dip"
+            app:right_bottom_radius="7dip"
+            app:right_top_radius="80dip" />
+
+        <ImageView
+            android:id="@+id/img_gif"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+    </LinearLayout>
+</ScrollView>

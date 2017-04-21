@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/app/build/generated/source/r/debug"/>
+	<classpathentry kind="src" path="/app/build/generated/source/aidl/debug"/>
+	<classpathentry kind="src" path="/app/build/generated/source/buildConfig/debug"/>
+	<classpathentry kind="src" path="/app/build/generated/source/rs/debug"/>
+	<classpathentry kind="src" path="/app/build/generated/res/rs/debug"/>
+	<classpathentry kind="src" path="/app/build/generated/res/resValues/debug"/>
+	<classpathentry kind="src" path="/app/build/generated/source/r/androidTest/debug"/>
+	<classpathentry kind="src" path="/app/build/generated/source/aidl/androidTest/debug"/>
+	<classpathentry kind="src" path="/app/build/generated/source/buildConfig/androidTest/debug"/>
+	<classpathentry kind="src" path="/app/build/generated/source/rs/androidTest/debug"/>
+	<classpathentry kind="src" path="/app/build/generated/res/rs/androidTest/debug"/>
+	<classpathentry kind="src" path="/app/build/generated/res/resValues/androidTest/debug"/>
+	<classpathentry kind="src" path="/app/src/debug/res"/>
+	<classpathentry kind="src" path="/app/src/debug/resources"/>
+	<classpathentry kind="src" path="/app/src/debug/assets"/>
+	<classpathentry kind="src" path="/app/src/debug/aidl"/>
+	<classpathentry kind="src" path="/app/src/debug/java"/>
+	<classpathentry kind="src" path="/app/src/debug/jni"/>
+	<classpathentry kind="src" path="/app/src/debug/rs"/>
+	<classpathentry kind="src" path="/app/src/testDebug/res"/>
+	<classpathentry kind="src" path="/app/src/testDebug/resources"/>
+	<classpathentry kind="src" path="/app/src/testDebug/assets"/>
+	<classpathentry kind="src" path="/app/src/testDebug/aidl"/>
+	<classpathentry kind="src" path="/app/src/testDebug/java"/>
+	<classpathentry kind="src" path="/app/src/testDebug/jni"/>
+	<classpathentry kind="src" path="/app/src/testDebug/rs"/>
+	<classpathentry kind="src" path="/app/src/main/res"/>
+	<classpathentry kind="src" path="/app/src/main/resources"/>
+	<classpathentry kind="src" path="/app/src/main/assets"/>
+	<classpathentry kind="src" path="/app/src/main/aidl"/>
+	<classpathentry kind="src" path="/app/src/main/java"/>
+	<classpathentry kind="src" path="/app/src/main/jni"/>
+	<classpathentry kind="src" path="/app/src/main/rs"/>
+	<classpathentry kind="src" path="/app/src/androidTest/res"/>
+	<classpathentry kind="src" path="/app/src/androidTest/resources"/>
+	<classpathentry kind="src" path="/app/src/androidTest/assets"/>
+	<classpathentry kind="src" path="/app/src/androidTest/aidl"/>
+	<classpathentry kind="src" path="/app/src/androidTest/java"/>
+	<classpathentry kind="src" path="/app/src/androidTest/jni"/>
+	<classpathentry kind="src" path="/app/src/androidTest/rs"/>
+	<classpathentry kind="src" path="/app/src/test/res"/>
+	<classpathentry kind="src" path="/app/src/test/resources"/>
+	<classpathentry kind="src" path="/app/src/test/assets"/>
+	<classpathentry kind="src" path="/app/src/test/aidl"/>
+	<classpathentry kind="src" path="/app/src/test/java"/>
+	<classpathentry kind="src" path="/app/src/test/jni"/>
+	<classpathentry kind="src" path="/app/src/test/rs"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/recyclerview-v7-24.0.0"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/fastjson-1.1.36"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/play-services-basement-9.2.0"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/play-services-base-9.2.0"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/play-services-tasks-9.2.0"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/appcompat-v7-24.0.0"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/support-annotations-24.0.0"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/support-v4-24.0.0"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/support-vector-drawable-24.0.0"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/animated-vector-drawable-24.0.0"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/play-services-appindexing-9.2.0"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/layoutlib-api"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/glide-3.5.2"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/firebase-common-9.2.0"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="center"
+        android:src="@drawable/grid_img" />
+
+    <TextView
+        android:id="@+id/text_grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:background="@color/gzl_red1"
+        android:padding="5dp"
+        android:text="王宝强 在线56345人"
+        android:textColor="@color/gzl_white"
+        android:textSize="10sp" />
+</RelativeLayout>

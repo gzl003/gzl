@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/account_text_grey"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.youth.banner.Banner
+        android:id="@+id/main_banner"
+        app:indicator_height="5dp"
+        app:indicator_margin="5dp"
+        app:indicator_width="5dp"
+        app:title_height="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world"
+        android:visibility="gone"/>
+
+    <FrameLayout
+        android:id="@+id/bootrem_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+
+    <GridView
+        android:id="@+id/main_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="3" />
+
+
+</LinearLayout>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gzl_red1">#88e91e63</color>
+    <color name="gzl_gray1">#dedede</color>
+    <color name="gzl_white">#ffffffff</color>
+    <color name="gzl_to_gray">#667f7f7f</color>
+
+
+    <color name="red">#FF0000</color>
+    <color name="green">#008000</color>
+    <color name="black">#000000</color>
+    <color name="beige">#F5F5DC</color>
+    <color name="color_gray_line">#d7d7d7</color>
+    <color name="transparent">#00000000</color>
+    <color name="item_unselected_color">#ffffff</color>
+    <color name="item_selected_color">#459e4a</color>
+    <color name="xiankan_bg">#FFFFFF</color>
+    <color name="main_bottom_tab_text_normal">#555555</color>
+    <color name="main_bottom_tab_text_select">#429e47</color>
+    <color name="splash_bottom_bg_color">#F5F5F5</color>
+    <color name="splash_link_text_color">#FFFFFF</color>
+    <color name="splash_count_down_color">#333333</color>
+    <color name="popupwindow_bg_color">#FDFDFD</color>
+    <color name="popupwindow_pressed_bg_color">#cccccc</color>
+    <color name="popupwindow_header_divider_color">#E0E0E0</color>
+    <color name="bootpager_green_color">#51ab56</color>
+    <color name="bootpager_gray_color">#B7B7B7</color>
+    <color name="normal_gray_color">#999999</color>
+    <color name="white">#FFFFFF</color>
+    <color name="background_color">#242A2D</color>
+    <color name="item_divider_color">#D7D7D7</color>
+    <color name="item_text_color">#777777</color>
+    <color name="normal_black_color">#333333</color>
+    <color name="gray_1">#C0C0C0</color>
+    <color name="gray_2">#AFAFAF</color>
+    <color name="dark_slate_gray">#2F4F4F</color>
+    <color name="item_title_color">#333</color>
+    <color name="segment_color">#737779</color>
+    <color name="movie_purchase_expire">#ff8a00</color>
+    <color name="button_gray">#cccccc</color>
+    <color name="movie_gray_text">#aaaaaa</color>
+    <color name="movie_line_color">#eeeeee</color>
+    <color name="account_custom_title_color">#069718</color>
+    <color name="account_normal_black_color">#333333</color>
+    <color name="account_register_bg_color">#e5e9e8</color>
+    <color name="account_register_green">#47b927</color>
+    <color name="account_white">#ffffff</color>
+    <color name="account_bg">#f0f0f0</color>
+    <color name="account_avatar">#f4f4f4</color>
+    <color name="account_register_grey">#aaaaaa</color>
+    <color name="button_green">#22ad38</color>
+    <color name="button_green_press">#128e25</color>
+    <color name="account_text_grey">#bdbdbd</color>
+    <color name="account_success">#717171</color>
+    <color name="account_black_color">#656565</color>
+    <color name="account_login_green_color">#47b927</color>
+    <color name="slide_menu_settings_color">#E7EaE9</color>
+    <color name="game_promotion_bg">#FAFAFA</color>
+    <color name="text_small_tip">#999</color>
+    <color name="text_color_pressed">#FFFFFF</color>
+    <color name="confirm_dialog_btn_pressed">#3f9745</color>
+    <color name="player_panel_background_color">#88000000</color>
+    <color name="title_select_color">#459e4a</color>
+    <color name="player_panel_text_press">#3e8b01</color>
+    <color name="color_play_loading_text">#bdbdbd</color>
+    <color name="translucent_black">#8F000000</color>
+    <color name="player_background_color">#222222</color>
+    <color name="delete_button_disabled_text_color">#df8989</color>
+    <color name="text_title_color_normal">#353535</color>
+    <color name="gray6">#666666</color>
+    <color name="gray9">#999999</color>
+    <color name="light_gray_f9">#F9F9F9</color>
+    <color name="orange">#ED670D</color>
+    <color name="button_yellow">#dbb44b</color>
+    <color name="button_yellow_press">#997e34</color>
+    <color name="movie_yellow_text">#ff8a00</color>
+    <color name="background_gray">#E7EAE9</color>
+    <color name="film_price_color">#FE0000</color>
+    <color name="movie_detail_danmu_float_bg">#E6333333</color>
+    <color name="homepage_indicator_item_normal">#999999</color>
+    <color name="homepage_indicator_item_selected">#BBAA33</color>
+    <color name="tab_bar_color">#15181a</color>
+    <color name="tab_bar_title_default_color">#aaaaaa</color>
+    <color name="xiankan_pink">#dd0061</color>
+    <color name="xiankan_blue">#1C8FE3</color>
+    <color name="black_list_item_default_color">#242a2d</color>
+    <color name="black_list_item_pressed_color">#2d3438</color>
+    <color name="list_divider_color">#0e1011</color>
+    <color name="back_ground">#1b2022</color>
+    <!--#1b2022-->
+    <color name="detail_line_color">#30383c</color>
+    <color name="detail_name_blue_color">#328edc</color>
+    <color name="detail_vote_yellow_color">#de922f</color>
+    <color name="detail_bg_color">#242a2d</color>
+    <color name="tab_select_red_color">#E50065</color>
+    <color name="tab_normal_text_color">#848789</color>
+    <color name="detail_yellow_color">#e2cb27</color>
+    <color name="detail_red_color">#f53737</color>
+    <color name="background_darkgray_normal">#242b2e</color>
+    <color name="background_darkgray_pressed">#878e91</color>
+    <color name="textview_color_gray_normal">#878e91</color>
+    <color name="textview_color_gray_pressed">#242b2e</color>
+    <!-- Chat -->
+    <color name="chat_item_bg">#242A2D</color>
+    <color name="chat_item_bg_press">#1D2023</color>
+    <color name="chat_name_color">#328EDC</color>
+    <color name="title_bar_bg">#1a1c1f</color>
+    <color name="content_bg">#242b2e</color>
+    <color name="xiankan_red">#dd0061</color>
+    <color name="xiankan_red_press">#b4004f</color>
+    <color name="edit_bg_color">#191e1f</color>
+    <color name="login_tips_text_color">#959798</color>
+    <color name="login_disable_btn_color">#666bc6</color>
+    <color name="login_btn_text_color">#9ea0a1</color>
+    <color name="xiankan_green">#63a42c</color>
+    <color name="login_gray_color">#989fa2</color>
+    <color name="login_success_tips_color">#dfe0e0</color>
+    <color name="login_edit_hint_color">#535556</color>
+    <color name="login_small_btn_text_color">#1b1c1d</color>
+    <color name="login_line_color">#505557</color>
+    <color name="popup_color">#D01B1E21</color>
+    <color name="white_alpha_80">#ccffffff</color>
+    <color name="white_alpha_30">#4cffffff</color>
+    <color name="white_alpha_60">#99ffffff</color>
+    <color name="white_alpha_50">#80ffffff</color>
+    <color name="white_alpha_20">#33ffffff</color>
+    <color name="blank_alpha_50">#80000000</color>
+    <color name="blank_alpha_75">#c0000000</color>
+    <color name="blank_alpha_20">#33000000</color>
+    <color name="blank_alpha_40">#66000000</color>
+    <color name="home_drawer_content_bg">#F3242a2d</color>
+    <color name="detail_edit_stroke_color">#3b4347</color>
+    <color name="common_delete_bg">#2F373B</color>
+    <color name="common_delete_bg_selected">#1c2123</color>
+    <color name="login_disenable_btn_color">#65696c</color>
+    <color name="boxoffice_date_press_color">#a7aaab</color>
+    <color name="boxoffice_date_disable_color">#989c9e</color>
+    <color name="boxoffice_show_date_bg_color">#1a1e20</color>
+    <color name="boxoffice_title_color">#8499a4</color>
+    <color name="boxoffice_while_color">#e9eaea</color>
+    <color name="boxoffice_gray_color">#818586</color>
+    <color name="hot_comment_name_color">#72858f</color>
+    <color name="hot_comment_content_color">#aaabac</color>
+
+    <!-- 片库 -->
+    <color name="film_library_filter_bg">#F8121416</color>
+    <color name="film_library_filter_text">#8f8f8f</color>
+    <color name="film_library_filter_reset_press">#101213</color>
+    <color name="film_library_filter_reset_normal">#2e3437</color>
+    <color name="film_library_filter_reset_text">#c7c8c9</color>
+    <color name="film_library_filter_reset_bg">#E6121416</color>
+    <color name="hot_comment_yellow_color">#ff9600</color>
+    <color name="cinema_edit_bg">#171a1d</color>
+    <color name="sdcard_left_size_color">#999999</color>
+    <color name="feed_back_content_color">#171a1d</color>
+
+    <!-- 离线下载 -->
+    <color name="download_title_color">#dfe0e0</color>
+    <color name="download_size_color">#8f9191</color>
+    <color name="download_storage_color">#b2b4b5</color>
+    <color name="movie_score_color">#ff9c00</color>
+    <color name="yingxun_description_color">#959798</color>
+    <color name="account_gray_color">#8f9191</color>
+    <color name="yingxun_from_color">#707375</color>
+    <!-- about gray color -->
+    <color name="about_gray_color">#66696b</color>
+    <color name="account_mine_press_color">#e5e5e5</color>
+    <color name="account_mine_dialog_line_color">#8e8e8e</color>
+    <color name="account_mine_dialog_cancel_color">#343434</color>
+    <color name="account_set_name_bg_color">#1a1f21</color>
+    <color name="account_set_name_line_color">#15181b</color>
+    <color name="account_set_name_edit_bg_color">#23292c</color>
+    <color name="dailog_birthday_title_bg_color">#F8F8F8</color>
+    <color name="dailog_birthday_text_select_color">#A7A7A7</color>
+    <color name="dailog_birthday_line_color">#cdcdcd</color>
+    <color name="push_style_title_bg">#b3000000</color>
+    <color name="xiankan_while">#FEFEFE</color>
+    <color name="purchase_movie_offline_color">#484b4d</color>
+    <color name="purchase_share_normal_color">#d36e0c</color>
+    <color name="purchase_share_press_color">#b15c0a</color>
+    <color name="share_window_bg">#242c2f</color>
+
+    <color name="yingxun_detail_footer_color">#1C1F21</color>
+
+    <color name="comment_article_title_color">#fcfcfc</color>
+
+    <color name="app_upgrade_progress_color">#6fba2c</color>
+
+    <!--新版app主题色-->
+    <color name="xiankan_theme_color">#EE286F</color>
+    <color name="xiankan_hui_theme">#f1f1f1</color>
+    <!--新版app 常用色值-->
+    <color name="xiankan_black">#222222</color>
+    <!--灰色 由深到浅 3 2 1-->
+    <color name="xiankan_gray5">#666666</color>
+    <color name="xiankan_gray4">#999999</color>
+    <color name="xiankan_gray3">#d3d5d7</color>
+    <color name="xiankan_gray2">#eeeeee</color>
+    <color name="xiankan_gray1">#f3f4f7</color>
+    <!--红色 由深到浅 3 2 1-->
+    <color name="xiankan_red2">#cf1d38</color>
+    <color name="xiankan_red1">#f82645</color>
+
+    <color name="live_status_red">#de3b51</color>
+    <color name="tab_unselect_unfocus_bg">#80ffc04e</color>
+
+    <color name="item_chacked_bg">#fbfbfb</color>
+    <color name="item_cheng_bg">#EEEEEE</color>
+    <color name="radiobtn_cheched">#D8D8D8</color>
+
+    <color name="xiankan_sub_green">#5895ed</color>
+    <color name="xiankan_sub_bg_black">#66000000</color>
+    <color name="xiankan_sub_bg_green">#ff5895ed</color>
+
+    <color name="fengexian">#CACACB</color>
+
+    <color name="jiaobiao_left_1">#F5A623</color>
+    <color name="jiaobiao_left_2">#EE286F</color>
+    <color name="jiaobiao_left_3">#FA4B5B</color>
+    <color name="jiaobiao_left_4">#50E3C2</color>
+    <color name="jiaobiao_left_5">#71BE44</color>
+    <color name="jiaobiao_left_6">#9013FE</color>
+    <color name="jiaobiao_right_1">#71BE44</color>
+    <color name="jiaobiao_right_2">#71BE44</color>
+    <color name="jiaobiao_right_3">#F94B5B</color>
+    <color name="jiaobiao_right_4">#EE286F</color>
+
+</resources>

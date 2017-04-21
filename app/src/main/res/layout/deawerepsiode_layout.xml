@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_epsode"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:button="@null"
+            android:text="剧集"
+            android:textColor="@drawable/text_selector" />
+
+        <RadioButton
+            android:id="@+id/rb_huaxv"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:button="@null"
+            android:text="花絮"
+            android:textColor="@drawable/text_selector" />
+    </RadioGroup>
+</LinearLayout>

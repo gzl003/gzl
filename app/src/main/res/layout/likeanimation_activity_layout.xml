@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:clipChildren="false">
+
+    <LinearLayout
+        android:id="@+id/dianzan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpaget"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginLeft="210dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="3"
+            android:clipChildren="false" />
+
+        <Button
+            android:id="@+id/like_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="赞" />
+    </LinearLayout>
+
+    <com.example.gzl.myapplication.view.ManyCircle
+        android:id="@+id/manycircle"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/dianzan"
+        android:layout_centerHorizontal="true" />
+
+    <com.example.gzl.myapplication.view.LoadingView
+        android:id="@+id/loading"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_below="@id/manycircle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <com.example.gzl.myapplication.view.LoadingImage
+        android:id="@+id/rotate"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_below="@id/loading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+
+    <com.example.gzl.myapplication.view.SameCircle
+        android:id="@+id/samecircle"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_below="@id/rotate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+</RelativeLayout>

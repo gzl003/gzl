@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_drawer_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/grid_img" />
+
+        <Button
+            android:id="@+id/my_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="开关" />
+    </RelativeLayout>
+
+    <!-- <RelativeLayout
+         android:id="@+id/drawer_view"
+         android:layout_width="350dp"
+         android:layout_height="match_parent"
+         android:layout_gravity="end"
+         android:background="@color/gzl_white"
+         android:gravity="right">
+
+         <RadioGroup
+             android:id="@+id/drawer_rg"
+             android:layout_width="wrap_content"
+             android:layout_height="45dp"
+             android:layout_gravity="center"
+             android:gravity="center_vertical"
+             android:orientation="horizontal">
+
+             <RadioButton
+                 android:id="@+id/rb_episode_sele"
+                 android:layout_width="wrap_content"
+                 android:layout_height="45dp"
+                 android:layout_marginLeft="10dp"
+                 android:layout_marginRight="10dp"
+                 android:checked="true"
+                 android:paddingLeft="10dp"
+                 android:paddingRight="10dp"
+                 android:text="选集" />
+
+             <RadioButton
+                 android:id="@+id/rb_episode_huaxu"
+                 android:layout_width="wrap_content"
+                 android:layout_height="45dp"
+                 android:layout_marginLeft="10dp"
+                 android:layout_marginRight="10dp"
+                 android:paddingLeft="10dp"
+                 android:paddingRight="10dp"
+                 android:text="花絮" />
+         </RadioGroup>
+
+         <android.support.v4.view.ViewPager
+             android:id="@+id/episode_pager"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@id/drawer_rg"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp" />
+
+     </RelativeLayout>-->
+
+    <com.example.gzl.myapplication.widget.DeawerEpisodeWidget
+        android:id="@+id/cehua_view"
+        android:layout_width="350dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end" />
+</android.support.v4.widget.DrawerLayout>

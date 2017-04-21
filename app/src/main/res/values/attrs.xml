@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RadidsImageView">
+        <attr name="left_top_radius" format="dimension" />
+        <attr name="right_top_radius" format="dimension" />
+        <attr name="left_bottom_radius" format="dimension" />
+        <attr name="right_bottom_radius" format="dimension" />
+        <attr name="sriv_border_width" format="dimension" />
+        <attr name="sriv_border_color" format="color" />
+        <attr name="sriv_oval" format="boolean" />
+        <attr name="android:scaleType" />
+    </declare-styleable>
+
+    <declare-styleable name="crLayout">
+        <!-- 自定义加载更多 res layout id-->
+        <attr name="load_layout" format="reference" />
+        <!--加载更多显示的文字-->
+        <attr name="load_text" format="string" />
+        <!--加载更多的进度菊花-->
+        <attr name="load_indeterminate_drawable" format="reference" />
+        <!--加载更多完成显示的文字-->
+        <attr name="load_completed_text" format="string" />
+        <!--加载更多layout有动画显示效果-->
+        <attr name="load_animator" format="boolean" />
+        <attr name="empty_text" format="string" />
+    </declare-styleable>
+
+
+
+    <!-- 支付密码输入框 -->
+    <declare-styleable name="PasswordInputView">
+        <attr name="borderWidth" format="dimension"/>
+        <attr name="borderColor" format="color"/>
+        <attr name="borderRadius" format="dimension"/>
+        <attr name="passwordLength" format="integer"/>
+        <attr name="passwordWidth" format="dimension"/>
+        <attr name="passwordColor" format="color"/>
+        <attr name="passwordRadius" format="dimension"/>
+    </declare-styleable>
+</resources>
