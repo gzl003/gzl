@@ -29,14 +29,14 @@
             android:text="赞" />
     </LinearLayout>
 
-    <com.example.gzl.myapplication.view.ManyCircle
+    <com.example.gzl.view.ManyCircle
         android:id="@+id/manycircle"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_below="@id/dianzan"
         android:layout_centerHorizontal="true" />
 
-    <com.example.gzl.myapplication.view.LoadingView
+    <com.example.gzl.view.LoadingView
         android:id="@+id/loading"
         android:layout_width="72dp"
         android:layout_height="72dp"
@@ -44,7 +44,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp" />
 
-    <com.example.gzl.myapplication.view.LoadingImage
+    <com.example.gzl.view.LoadingImage
         android:id="@+id/rotate"
         android:layout_width="72dp"
         android:layout_height="72dp"
@@ -53,7 +53,7 @@
         android:layout_marginTop="20dp" />
 
 
-    <com.example.gzl.myapplication.view.SameCircle
+    <com.example.gzl.view.SameCircle
         android:id="@+id/samecircle"
         android:layout_width="72dp"
         android:layout_height="72dp"

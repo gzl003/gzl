@@ -11,7 +11,7 @@
         android:text="多机位"
         android:textSize="16sp" />
 
-    <com.example.gzl.myapplication.widget.MyGridView
+    <com.example.gzl.widget.MyGridView
         android:id="@+id/recyleitem_gridview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -1,4 +1,4 @@
-package com.example.gzl.myapplication;
+package com.example.gzl;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

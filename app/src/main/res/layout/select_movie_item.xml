@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.example.gzl.myapplication.widget.SelectItemWidget
+    <com.example.gzl.widget.SelectItemWidget
         android:gravity="center"
         android:id="@+id/sel_movie_item"
         android:layout_width="match_parent"

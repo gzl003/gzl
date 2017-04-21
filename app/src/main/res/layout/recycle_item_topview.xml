@@ -22,7 +22,7 @@
             android:scaleType="centerCrop" />
     </LinearLayout>
 
-    <com.example.gzl.myapplication.widget.NoScrollListview
+    <com.example.gzl.widget.NoScrollListview
         android:id="@+id/my_listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

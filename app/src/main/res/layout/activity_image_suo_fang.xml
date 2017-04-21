@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.gzl.myapplication.activity.ImageSuoFang">
+    tools:context="com.example.gzl.activity.ImageSuoFang">
 
     <SeekBar
         android:id="@+id/suofangseekBar"
@@ -24,7 +24,7 @@
         android:scaleType="matrix"
         android:src="@drawable/ic_launcher" />
 
-    <com.example.gzl.myapplication.widget.ZoomImageView
+    <com.example.gzl.widget.ZoomImageView
         android:id="@+id/zoomImage"
         android:layout_width="match_parent"
         android:layout_height="500dp"

@@ -72,7 +72,7 @@
 
      </RelativeLayout>-->
 
-    <com.example.gzl.myapplication.widget.DeawerEpisodeWidget
+    <com.example.gzl.widget.DeawerEpisodeWidget
         android:id="@+id/cehua_view"
         android:layout_width="350dp"
         android:layout_height="match_parent"

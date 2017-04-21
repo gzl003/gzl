@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.gzl.myapplication.activity.BitmapOrBase64Activity">
+    tools:context="com.example.gzl.activity.BitmapOrBase64Activity">
 
     <ImageView
         android:id="@+id/bit_img"

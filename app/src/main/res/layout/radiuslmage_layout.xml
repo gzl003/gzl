@@ -13,7 +13,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <com.example.gzl.myapplication.widget.RadiusImageWidget
+        <com.example.gzl.widget.RadiusImageWidget
             android:id="@+id/redius_img"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -25,7 +25,7 @@
             app:right_bottom_radius="100dip"
             app:right_top_radius="100dip" />
 
-        <com.example.gzl.myapplication.widget.RadiusImageWidget
+        <com.example.gzl.widget.RadiusImageWidget
             android:id="@+id/redius_img1"
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -37,7 +37,7 @@
             app:right_bottom_radius="16dip"
             app:right_top_radius="16dip" />
 
-        <com.example.gzl.myapplication.widget.RadiusImageWidget
+        <com.example.gzl.widget.RadiusImageWidget
             android:id="@+id/redius_img2"
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -49,7 +49,7 @@
             app:right_bottom_radius="16dip"
             app:right_top_radius="70dip" />
 
-        <com.example.gzl.myapplication.widget.RadiusImageWidget
+        <com.example.gzl.widget.RadiusImageWidget
             android:id="@+id/redius_img3"
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -61,7 +61,7 @@
             app:right_bottom_radius="70dip"
             app:right_top_radius="70dip" />
 
-        <com.example.gzl.myapplication.widget.RadiusImageWidget
+        <com.example.gzl.widget.RadiusImageWidget
             android:id="@+id/redius_img4"
             android:layout_width="200dp"
             android:layout_height="100dp"
