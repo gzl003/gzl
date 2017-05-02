@@ -106,7 +106,8 @@
         <activity android:name=".activity.SkiddeleteActivity" />
         <activity android:name=".activity.VerticalSeekbarActivity" />
         <activity android:name=".activity.WebViewRefshActivity" />
-        <activity android:name=".activity.SwichButtonActivity"></activity>
+        <activity android:name=".activity.SwichButtonActivity" />
+        <activity android:name=".activity.RcycleViewImagetActivity"></activity>
     </application>
 
 </manifest>

@@ -20,6 +20,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
+import com.youth.banner.Transformer;
+import com.youth.banner.listener.OnBannerClickListener;
+import com.youth.banner.loader.ImageLoader;
 import com.zhiguang.li.activity.ADebaseActivity;
 import com.zhiguang.li.activity.AdaptrViewActivity;
 import com.zhiguang.li.activity.BaseActivity;
@@ -46,6 +51,7 @@ import com.zhiguang.li.activity.PathLineActivity;
 import com.zhiguang.li.activity.ProgressActivity;
 import com.zhiguang.li.activity.PtrRecycleViewActivity;
 import com.zhiguang.li.activity.RadiusImage;
+import com.zhiguang.li.activity.RcycleViewImagetActivity;
 import com.zhiguang.li.activity.RecyclerViewActivity;
 import com.zhiguang.li.activity.ScrollingActivity;
 import com.zhiguang.li.activity.SelectMovieActivity;
@@ -65,11 +71,6 @@ import com.zhiguang.li.network.NetworkObservable;
 import com.zhiguang.li.network.NetworkObservable.NetConnectStatus;
 import com.zhiguang.li.utils.CKEven;
 import com.zhiguang.li.utils.GPSUtils;
-import com.youth.banner.Banner;
-import com.youth.banner.BannerConfig;
-import com.youth.banner.Transformer;
-import com.youth.banner.listener.OnBannerClickListener;
-import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -87,12 +88,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             , BasicVideoActivity.class, SwioerefreshActivity.class, MySerActivity.class, WebViewActivity.class, ProgressActivity.class, ScrollingActivity.class, FlowViewActivity.class, NestedScrollingActivity.class
             , CodeLayActivity.class, TabswitchActivity.class, TabVpScrActivity.class, TabTopActivity.class, SparkActivity.class, PtrRecycleViewActivity.class, BitmapOrBase64Activity.class
             , SuperSwipeRefreshLayoutActivity.class, MadiaPlayerActivity.class, GifActivity.class, MuseumActivity.class, PasswordinputActivity.class, ImageSuoFang.class, SkiddeleteActivity.class, VerticalSeekbarActivity.class
-            , WebViewRefshActivity.class, SwichButtonActivity.class
+            , WebViewRefshActivity.class, SwichButtonActivity.class, RcycleViewImagetActivity.class
     };
     public String[] strings = {"RecyclerView", "点赞动画", "圆角图片", "分类", "选集", "AdapterViewFlipper", "gps"
             , "信息", "轮播图", "剧集", "drawer侧滑", "跟随动画", "map json", "destest", "贝塞尔曲线"
             , "视频录制", "google自家的刷新View", "服务测试", "webView测试", "加载框", "滚动的Activity", "RecyclerView 实现流式布局", "嵌套滚动", "CodeLayActivity", "TAB切换", "仿照微信左右切换", "TABlayout顶部切换", "闪光字体",
-            "上下刷新的RecycleView", "图片和base64之间的转换", "SuperSwipeRefresh", "MediaPlayer测试", "gif图", "典藏馆", "密码输入框", "图片缩放", "侧滑删除item", "垂直进度条", "滑动的webView","切换开关"};
+            "上下刷新的RecycleView", "图片和base64之间的转换", "SuperSwipeRefresh", "MediaPlayer测试", "gif图", "典藏馆", "密码输入框", "图片缩放", "侧滑删除item", "垂直进度条", "滑动的webView", "切换开关", "recycleImage"};
     private List<MClassmodle> mClassmodles;
     private Banner banner;
 
