@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.HttpAuthHandler;
+import android.webkit.JavascriptInterface;
 import android.webkit.SslErrorHandler;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -21,6 +22,11 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 
 import com.zhiguang.li.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Random;
 
 public class WebViewActivity extends Activity implements View.OnClickListener {
     private WebView webView;
@@ -48,19 +54,66 @@ public class WebViewActivity extends Activity implements View.OnClickListener {
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true); //支持通过JS打开新窗口
         webSettings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
         webSettings.setLoadsImagesAutomatically(true);  //支持自动加载图片
+        webView.addJavascriptInterface(new JavaScriptInterface(this), "abc");//js给Android传值 添加接收的接口
+
         loadWeb();
 //        webView.loadUrl("http://www.lmf9.com/");
-        webView.loadUrl("https://beta.huanxi.com/testh5/test/index.html");
-
+        webView.loadUrl("https://beta.huanxi.com/other/DEMO.html?a=5" + new Random());
+//        webView.loadUrl("https://beta.huanxi.com/testh5/test/index.html");
 //        webView.loadUrl("http://m.teteparts.com/discover.html");
-
     }
 
+    /**
+     * 接收js的方法
+     */
+    public class JavaScriptInterface {
+        private Activity mActivity;
+
+        public JavaScriptInterface(Activity activity) {
+            mActivity = activity;
+        }
+
+        /**
+         * js的方法
+         *
+         * @param str
+         */
+        @JavascriptInterface
+        public void callShare(String str) {
+            try {
+                JSONObject jsonObject = new JSONObject(str);
+                String mid = jsonObject.optString("mid");
+                String vtype = jsonObject.optString("vtype");
+                Log.e("JavaScriptInterface", "======callShare======" + mid);
+                Log.e("JavaScriptInterface", "========callShare====" + vtype);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            webView.post(new Runnable() {
+                @Override
+                public void run() {
+                    String dfdfd = "QWE";
+                    webView.loadUrl("javascript:shareCallback('" + dfdfd + "')");//Android 传值给js
+                }
+            });
+
+
+        }
+
+
+        @JavascriptInterface
+        public void calloc(String str) {
+            Log.e("JavaScriptInterface", "======calloc======" + str);
+        }
+    }
+
+
     private void loadWeb() {
-        webView.setWebChromeClient(new WebChromeClient(){
+        webView.setWebChromeClient(new WebChromeClient() {
             @Override
             public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> filePathCallback, FileChooserParams fileChooserParams) {
-                if(fileChooserParams != null ){
+                if (fileChooserParams != null) {
 
                 }
                 return super.onShowFileChooser(webView, filePathCallback, fileChooserParams);
@@ -221,7 +274,6 @@ public class WebViewActivity extends Activity implements View.OnClickListener {
         }
         return super.onKeyDown(keyCode, event);
     }
-
 
 
     @Override
