@@ -42,10 +42,9 @@ public class WebViewActivity extends Activity implements View.OnClickListener {
         back_btn.setOnClickListener(this);
         webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);  //支持js
-        webSettings.setUseWideViewPort(false);  //将图片调整到适合webview的大小
         webSettings.setSupportZoom(true);  //支持缩放
-        webSettings.setLoadWithOverviewMode(true);
-        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN); //支持内容重新布局
+        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NORMAL); //支持内容重新布局
+        webSettings.setUseWideViewPort(true);//将图片调整到适合webview的大小
         webSettings.supportMultipleWindows();  //多窗口
         webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);  //关闭webview中缓存
         webSettings.setAllowFileAccess(true);  //设置可以访问文件
@@ -54,11 +53,11 @@ public class WebViewActivity extends Activity implements View.OnClickListener {
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true); //支持通过JS打开新窗口
         webSettings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
         webSettings.setLoadsImagesAutomatically(true);  //支持自动加载图片
-        webView.addJavascriptInterface(new JavaScriptInterface(this), "abc");//js给Android传值 添加接收的接口
+        webView.addJavascriptInterface(new JavaScriptInterface(this), "HX");//js给Android传值 添加接收的接口
 
         loadWeb();
 //        webView.loadUrl("http://www.lmf9.com/");
-        webView.loadUrl("https://beta.huanxi.com/other/DEMO.html?a=5" + new Random());
+        webView.loadUrl("https://beta.huanxi.com/h5/chat/movie.html?" + new Random());
 //        webView.loadUrl("https://beta.huanxi.com/testh5/test/index.html");
 //        webView.loadUrl("http://m.teteparts.com/discover.html");
     }
@@ -79,35 +78,77 @@ public class WebViewActivity extends Activity implements View.OnClickListener {
          * @param str
          */
         @JavascriptInterface
-        public void callShare(String str) {
+        public void JSCallMovie1(String str) {
             try {
                 JSONObject jsonObject = new JSONObject(str);
-                String mid = jsonObject.optString("mid");
-                String vtype = jsonObject.optString("vtype");
-                Log.e("JavaScriptInterface", "======callShare======" + mid);
-                Log.e("JavaScriptInterface", "========callShare====" + vtype);
+                String mid = jsonObject.optString("data-mid");
+                String vtype = jsonObject.optString("data-mtype");
+                Log.e("JavaScriptInterface", "JSCallMovie1======" + mid);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
-            webView.post(new Runnable() {
-                @Override
-                public void run() {
-                    String dfdfd = "QWE";
-                    webView.loadUrl("javascript:shareCallback('" + dfdfd + "')");//Android 传值给js
-                }
-            });
-
-
+//            webView.post(new Runnable() {
+//                @Override
+//                public void run() {
+//                    String dfdfd = "QWE";
+//                    webView.loadUrl("javascript:shareCallback('" + dfdfd + "')");//Android 传值给js
+//                }
+//            });
         }
-
 
         @JavascriptInterface
-        public void calloc(String str) {
-            Log.e("JavaScriptInterface", "======calloc======" + str);
+        public void JSCallMovie2(String str) {
+            JSONObject jsonObject = null;
+            try {
+                jsonObject = new JSONObject(str);
+                String mid = jsonObject.optString("data-mid");
+                String vtype = jsonObject.optString("data-mtype");
+                Log.e("JavaScriptInterface", "JSCallMovie2=====callShare======" + mid);
+                Log.e("JavaScriptInterface", "JSCallMovie2======callShare====" + vtype);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        @JavascriptInterface
+        public void JSCallMovie3(String str) {
+            JSONObject jsonObject = null;
+            try {
+                jsonObject = new JSONObject(str);
+                String mid = jsonObject.optString("data-mid");
+                String vtype = jsonObject.optString("data-mtype");
+                Log.e("JavaScriptInterface", "JSCallMovie3==callShare======" + mid);
+                Log.e("JavaScriptInterface", "JSCallMovie3==callShare====" + vtype);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        @JavascriptInterface
+        public void JSCallBack() {
+            Log.e("JavaScriptInterface", "JSCallHotComment");
+            finish();
+        }
+
+        @JavascriptInterface
+        public void JSCallMovieShare(String string) {
+            Log.e("JavaScriptInterface", "JSCallMovieShare" + string);
+        }
+
+        @JavascriptInterface
+        public void JSCallSpecialShare(String string) {
+            Log.e("JavaScriptInterface", "JSCallSpecialShare" + string);
+        }
+        @JavascriptInterface
+        public void JSCallComment(String string) {
+            Log.e("JavaScriptInterface", "JSCallHotComment" + string);
+        }
+        @JavascriptInterface
+        public void JSCallHotComment() {
+            Log.e("JavaScriptInterface", "JSCallHotComment" );
         }
     }
-
 
     private void loadWeb() {
         webView.setWebChromeClient(new WebChromeClient() {
