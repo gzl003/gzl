@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.net.http.SslError;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
 import android.util.Log;
@@ -53,12 +54,16 @@ public class WebViewActivity extends Activity implements View.OnClickListener {
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true); //支持通过JS打开新窗口
         webSettings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
         webSettings.setLoadsImagesAutomatically(true);  //支持自动加载图片
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+            webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        }
+        webSettings.setBlockNetworkImage(false);
         webView.addJavascriptInterface(new JavaScriptInterface(this), "HX");//js给Android传值 添加接收的接口
 
         loadWeb();
 //        webView.loadUrl("http://www.lmf9.com/");
         webView.loadUrl("https://beta.huanxi.com/h5/chat/movie.html?" + new Random());
-//        webView.loadUrl("https://beta.huanxi.com/testh5/test/index.html");
+//        webView.loadUrl("http://sina.com.cn");
 //        webView.loadUrl("http://m.teteparts.com/discover.html");
     }
 

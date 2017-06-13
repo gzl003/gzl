@@ -107,7 +107,8 @@
         <activity android:name=".activity.VerticalSeekbarActivity" />
         <activity android:name=".activity.WebViewRefshActivity" />
         <activity android:name=".activity.SwichButtonActivity" />
-        <activity android:name=".activity.RcycleViewImagetActivity"></activity>
+        <activity android:name=".activity.RcycleViewImagetActivity" />
+        <activity android:name=".activity.GreenDaoActivity"></activity>
     </application>
 
 </manifest>
