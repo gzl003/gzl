@@ -108,7 +108,8 @@
         <activity android:name=".activity.WebViewRefshActivity" />
         <activity android:name=".activity.SwichButtonActivity" />
         <activity android:name=".activity.RcycleViewImagetActivity" />
-        <activity android:name=".activity.GreenDaoActivity"></activity>
+        <activity android:name=".activity.GreenDaoActivity" />
+        <activity android:name=".activity.YUyunsuanActivity"></activity>
     </application>
 
 </manifest>
