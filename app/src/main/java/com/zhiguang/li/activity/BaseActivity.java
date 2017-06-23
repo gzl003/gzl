@@ -20,6 +20,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.zhiguang.li.widget.SlidingLayout;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -200,6 +202,15 @@ public class BaseActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTopBar();
+
+        if (enableSliding()) {//右滑关闭页面
+            SlidingLayout rootView = new SlidingLayout(this);
+            rootView.bindActivity(this);
+        }
+    }
+
+    protected boolean enableSliding() {
+        return true;
     }
 
     private void setTopBar() {
