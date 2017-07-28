@@ -1,6 +1,7 @@
 package com.zhiguang.li.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.net.http.SslError;
@@ -26,8 +27,6 @@ import com.zhiguang.li.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.Random;
 
 public class WebViewActivity extends Activity implements View.OnClickListener {
     private WebView webView;
@@ -62,7 +61,8 @@ public class WebViewActivity extends Activity implements View.OnClickListener {
 
         loadWeb();
 //        webView.loadUrl("http://www.lmf9.com/");
-        webView.loadUrl("https://beta.huanxi.com/h5/chat/movie.html?" + new Random());
+//        webView.loadUrl("https://qam.huanxi.com/h5/index/" + new Random());
+        webView.loadUrl("https://qam.huanxi.com/h5/index/");
 //        webView.loadUrl("http://sina.com.cn");
 //        webView.loadUrl("http://m.teteparts.com/discover.html");
     }
@@ -145,13 +145,15 @@ public class WebViewActivity extends Activity implements View.OnClickListener {
         public void JSCallSpecialShare(String string) {
             Log.e("JavaScriptInterface", "JSCallSpecialShare" + string);
         }
+
         @JavascriptInterface
         public void JSCallComment(String string) {
             Log.e("JavaScriptInterface", "JSCallHotComment" + string);
         }
+
         @JavascriptInterface
         public void JSCallHotComment() {
-            Log.e("JavaScriptInterface", "JSCallHotComment" );
+            Log.e("JavaScriptInterface", "JSCallHotComment");
         }
     }
 
@@ -176,9 +178,18 @@ public class WebViewActivity extends Activity implements View.OnClickListener {
              */
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
+//                view.loadUrl(url);
                 Log.e("shouldOverrideUrlLoading", "============" + url);
-                return true;
+                // 如下方案可在非微信内部WebView的H5页面中调出微信支付
+                if (url.startsWith("weixin://wap/pay?")) {
+                    Intent intent = new Intent();
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse(url));
+                    startActivity(intent);
+
+                    return true;
+                }
+                return super.shouldOverrideUrlLoading(view, url);
             }
 
             /**
