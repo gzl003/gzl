@@ -12,7 +12,7 @@ import com.zhiguang.li.modle.FlowInfo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RcycleViewImagetActivity extends AppCompatActivity {
+public class RcycleViewImagetActivity extends AppCompatActivity{
 
     private String[] name = {"一拍成名一拍成名", "穿越侠穿越侠 我穿 我穿我穿穿穿", "王朝的女人，杨贵妃王朝的女人，杨贵妃", "左耳", "战狼", "港囧", "煎饼侠", "千金女侠傻白甜", "碟中谍5，神秘的傻逼碟中谍5，神秘的傻逼碟中谍5，神秘的傻逼", "终结者。创世纪终结者。创世纪终结者。创世纪", "陪安东尼度过漫长的岁月"
             , "赤裸女特工之夜序曲赤裸女特工之夜序曲赤裸女特工之夜序曲", "杀破狼", "捉妖记", "速度与激情7", "喜气洋洋小金莲----喜气洋洋小金莲-----喜气洋洋小金莲--金莲啊 大郎哪里去了", "我的青春期", "赤裸特工", "我是谁的2015", "速度与激情5", "这个杀手不太冷这个杀手不太冷这个杀手不太冷", "变形金刚", "谁的青春不热血谁的青春不热血谁的青春不热血"
@@ -60,6 +60,19 @@ public class RcycleViewImagetActivity extends AppCompatActivity {
         adapter = new ImageRecycleAdapter(this, flowInfos);
         image_recycle.setLayoutManager(new LinearLayoutManager(this));//设置布局管理器
         image_recycle.setAdapter(adapter);
+        image_recycle.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+
+
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+            }
+        });
     }
 
     private void setDate() {
@@ -70,4 +83,6 @@ public class RcycleViewImagetActivity extends AppCompatActivity {
             flowInfos.add(flowInfo);
         }
     }
+
+
 }

@@ -28,7 +28,8 @@ public class ImageRecycleAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ImgViewRecycleItem(LayoutInflater.from(mContext).inflate(R.layout.image_recycle_item, parent, false));
+        ImgViewRecycleItem recycleItem = new ImgViewRecycleItem(LayoutInflater.from(mContext).inflate(R.layout.image_recycle_item, parent, false));
+        return recycleItem;
     }
 
     @Override
