@@ -4,9 +4,9 @@ import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
+import android.view.animation.TranslateAnimation;
 
 import com.zhiguang.li.R;
 
@@ -29,22 +29,32 @@ public class ProgressWidget extends Dialog {
         View vitwroot = LayoutInflater.from(context).inflate(R.layout.progress_widget, null);
         image = vitwroot.findViewById(R.id.xz_img);
 
-        animation = new RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF,
-                5, Animation.RELATIVE_TO_SELF, 5);
-        animation.setDuration(2000);//设置动画持续时间
-
-        /** 常用方法 */
-        animation.setRepeatCount(-1);//设置重复次数
-        animation.setFillAfter(true);//动画执行完后是否停留在执行完的状态
-        animation.setStartOffset(0);//执行前的等待时间
-        LinearInterpolator lir = new LinearInterpolator();
-        animation.setInterpolator(lir);//匀速
-        image.setAnimation(animation);
-/** 开始动画 */
-
-        animation.startNow();
-/** 结束动画 */
+//        animation = new RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF,
+//                5, Animation.RELATIVE_TO_SELF, 5);
+//        animation.setDuration(2000);//设置动画持续时间
+//        /** 常用方法 */
+//        animation.setRepeatCount(-1);//设置重复次数
+//        animation.setFillAfter(true);//动画执行完后是否停留在执行完的状态
+//        animation.setStartOffset(0);//执行前的等待时间
+//        LinearInterpolator lir = new LinearInterpolator();
+//        animation.setInterpolator(lir);//匀速
+//        image.setAnimation(animation);
+//        /** 开始动画 */
+//        animation.startNow();
+        /** 结束动画 */
 //        animation.cancel();
+
+
+        TranslateAnimation translateAnimation = new TranslateAnimation(image.getX(),image.getX(),image.getY(),image.getY() + 20);
+        translateAnimation.setRepeatCount(-1);
+        translateAnimation.setRepeatCount(-1);//设置重复次数
+        translateAnimation.setFillAfter(true);//动画执行完后是否停留在执行完的状态
+        translateAnimation.setStartOffset(0);//执行前的等待时间
+        LinearInterpolator interpolator = new LinearInterpolator();
+        translateAnimation.setInterpolator(interpolator);//匀速
+        image.setAnimation(animation);
+        translateAnimation.startNow();
+
         super.setContentView(vitwroot);
     }
 }

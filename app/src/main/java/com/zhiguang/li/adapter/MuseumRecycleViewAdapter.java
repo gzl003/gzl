@@ -98,9 +98,6 @@ public class MuseumRecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.
                     bigImgViewHolder.text_title.setText(info.title);
                     Glide.with(mContext)
                             .load(info.stills)
-                            .fitCenter()
-                            .placeholder(R.drawable.image)
-                            .crossFade()
                             .into(bigImgViewHolder.imageView);
                 }
                 break;
@@ -112,9 +109,6 @@ public class MuseumRecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.
                     smallImgViewHolder.text_title.setText(smallinfo.title);
                     Glide.with(mContext)
                             .load(smallinfo.stills)
-                            .fitCenter()
-                            .placeholder(R.drawable.image)
-                            .crossFade()
                             .into(smallImgViewHolder.imageView);
 
                 }

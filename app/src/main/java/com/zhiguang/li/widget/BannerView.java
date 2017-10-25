@@ -46,9 +46,6 @@ public class BannerView implements Holder<Museum.ResultBean.HeadBean> {
          */
         Glide.with(mContext)
                 .load(data.stills)
-                .fitCenter()
-                .placeholder(R.drawable.image)
-                .crossFade()
                 .into(imageView);
     }
 }

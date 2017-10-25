@@ -112,7 +112,8 @@
         <activity android:name=".activity.YUyunsuanActivity" />
         <activity android:name=".activity.SlidingCloseActivity" />
         <activity android:name=".activity.PoorVisionActivity" />
-        <activity android:name=".activity.IJKPlayerActivity"/>
+        <activity android:name=".activity.IJKPlayerActivity" />
+        <activity android:name=".activity.PaletteActivity"/>
     </application>
 
 </manifest>

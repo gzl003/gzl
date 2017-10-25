@@ -41,12 +41,14 @@ import com.zhiguang.li.activity.GPSActivity;
 import com.zhiguang.li.activity.GifActivity;
 import com.zhiguang.li.activity.GreenDaoActivity;
 import com.zhiguang.li.activity.HasMapJsonActivity;
+import com.zhiguang.li.activity.IJKPlayerActivity;
 import com.zhiguang.li.activity.ImageSuoFang;
 import com.zhiguang.li.activity.LikeAnimationActivity;
 import com.zhiguang.li.activity.MadiaPlayerActivity;
 import com.zhiguang.li.activity.MuseumActivity;
 import com.zhiguang.li.activity.MySerActivity;
 import com.zhiguang.li.activity.NestedScrollingActivity;
+import com.zhiguang.li.activity.PaletteActivity;
 import com.zhiguang.li.activity.PasswordinputActivity;
 import com.zhiguang.li.activity.PathLineActivity;
 import com.zhiguang.li.activity.PoorVisionActivity;
@@ -92,13 +94,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             , BasicVideoActivity.class, SwioerefreshActivity.class, MySerActivity.class, WebViewActivity.class, ProgressActivity.class, ScrollingActivity.class, FlowViewActivity.class, NestedScrollingActivity.class
             , CodeLayActivity.class, TabswitchActivity.class, TabVpScrActivity.class, TabTopActivity.class, SparkActivity.class, PtrRecycleViewActivity.class, BitmapOrBase64Activity.class
             , SuperSwipeRefreshLayoutActivity.class, MadiaPlayerActivity.class, GifActivity.class, MuseumActivity.class, PasswordinputActivity.class, ImageSuoFang.class, SkiddeleteActivity.class, VerticalSeekbarActivity.class
-            , WebViewRefshActivity.class, SwichButtonActivity.class, RcycleViewImagetActivity.class, GreenDaoActivity.class, YUyunsuanActivity.class, SlidingCloseActivity.class, PoorVisionActivity.class
+            , WebViewRefshActivity.class, SwichButtonActivity.class, RcycleViewImagetActivity.class, GreenDaoActivity.class, YUyunsuanActivity.class, SlidingCloseActivity.class, PoorVisionActivity.class, IJKPlayerActivity.class
+            , PaletteActivity.class
     };
     public String[] strings = {"RecyclerView", "点赞动画", "圆角图片", "分类", "选集", "AdapterViewFlipper", "gps"
             , "信息", "轮播图", "剧集", "drawer侧滑", "跟随动画", "map json", "destest", "贝塞尔曲线"
             , "视频录制", "google自家的刷新View", "服务测试", "webView测试", "加载框", "滚动的Activity", "RecyclerView 实现流式布局", "嵌套滚动", "CodeLayActivity", "TAB切换", "仿照微信左右切换", "TABlayout顶部切换", "闪光字体",
             "上下刷新的RecycleView", "图片和base64之间的转换", "SuperSwipeRefresh", "MediaPlayer测试", "gif图", "典藏馆", "密码输入框", "图片缩放", "侧滑删除item", "垂直进度条", "滑动的webView", "切换开关", "recycleImage",
-            "GreenDao", "与 运算", "右滑关闭页面", "滚动视觉差"};
+            "GreenDao", "与 运算", "右滑关闭页面", "滚动视觉差", "B站player", "Palette"};
     private List<MClassmodle> mClassmodles;
     private Banner banner;
 
@@ -411,9 +414,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
              */
             Glide.with(context)
                     .load(path)
-                    .fitCenter()
-                    .placeholder(R.drawable.image)
-                    .crossFade()
                     .into(imageView);
 
         }

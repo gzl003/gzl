@@ -7,12 +7,13 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.zhiguang.li.R;
+import com.bumptech.glide.request.RequestOptions;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
 import com.youth.banner.listener.OnBannerClickListener;
 import com.youth.banner.loader.ImageLoader;
+import com.zhiguang.li.R;
 
 import java.util.Arrays;
 
@@ -69,6 +70,9 @@ public class ADebaseActivity extends Activity {
     public class GlideImageLoader implements ImageLoader {
         @Override
         public void displayImage(Context context, Object path, ImageView imageView) {
+
+            RequestOptions options = new RequestOptions();
+            options.centerCrop();
             /**
              常用的图片加载库：
              Universal Image Loader：一个强大的图片加载库，包含各种各样的配置，最老牌，使用也最广泛。
@@ -79,11 +83,8 @@ public class ADebaseActivity extends Activity {
              */
             Glide.with(context)
                     .load(path)
-                    .fitCenter()
-                    .placeholder(R.drawable.image)
-                    .crossFade()
+                    .apply(options)
                     .into(imageView);
-
         }
     }
 

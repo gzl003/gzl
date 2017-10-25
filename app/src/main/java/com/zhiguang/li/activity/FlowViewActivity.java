@@ -97,10 +97,6 @@ public class FlowViewActivity extends Activity {
                 flowViewHolder.textView.setText(flowInfos.get(position).name);
                 Glide.with(FlowViewActivity.this)
                         .load(flowInfos.get(position).imgurl)
-                        .error(R.drawable.grid_img)
-                        .placeholder(R.drawable.grid_img)
-                        .dontAnimate()
-                        .centerCrop()
                         .into(flowViewHolder.imageView);
             }
         }

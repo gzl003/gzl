@@ -40,10 +40,6 @@ public class MyRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
             Glide.with(mContext)
                     .load("http://img0.wsy1.com/0ef2e0ae127015113bbb.jpg")
-                    .error(R.drawable.image)
-                    .placeholder(R.drawable.image)
-                    .dontAnimate()
-                    .centerCrop()
                     .into(((ImgViewItem) holder).imgview);
         }
     }

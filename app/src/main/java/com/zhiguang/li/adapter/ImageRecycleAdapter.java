@@ -40,10 +40,6 @@ public class ImageRecycleAdapter extends RecyclerView.Adapter {
 
             Glide.with(mContext)
                     .load(flowInfo.getImgurl())
-                    .error(R.drawable.grid_img)
-                    .placeholder(R.drawable.grid_img)
-                    .dontAnimate()
-                    .centerCrop()
                     .into(((ImgViewRecycleItem) holder).imgview);
         }
     }
