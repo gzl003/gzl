@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" android:oneshot="false"  >
+    <!-- 定义一个动画帧，Drawable为img0，持续时间50毫秒 -->
+
+
+    <item android:drawable="@drawable/longmao_ima3" android:duration="30" />
+    <item android:drawable="@drawable/longmao_ima4" android:duration="30" />
+    <item android:drawable="@drawable/longmao_ima5" android:duration="30" />
+    <item android:drawable="@drawable/longmao_ima6" android:duration="30" />
+    <item android:drawable="@drawable/longmao_ima7" android:duration="30" />
+    <item android:drawable="@drawable/longmao_ima8" android:duration="30" />
+    <item android:drawable="@drawable/longmao_ima9" android:duration="30" />
+    <item android:drawable="@drawable/longmao_ima10" android:duration="30" />
+    <item android:drawable="@drawable/longmao_ima1" android:duration="30" />
+    <item android:drawable="@drawable/longmao_ima2" android:duration="30" />
+
+
+</animation-list>

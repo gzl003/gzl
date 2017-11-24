@@ -17,4 +17,10 @@
         android:enabled="false"
         android:src="@drawable/huanxi_full_loading" />
 
+    <ImageView
+        android:id="@+id/longmao"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        />
+
 </RelativeLayout>
