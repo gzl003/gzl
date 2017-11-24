@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
     <!-- 视频录制 -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -112,7 +113,8 @@
         <activity android:name=".activity.YUyunsuanActivity" />
         <activity android:name=".activity.SlidingCloseActivity" />
         <activity android:name=".activity.PoorVisionActivity" />
-        <activity android:name=".activity.PaletteActivity"/>
+        <activity android:name=".activity.PaletteActivity" />
+        <activity android:name=".activity.WatermarkActivity"></activity>
     </application>
 
 </manifest>
