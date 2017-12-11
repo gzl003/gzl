@@ -114,7 +114,8 @@
         <activity android:name=".activity.SlidingCloseActivity" />
         <activity android:name=".activity.PoorVisionActivity" />
         <activity android:name=".activity.PaletteActivity" />
-        <activity android:name=".activity.WatermarkActivity"></activity>
+        <activity android:name=".activity.WatermarkActivity" />
+        <activity android:name=".activity.QRCodeActivity"></activity>
     </application>
 
 </manifest>

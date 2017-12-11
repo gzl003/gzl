@@ -35,6 +35,7 @@ dependencies {
     compile files('libs/fastjson-1.1.36.jar')
     compile files('libs/gifView.jar')
     compile files('libs/tencentX5WebView.jar')
+    compile project(':libzxing')
 
     compile 'com.android.support:support-v4:24.2.1'
     compile 'com.android.support:appcompat-v7:24.2.1'
