@@ -6,6 +6,7 @@ import android.graphics.Matrix;
 import android.media.MediaScannerConnection;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.zhiguang.li.R;
 import com.zhiguang.li.utils.ImagetUtils;
@@ -44,7 +45,12 @@ public class WatermarkActivity extends BaseActivity {
         imageView.setImageBitmap(src1);
 
 //        ImagetUtils.saveImageToGallery(this, src1);
-        ImagetUtils.insertImageToAllbum(src1,this);
+        ImagetUtils.insertImageToAllbum(src1, this, new ImagetUtils.saveImgListener() {
+            @Override
+            public void onResult(String path) {
+                Toast.makeText(WatermarkActivity.this,path,Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
 

@@ -15,8 +15,6 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.media.MediaScannerConnection;
-import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
@@ -167,7 +165,7 @@ public class ImagetUtils {
         Typeface font = Typeface.create(Typeface.DEFAULT, Typeface.BOLD);
 
         //在src中画入水印(右下角)
-        cv.drawBitmap(watermark, 10, 10, null);
+        cv.drawBitmap(watermark, (w - ww) / 2, h - wh - 10, null);
 
         //加入文字
         if (title != null) {
@@ -193,7 +191,7 @@ public class ImagetUtils {
      * @param bitmap
      * @param mContext
      */
-    public static void insertImageToAllbum(final Bitmap bitmap, final Context mContext) {
+    public static void insertImageToAllbum(final Bitmap bitmap, final Context mContext, final saveImgListener listener) {
         final String SAVE_PIC_PATH = Environment.getExternalStorageState().equalsIgnoreCase(Environment.MEDIA_MOUNTED) ? Environment.getExternalStorageDirectory().getAbsolutePath() : "/mnt/sdcard";//保存到SD卡
         final String SAVE_REAL_PATH = SAVE_PIC_PATH + "/DCIM/savePic";//保存的确切位置
         new Thread(new Runnable() {
@@ -231,21 +229,29 @@ public class ImagetUtils {
                     e.printStackTrace();
                 }
 
+
+//                String[] paths = {myCaptureFile.getAbsolutePath()};
+//                String[] mimeTypes = {"image/jpeg"};
+//                MediaScannerConnection.scanFile(mContext, paths, mimeTypes, new MediaScannerConnection.OnScanCompletedListener() {
+//                    @Override
+//                    public void onScanCompleted(String path, Uri uri) {
+//                        Log.e("onScanCompleted", "path   " + path);
+////                        listener.onResult(path);
+//                    }
+//                });
                 new Handler(Looper.getMainLooper()).post(new Runnable() {
                     @Override
                     public void run() {
-                        String[] paths = {myCaptureFile.getAbsolutePath()};
-                        String[] mimeTypes = {"image/jpeg"};
-                        MediaScannerConnection.scanFile(mContext, paths, mimeTypes, new MediaScannerConnection.OnScanCompletedListener() {
-                            @Override
-                            public void onScanCompleted(String path, Uri uri) {
-                                Log.e("onScanCompleted", "path   " + path);
-                            }
-                        });
-
+                        listener.onResult(myCaptureFile.getAbsolutePath());
                     }
                 });
             }
+
         }).start();
+
+    }
+
+    public interface saveImgListener {
+        void onResult(String path);
     }
 }
