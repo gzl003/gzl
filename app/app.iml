@@ -96,6 +96,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.jiongbull/jlog/1.0.5/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.youth.banner/banner/1.4.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.zhy/okhttputils/2.6.2/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/jameson.io.library/library/0.0.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/tv.danmaku.ijk.media/ijkplayer-arm64/0.6.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/tv.danmaku.ijk.media/ijkplayer-armv5/0.6.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/tv.danmaku.ijk.media/ijkplayer-armv7a/0.6.1/jars" />
@@ -124,14 +125,16 @@
     <orderEntry type="library" name="glide-4.2.0" level="project" />
     <orderEntry type="library" name="constraint-layout-solver-1.0.0-alpha9" level="project" />
     <orderEntry type="library" name="convenientbanner-2.0.5" level="project" />
-    <orderEntry type="library" name="play-services-appindexing-9.6.1" level="project" />
+    <orderEntry type="library" name="library-0.0.1" level="project" />
     <orderEntry type="library" name="ijkplayer-java-0.6.1" level="project" />
+    <orderEntry type="library" name="play-services-appindexing-9.6.1" level="project" />
     <orderEntry type="library" name="support-core-ui-25.3.1" level="project" />
     <orderEntry type="library" name="palette-v7-24.2.1" level="project" />
     <orderEntry type="library" name="annotations-4.2.0" level="project" />
+    <orderEntry type="library" name="renderscript-v8" level="project" />
     <orderEntry type="library" name="firebase-common-9.6.1" level="project" />
-    <orderEntry type="library" name="ijkplayer-exo-0.6.1" level="project" />
     <orderEntry type="library" name="constraint-layout-1.0.0-alpha9" level="project" />
+    <orderEntry type="library" name="ijkplayer-exo-0.6.1" level="project" />
     <orderEntry type="library" name="banner-1.4.1" level="project" />
     <orderEntry type="library" name="greendao-3.0.1" level="project" />
     <orderEntry type="library" name="jlog-1.0.5" level="project" />

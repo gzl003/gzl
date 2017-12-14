@@ -11,6 +11,10 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
+
+        //启用renderscript
+        renderscriptTargetApi = 18
+        renderscriptSupportModeEnabled = true
     }
     buildTypes {
         release {
@@ -37,6 +41,7 @@ dependencies {
     compile files('libs/tencentX5WebView.jar')
     compile project(':libzxing')
 
+    //noinspection GradleCompatible
     compile 'com.android.support:support-v4:24.2.1'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:recyclerview-v7:24.2.1'
@@ -65,4 +70,7 @@ dependencies {
     compile 'tv.danmaku.ijk.media:ijkplayer-x86_64:0.6.1'
     // ExoPlayer as IMediaPlayer: optional, experimental
     compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.6.1'
+    compile('jameson.io.library:library:0.0.1') {
+        exclude group: "com.android.support", module: "support-v4"
+    }
 }
