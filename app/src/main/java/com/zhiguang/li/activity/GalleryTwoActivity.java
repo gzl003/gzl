@@ -6,10 +6,8 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.MotionEvent;
-import android.view.View;
+import android.util.TypedValue;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.zhiguang.li.R;
 import com.zhiguang.li.adapter.GralleryPagerAdapter;
@@ -22,11 +20,11 @@ import java.util.List;
 
 /**
  * 画廊效果
+ * clipToPadding属性是我们在一个页面中显示多个ViewPager  item
  */
 public class GalleryTwoActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
-    private LinearLayout page_parent;
     private String[] imageViews;
     private ImageView img_bar;
     public Runnable mBlurRunnable;
@@ -39,21 +37,15 @@ public class GalleryTwoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery_two);
         mViewPager = (ViewPager) findViewById(R.id.gallery_pager);
-        page_parent = (LinearLayout) findViewById(R.id.page_parent);
         img_bar = (ImageView) findViewById(R.id.img_bar);
         initData();
 
         // 1.设置幕后item的缓存数目
         mViewPager.setOffscreenPageLimit(3);
         // 2.设置页与页之间的间距
-        mViewPager.setPageMargin(10);
+        mViewPager.setPageMargin((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                48, getResources().getDisplayMetrics()));
 
-        page_parent.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return mViewPager.dispatchTouchEvent(motionEvent);
-            }
-        });
         mViewPager.setPageTransformer(true, new GrallyPageTransfrom());
         mViewPager.setAdapter(new GralleryPagerAdapter(GalleryTwoActivity.this, imageViews, img_bar));
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -76,13 +68,7 @@ public class GalleryTwoActivity extends AppCompatActivity {
                     }
                 };
                 img_bar.postDelayed(mBlurRunnable, 500);
-//                Glide.with(GalleryTwoActivity.this).load(imageViews[position]).into(new SimpleTarget<Drawable>() {
-//                    @Override
-//                    public void onResourceReady(final Drawable resource, Transition<? super Drawable> transition) {
-////                        bitmap = ImagetUtils.drawableToBitmap(resource);
-//                        ViewSwitchUtils.startSwitchBackgroundAnim(img_bar, ImagetUtils.blurImages(ImagetUtils.drawableToBitmap(resource)));
-//                    }
-//                });
+
             }
 
             @Override

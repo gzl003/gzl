@@ -117,7 +117,8 @@
         <activity android:name=".activity.WatermarkActivity" />
         <activity android:name=".activity.QRCodeActivity" />
         <activity android:name=".activity.GalleryActivity" />
-        <activity android:name=".activity.GalleryTwoActivity"></activity>
+        <activity android:name=".activity.GalleryTwoActivity" />
+        <activity android:name=".activity.RecyclerViewPageActivity"></activity>
     </application>
 
 </manifest>

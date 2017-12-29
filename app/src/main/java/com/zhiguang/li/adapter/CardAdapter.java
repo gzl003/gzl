@@ -49,6 +49,15 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         return mList.size();
     }
 
+    /**
+     * 获取position位置的resId
+     * @param position
+     * @return
+     */
+    public int getResId(int position) {
+        return mList == null ? 0 : mList.get(position);
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final ImageView mImageView;
 

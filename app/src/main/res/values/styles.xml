@@ -44,4 +44,12 @@
         <item name="android:activityCloseExitAnimation">@anim/anim_slide_out</item>
     </style>
 
+    <declare-styleable name="gallery_recyclerview">
+        <attr name="helper" format="string">
+            <enum name="LinearySnapHelper" value="0" />
+            <enum name="PagerSnapHelper" value="1" />
+        </attr>
+
+    </declare-styleable>
+
 </resources>

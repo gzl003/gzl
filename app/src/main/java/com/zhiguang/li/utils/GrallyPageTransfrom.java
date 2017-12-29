@@ -1,6 +1,7 @@
 package com.zhiguang.li.utils;
 
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -9,28 +10,31 @@ import android.view.View;
  */
 public class GrallyPageTransfrom implements ViewPager.PageTransformer {
 
-    private static final float min_scale = 0.85f;
+    private static final float MAX_SCALE = 1.0f;
+    private static final float MIN_SCALE = 0.85f;
 
     @Override
     public void transformPage(final View page, float position) {
-        float scaleFactor = Math.max(min_scale, 1 - Math.abs(position));
-//        float rotate = 20 * Math.abs(position);
         if (position < -1) {
-            page.setScaleX(scaleFactor);
-            page.setScaleY(scaleFactor);
-        } else if (position < 0) {
-            page.setScaleX(scaleFactor);//X缩放
-            page.setScaleY(scaleFactor);//Y缩放
-//            page.setRotationY(rotate);//Y 旋转
-        } else if (position >= 0 && position < 1) {
-            page.setScaleX(scaleFactor);
-            page.setScaleY(scaleFactor);
-//            page.setRotationY(-rotate);
-        } else if (position >= 1) {
-            page.setScaleX(scaleFactor);
-            page.setScaleY(scaleFactor);
-//            page.setRotationY(-rotate);
+            page.setScaleX(MIN_SCALE);
+            page.setScaleY(MIN_SCALE);
+        } else if (position <= 1) {//a页滑动至b页 ； a页从 0.0 -1 ；b页从1 ~ 0.0
+            // [-1,1]
+            if (position < 0) {
+                float scaleFactor = MIN_SCALE + (1 - Math.abs(position)) * (MAX_SCALE - MIN_SCALE);
+                page.setScaleX(scaleFactor);
+                page.setScaleY(scaleFactor);
+                Log.e("transformPage  开始消失",  "\n transformPage>>>>>>>>>" + scaleFactor);
+            } else {
+                float scaleFactor = MIN_SCALE + (1 - Math.abs(position)) * (MAX_SCALE - MIN_SCALE);
+                page.setScaleX(scaleFactor);
+                page.setScaleY(scaleFactor);
+                Log.w("transformPage   开始出现   else {",  "\n transformPage>>>>>>>>>" + scaleFactor);
+            }
+        } else { // (1,+Infinity]
+            page.setScaleX(MIN_SCALE);
+            page.setScaleY(MIN_SCALE);
+
         }
     }
-
 }

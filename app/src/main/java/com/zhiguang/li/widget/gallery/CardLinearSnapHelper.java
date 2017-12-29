@@ -20,5 +20,4 @@ public class CardLinearSnapHelper extends LinearSnapHelper {
             return super.calculateDistanceToFinalSnap(layoutManager, targetView);
         }
     }
-
 }
