@@ -57,7 +57,7 @@ public class GalleryItemDecoration extends RecyclerView.ItemDecoration {
 
     private void onSetVerticalParams(ViewGroup parent, View itemView, int position, int itemCount) {
         int itemNewWidth = parent.getWidth();
-        int itemNewHeight = parent.getHeight() - OsUtil.dpToPx(4 * mPageMargin + 2 * mLeftPageVisibleWidth);
+        int itemNewHeight = parent.getHeight() - OsUtil.dpToPx(2 * mPageMargin + 2 * mLeftPageVisibleWidth);
 
         mItemComusemY = itemNewHeight + OsUtil.dpToPx(2 * mPageMargin);
 
@@ -80,7 +80,7 @@ public class GalleryItemDecoration extends RecyclerView.ItemDecoration {
      * @param itemCount
      */
     private void onSetHoritiontalParams(ViewGroup parent, View itemView, int position, int itemCount) {
-        int itemNewWidth = parent.getWidth() - OsUtil.dpToPx(4 * mPageMargin + 2 * mLeftPageVisibleWidth);
+        int itemNewWidth = parent.getWidth() - OsUtil.dpToPx(2 * mPageMargin + 2 * mLeftPageVisibleWidth);
         int itemNewHeight = parent.getHeight();
 
         mItemComusemX = itemNewWidth + OsUtil.dpToPx(2 * mPageMargin);

@@ -57,19 +57,16 @@ public class QRCodeActivity extends AppCompatActivity {
 
     private void makeQR() {
         String contentString = imputEdit.getText().toString();
-       if(contentString != null && !contentString.isEmpty()){
+        if (contentString != null && !contentString.isEmpty()) {
 
-           if (!contentString.equals("")) {
-               //根据字符串生成二维码图片并显示在界面上，第二个参数为图片的大小（350*350）
-               Bitmap qrCodeBitmap = EncodingUtils.createQRCode(contentString, 350, 350,
-                       /*mCheckBox.isChecked()*/true ?
-                               BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher) :
-                               null);
-               imageView.setImageBitmap(qrCodeBitmap);
-           } else {
-               Toast.makeText(this, "Text can not be empty", Toast.LENGTH_SHORT).show();
-           }
-       }
+            if (!contentString.equals("")) {
+                //根据字符串生成二维码图片并显示在界面上，第二个参数为图片的大小（350*350）
+                Bitmap qrCodeBitmap = EncodingUtils.createQRCode(contentString, 350, 350, BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+                imageView.setImageBitmap(qrCodeBitmap);
+            } else {
+                Toast.makeText(this, "Text can not be empty", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     private void saoQR() {
