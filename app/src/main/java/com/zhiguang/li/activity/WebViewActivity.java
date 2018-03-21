@@ -11,6 +11,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.ConsoleMessage;
 import android.webkit.HttpAuthHandler;
 import android.webkit.JavascriptInterface;
 import android.webkit.SslErrorHandler;
@@ -22,6 +23,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.zhiguang.li.R;
 
@@ -31,14 +33,16 @@ import org.json.JSONObject;
 public class WebViewActivity extends Activity implements View.OnClickListener {
     private WebView webView;
     private WebSettings webSettings;
+    private ProgressBar loding_progress;
     private Button back_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
-        webView = (WebView) findViewById(R.id.my_webview);
-        back_btn = (Button) findViewById(R.id.back_btn);
+        webView = findViewById(R.id.my_webview);
+        back_btn = findViewById(R.id.back_btn);
+        loding_progress = findViewById(R.id.loding_progress);
         back_btn.setOnClickListener(this);
         webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);  //支持js
@@ -166,6 +170,22 @@ public class WebViewActivity extends Activity implements View.OnClickListener {
                 }
                 return super.onShowFileChooser(webView, filePathCallback, fileChooserParams);
             }
+
+            @Override
+            public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
+                return super.onConsoleMessage(consoleMessage);
+            }
+
+            @Override
+            public boolean onCreateWindow(WebView view, boolean isDialog, boolean isUserGesture, Message resultMsg) {
+                return super.onCreateWindow(view, isDialog, isUserGesture, resultMsg);
+            }
+
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                super.onProgressChanged(view, newProgress);
+                Log.e("webview", "onProgressChanged>>>>  " + newProgress);
+            }
         });
 
         webView.setWebViewClient(new WebViewClient() {
@@ -239,6 +259,7 @@ public class WebViewActivity extends Activity implements View.OnClickListener {
                 } else {
                     back_btn.setVisibility(View.GONE);
                 }
+                loding_progress.setVisibility(View.VISIBLE);
                 super.onPageStarted(view, url, favicon);
             }
 
@@ -251,6 +272,7 @@ public class WebViewActivity extends Activity implements View.OnClickListener {
             public void onPageFinished(WebView view, String url) {
                 Log.e("webview", "onPageFinished");
                 super.onPageFinished(view, url);
+                loding_progress.setVisibility(View.GONE);
             }
 
             /**
