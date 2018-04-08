@@ -3,8 +3,8 @@ package com.zhiguang.li.activity;
 import android.app.Activity;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,16 +61,17 @@ public class FlowViewActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flow_view);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.flow_recycleview);
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));//上下滚动
+//        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));//上下滚动
 //        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL));//左右滚动
 //        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(5, StaggeredGridLayoutManager.GAP_HANDLING_NONE));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         passData();
         FlowAdapter flowAdapter = new FlowAdapter();
         recyclerView.setAdapter(flowAdapter);
         //设置item之间的间隔
-        SpacesItemDecoration decoration = new SpacesItemDecoration(5);
-        recyclerView.addItemDecoration(decoration);
+//        SpacesItemDecoration decoration = new SpacesItemDecoration(50);
+//        recyclerView.addItemDecoration(decoration);
     }
 
     private void passData() {

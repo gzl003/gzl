@@ -3,12 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/flow_view_bg"
+    android:background="@color/white"
     tools:context="com.zhiguang.li.activity.FlowViewActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/flow_recycleview"
-        android:layout_margin="@dimen/activity_horizontal_margin"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

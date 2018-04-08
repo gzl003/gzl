@@ -4,9 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    card_view:cardBackgroundColor="@color/gzl_white"
-    card_view:cardCornerRadius="7dp"
-    card_view:cardElevation="10dp">
+    card_view:cardBackgroundColor="@color/white"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="15dp"
+    card_view:cardMaxElevation="15dp"
+    card_view:cardPreventCornerOverlap="false"
+    card_view:cardUseCompatPadding="false">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +19,7 @@
         <ImageView
             android:id="@+id/img_grid"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:scaleType="centerCrop"
             android:src="@drawable/grid_img" />
 
