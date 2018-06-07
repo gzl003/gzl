@@ -50,6 +50,7 @@ import com.zhiguang.li.activity.MadiaPlayerActivity;
 import com.zhiguang.li.activity.MuseumActivity;
 import com.zhiguang.li.activity.MySerActivity;
 import com.zhiguang.li.activity.NestedScrollingActivity;
+import com.zhiguang.li.activity.PageIntedectorActivity;
 import com.zhiguang.li.activity.PaletteActivity;
 import com.zhiguang.li.activity.PasswordinputActivity;
 import com.zhiguang.li.activity.PathLineActivity;
@@ -63,6 +64,7 @@ import com.zhiguang.li.activity.RecyclerViewActivity;
 import com.zhiguang.li.activity.RecyclerViewPageActivity;
 import com.zhiguang.li.activity.ScrollingActivity;
 import com.zhiguang.li.activity.SelectMovieActivity;
+import com.zhiguang.li.activity.ShareActivity;
 import com.zhiguang.li.activity.SkiddeleteActivity;
 import com.zhiguang.li.activity.SlidingCloseActivity;
 import com.zhiguang.li.activity.SparkActivity;
@@ -77,9 +79,9 @@ import com.zhiguang.li.activity.VerticalSeekbarActivity;
 import com.zhiguang.li.activity.WatermarkActivity;
 import com.zhiguang.li.activity.WebViewActivity;
 import com.zhiguang.li.activity.WebViewRefshActivity;
+import com.zhiguang.li.activity.X5WebView;
 import com.zhiguang.li.activity.YUyunsuanActivity;
 import com.zhiguang.li.network.NetworkObservable;
-import com.zhiguang.li.network.NetworkObservable.NetConnectStatus;
 import com.zhiguang.li.utils.CKEven;
 import com.zhiguang.li.utils.GPSUtils;
 
@@ -100,13 +102,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             , CodeLayActivity.class, TabswitchActivity.class, TabVpScrActivity.class, TabTopActivity.class, SparkActivity.class, PtrRecycleViewActivity.class, BitmapOrBase64Activity.class
             , SuperSwipeRefreshLayoutActivity.class, MadiaPlayerActivity.class, GifActivity.class, MuseumActivity.class, PasswordinputActivity.class, ImageSuoFang.class, SkiddeleteActivity.class, VerticalSeekbarActivity.class
             , WebViewRefshActivity.class, SwichButtonActivity.class, RcycleViewImagetActivity.class, GreenDaoActivity.class, YUyunsuanActivity.class, SlidingCloseActivity.class, PoorVisionActivity.class
-            , PaletteActivity.class, WatermarkActivity.class, QRCodeActivity.class, GalleryActivity.class, GalleryTwoActivity.class, RecyclerViewPageActivity.class,ListSkideleteActivity.class
+            , PaletteActivity.class, WatermarkActivity.class, QRCodeActivity.class, GalleryActivity.class, GalleryTwoActivity.class, RecyclerViewPageActivity.class, ListSkideleteActivity.class, PageIntedectorActivity.class,
+            X5WebView.class, ShareActivity.class
     };
     public String[] strings = {"RecyclerView", "点赞动画", "圆角图片", "分类", "选集", "AdapterViewFlipper", "gps"
             , "信息", "轮播图", "剧集", "drawer侧滑", "跟随动画", "map json", "destest", "贝塞尔曲线"
             , "视频录制", "google自家的刷新View", "服务测试", "webView测试", "加载框", "滚动的Activity", "RecyclerView 实现流式布局", "嵌套滚动", "CodeLayActivity", "TAB切换", "仿照微信左右切换", "TABlayout顶部切换", "闪光字体",
             "上下刷新的RecycleView", "图片和base64之间的转换", "SuperSwipeRefresh", "MediaPlayer测试", "gif图", "典藏馆", "密码输入框", "图片缩放", "侧滑删除item", "垂直进度条", "滑动的webView", "切换开关", "recycleImage",
-            "GreenDao", "与 运算", "右滑关闭页面", "滚动视觉差", "Palette", "图片水印", "二维码", "画廊效果", "画廊效果2", "仿照viewpager的recyclerview","listview侧滑删除"};
+            "GreenDao", "与 运算", "右滑关闭页面", "滚动视觉差", "Palette", "图片水印", "二维码", "画廊效果", "画廊效果2", "仿照viewpager的recyclerview", "listview侧滑删除", "PageIntedector", "x5浏览器", "分享"};
     private List<MClassmodle> mClassmodles;
     private Banner banner;
 
@@ -343,13 +346,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
      */
     @Override
     public void update(Observable o, Object arg) {
-        if (arg != null && arg instanceof NetConnectStatus) {
+        if (arg != null && arg instanceof NetworkObservable.NetConnectStatus) {
             Log.e("update", "update net:" + arg);
-            if (arg.equals(NetConnectStatus.DISCONNECTED)) {
+            if (arg.equals(NetworkObservable.NetConnectStatus.DISCONNECTED)) {
                 Toast.makeText(this, "断网啦", Toast.LENGTH_SHORT).show();
-            } else if (arg.equals(NetConnectStatus.CONNECTED_WIFI)) {
+            } else if (arg.equals(NetworkObservable.NetConnectStatus.CONNECTED_WIFI)) {
                 Toast.makeText(this, "WIFI", Toast.LENGTH_SHORT).show();
-            } else if (arg.equals(NetConnectStatus.CONNECTED_3G)) {
+            } else if (arg.equals(NetworkObservable.NetConnectStatus.CONNECTED_3G)) {
                 Toast.makeText(this, "运营商网络", Toast.LENGTH_SHORT).show();
             }
         }

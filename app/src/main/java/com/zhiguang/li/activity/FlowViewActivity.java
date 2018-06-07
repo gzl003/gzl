@@ -1,10 +1,12 @@
 package com.zhiguang.li.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,7 @@ import java.util.List;
  * RecyclerView 实现流式布局
  */
 public class FlowViewActivity extends Activity {
+    private Context context;
     private String[] name = {"一拍成名一拍成名", "穿越侠穿越侠 我穿 我穿我穿穿穿", "王朝的女人，杨贵妃王朝的女人，杨贵妃", "左耳", "战狼", "港囧", "煎饼侠", "千金女侠傻白甜", "碟中谍5，神秘的傻逼碟中谍5，神秘的傻逼碟中谍5，神秘的傻逼", "终结者。创世纪终结者。创世纪终结者。创世纪", "陪安东尼度过漫长的岁月"
             , "赤裸女特工之夜序曲赤裸女特工之夜序曲赤裸女特工之夜序曲", "杀破狼", "捉妖记", "速度与激情7", "喜气洋洋小金莲----喜气洋洋小金莲-----喜气洋洋小金莲--金莲啊 大郎哪里去了", "我的青春期", "赤裸特工", "我是谁的2015", "速度与激情5", "这个杀手不太冷这个杀手不太冷这个杀手不太冷", "变形金刚", "谁的青春不热血谁的青春不热血谁的青春不热血"
             , "我是谁的2015", "速度与激情5", "这个杀手不太冷这个杀手不太冷这个杀手不太冷", "变形金刚", "谁的青春不热血谁的青春不热血谁的青春不热血"};
@@ -72,6 +75,7 @@ public class FlowViewActivity extends Activity {
         //设置item之间的间隔
 //        SpacesItemDecoration decoration = new SpacesItemDecoration(50);
 //        recyclerView.addItemDecoration(decoration);
+        context = this;
     }
 
     private void passData() {
@@ -99,6 +103,10 @@ public class FlowViewActivity extends Activity {
                 Glide.with(FlowViewActivity.this)
                         .load(flowInfos.get(position).imgurl)
                         .into(flowViewHolder.imageView);
+
+                flowViewHolder.recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL));
+                ItemFlowAdapter flowAdapter = new ItemFlowAdapter();
+                flowViewHolder.recyclerView.setAdapter(flowAdapter);
             }
         }
 
@@ -117,15 +125,46 @@ public class FlowViewActivity extends Activity {
 
         ImageView imageView;
         TextView textView;
+        RecyclerView recyclerView;
 
         public FlowViewHolder(View itemView) {
             super(itemView);
             imageView = (ImageView) itemView.findViewById(R.id.img_grid);
             textView = (TextView) itemView.findViewById(R.id.text_grid);
+            recyclerView = itemView.findViewById(R.id.item_recycle);
         }
 
     }
 
+    class ItemFlowAdapter extends RecyclerView.Adapter {
+
+        @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            return new FlowViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.flow_item, parent, false));
+        }
+
+        @Override
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+            //
+            if (holder instanceof FlowViewHolder) {
+                FlowViewHolder flowViewHolder = (FlowViewHolder) holder;
+                flowViewHolder.textView.setText(flowInfos.get(position).name);
+                Glide.with(FlowViewActivity.this)
+                        .load(flowInfos.get(position).imgurl)
+                        .into(flowViewHolder.imageView);
+            }
+        }
+
+        @Override
+        public int getItemCount() {
+            return flowInfos.size();
+        }
+
+        @Override
+        public int getItemViewType(int position) {
+            return super.getItemViewType(position);
+        }
+    }
 
     class FlowInfo {
 

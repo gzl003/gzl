@@ -107,4 +107,8 @@
     <string name="carty_text">我是第一级分类</string>
     <string name="encode_text">加 密</string>
     <string name="decode_text">解 密</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_scrolling2">ScrollingActivity2</string>
 </resources>
