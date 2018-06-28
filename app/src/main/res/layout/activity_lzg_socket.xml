@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/appbar_padding_top"
+    tools:context="com.zhiguang.li.activity.LzgSocketActivity">
+
+    <Button
+        android:id="@+id/connect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="连接" />
+
+    <Button
+        android:id="@+id/disconnect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="断开"
+        app:layout_constraintTop_toBottomOf="@+id/connect" />
+
+    <TextView
+        android:id="@+id/receive_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="接收到的消息"
+        app:layout_constraintTop_toBottomOf="@+id/disconnect" />
+
+    <Button
+        android:id="@+id/Receive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="接收消息"
+        app:layout_constraintTop_toBottomOf="@+id/receive_message" />
+
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/Receive" />
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送消息"
+        app:layout_constraintTop_toBottomOf="@+id/edit" />
+</android.support.constraint.ConstraintLayout>

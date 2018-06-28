@@ -123,6 +123,7 @@
         <activity android:name=".activity.PageIntedectorActivity" />
         <activity android:name=".activity.X5WebView" />
         <activity android:name=".activity.ShareActivity" />
+        <activity android:name=".activity.LzgSocketActivity"></activity>
     </application>
 
 </manifest>
