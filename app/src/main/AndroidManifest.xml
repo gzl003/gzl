@@ -123,7 +123,17 @@
         <activity android:name=".activity.PageIntedectorActivity" />
         <activity android:name=".activity.X5WebView" />
         <activity android:name=".activity.ShareActivity" />
-        <activity android:name=".activity.LzgSocketActivity"></activity>
+        <activity android:name=".activity.LzgSocketActivity" />
+
+        <receiver android:name=".activity.GzlAppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/gzl_app_widget_info" />
+        </receiver>
     </application>
 
 </manifest>
