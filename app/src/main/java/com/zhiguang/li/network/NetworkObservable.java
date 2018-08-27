@@ -8,6 +8,7 @@ import android.net.ConnectivityManager;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.zhiguang.li.application.LzgApplication;
 import com.zhiguang.li.utils.NetWorkState;
 
 /**
@@ -59,11 +60,11 @@ public class NetworkObservable extends java.util.Observable {
     private void registerReceiver() {
         IntentFilter mFilter = new IntentFilter();
         mFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-        mContext.registerReceiver(mReceiver, mFilter);
+        LzgApplication.getInstance().getApplicationContext().registerReceiver(mReceiver, mFilter);
     }
 
     private void unregisterReceiver() {
-        mContext.unregisterReceiver(mReceiver);
+        LzgApplication.getInstance().getApplicationContext().unregisterReceiver(mReceiver);
     }
 
     private NetConnectStatus getNetConnectStatus() {
