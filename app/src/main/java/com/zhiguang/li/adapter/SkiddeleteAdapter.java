@@ -5,10 +5,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zhiguang.li.R;
-import com.zhiguang.li.view.SkidDeletaItem;
 
 import java.util.List;
 
@@ -30,7 +30,7 @@ public class SkiddeleteAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         SkilddeleteItem imgViewItem = new SkilddeleteItem(LayoutInflater.from(mContext).inflate(R.layout.recycle_skild_item, parent, false));
-        imgViewItem.skidDeletaItem.setOnClickListener(new View.OnClickListener() {
+        imgViewItem.textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(mContext, "imgViewItem", Toast.LENGTH_SHORT).show();
@@ -41,10 +41,7 @@ public class SkiddeleteAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        if (hasOpen) {
-            ((SkilddeleteItem) holder).skidDeletaItem.scrollTo(0, 0);
-            hasOpen = false;
-        }
+
 
     }
 
@@ -55,11 +52,11 @@ public class SkiddeleteAdapter extends RecyclerView.Adapter {
 
 
     class SkilddeleteItem extends RecyclerView.ViewHolder {
-        SkidDeletaItem skidDeletaItem;
+        TextView textView;
 
         SkilddeleteItem(View rootview) {
             super(rootview);
-            skidDeletaItem = (SkidDeletaItem) rootview.findViewById(R.id.skid_view);
+            textView = rootview.findViewById(R.id.mybtnDelete);
         }
 
 

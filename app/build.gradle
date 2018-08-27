@@ -24,6 +24,7 @@ android {
     }
 
     greendao {
+        schemaVersion 2
         targetGenDir 'src/main/java'
     }
 }
@@ -37,7 +38,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile files('libs/layoutlib-api.jar')
     compile files('libs/fastjson-1.1.36.jar')
-    compile files('libs/gifView.jar')
     compile files('libs/tencentX5WebView.jar')
     compile project(':libzxing')
 
@@ -60,6 +60,7 @@ dependencies {
     compile 'com.jiongbull:jlog:1.0.5'
     compile 'com.zhy:okhttputils:2.6.2'
     compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.15'//jif加载框架
 
     //IJKPlayer
     //required, enough for most devices.

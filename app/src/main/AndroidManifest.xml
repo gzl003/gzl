@@ -119,7 +119,6 @@
         <activity android:name=".activity.GalleryActivity" />
         <activity android:name=".activity.GalleryTwoActivity" />
         <activity android:name=".activity.RecyclerViewPageActivity" />
-        <activity android:name=".activity.ListSkideleteActivity" />
         <activity android:name=".activity.PageIntedectorActivity" />
         <activity android:name=".activity.X5WebView" />
         <activity android:name=".activity.ShareActivity" />

@@ -20,15 +20,18 @@ import java.util.List;
 
 /**
  * 数据库测试 GreenDao 使用方法
+ * 1 编写对象User.class  对应数据库的表
+ * 2 点击 Make progect 生成数据了的操作类 UserDao.class
+ * 3 UserDao.class  用来增删改查的操作
  */
-public class GreenDaoActivity extends AppCompatActivity implements View.OnClickListener{
+public class GreenDaoActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ListView lvUser;
     private DBManager greenDaoHelper;
     private List<User> users;
     private List<Dog> dogs;
     private TextView tvTime;
-    private Button btnAdd,btnDelete;
+    private Button btnAdd, btnDelete;
     private int maxCount = 0;
     private EditText ediMaxCount;
     private PreferenceUtil preferenceUtil;
@@ -41,7 +44,7 @@ public class GreenDaoActivity extends AppCompatActivity implements View.OnClickL
         initView();
         getGreenDaoHelper();
         initData();
-        long seleteTime=System.currentTimeMillis();
+        long seleteTime = System.currentTimeMillis();
         refreshData();
         tvTime.setText("GreenDao查询" + preferenceUtil.getGreenDaoCount() + "条数据花了" + (System.currentTimeMillis() - seleteTime) + "毫秒");
     }
@@ -57,18 +60,18 @@ public class GreenDaoActivity extends AppCompatActivity implements View.OnClickL
         users.clear();
         dogs = new ArrayList<Dog>();
         dogs.clear();
-        for (int i= 0;i< maxCount;i++){
+        for (int i = 0; i < maxCount; i++) {
             User user = new User();
             user.setId(i);
-            user.setName("我是不是 王毛"+i);
+            user.setName("我是不是 王毛" + i);
             user.setAge(i);
             users.add(user);
         }
 
-        for (int i= 0;i< maxCount;i++){
+        for (int i = 0; i < maxCount; i++) {
             Dog dog = new Dog();
             dog.setId(i);
-            dog.setName("我是不是 王毛"+i);
+            dog.setName("我是不是 王毛" + i);
             dog.setCretry("");
             dogs.add(dog);
         }
@@ -86,33 +89,42 @@ public class GreenDaoActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void getGreenDaoHelper() {
-        greenDaoHelper= new DBManager(this);
+        greenDaoHelper = new DBManager(this);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn_add:
                 greenDaoHelper.deleteAll();
 
-                maxCount= Integer.parseInt(ediMaxCount.getText().toString());
+                if (ediMaxCount.getText() != null && !ediMaxCount.getText().toString().isEmpty()) {
+                    try {
+                        maxCount = Integer.parseInt(ediMaxCount.getText().toString());
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                        tvTime.setText(e.getMessage());
+                    }
+                }
+
                 preferenceUtil.saveGreenDaoCount(maxCount);
                 initData();
-                long addTime=System.currentTimeMillis();
-                for (int i= 0;i<maxCount;i++){
-                    greenDaoHelper.insertUser(users.get(i));
-                }
-                for (int i= 0;i<maxCount;i++){
+                long addTime = System.currentTimeMillis();
+//                for (int i= 0;i<maxCount;i++){
+//                    greenDaoHelper.insertUser(users.get(i));
+//                }
+                for (int i = 0; i < maxCount; i++) {
                     greenDaoHelper.insertDog(dogs.get(i));
                 }
-                tvTime.setText("GreenDao添加" + preferenceUtil.getGreenDaoCount()+"条数据花了" + (System.currentTimeMillis()-addTime)+"毫秒");
+                tvTime.setText("GreenDao添加" + preferenceUtil.getGreenDaoCount() + "条数据花了" + (System.currentTimeMillis() - addTime) + "毫秒");
                 refreshData();
 
                 break;
             case R.id.btn_delete:
-                long deleteTime=System.currentTimeMillis();
+                long deleteTime = System.currentTimeMillis();
+                int count = preferenceUtil.getGreenDaoCount();
                 greenDaoHelper.deleteAll();
-                tvTime.setText("GreenDao删除" + preferenceUtil.getGreenDaoCount() + "条数据花了" + (System.currentTimeMillis() - deleteTime) + "毫秒");
+                tvTime.setText("GreenDao删除" + count + "条数据花了" + (System.currentTimeMillis() - deleteTime) + "毫秒");
                 refreshData();
                 preferenceUtil.saveGreenDaoCount(0);
                 break;

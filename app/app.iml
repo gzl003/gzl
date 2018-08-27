@@ -109,6 +109,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.youth.banner/banner/1.4.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.zhy/okhttputils/2.6.2/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/jameson.io.library/library/0.0.1/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/pl.droidsonroids.gif/android-gif-drawable/1.2.15/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/tv.danmaku.ijk.media/ijkplayer-armv7a/0.6.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/tv.danmaku.ijk.media/ijkplayer-exo/0.6.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/tv.danmaku.ijk.media/ijkplayer-java/0.6.1/jars" />
@@ -131,6 +132,7 @@
     <orderEntry type="library" exported="" name="com.android.support:multidex-1.0.1" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-media-compat-26.0.1" level="project" />
     <orderEntry type="library" exported="" name="com.google.android.gms:play-services-base-9.6.1" level="project" />
+    <orderEntry type="library" exported="" name="pl.droidsonroids.gif:android-gif-drawable-1.2.15" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:recyclerview-v7-26.0.1" level="project" />
     <orderEntry type="library" exported="" name="com.squareup.okio:okio:1.8.0@jar" level="project" />
     <orderEntry type="library" exported="" name="com.github.bumptech.glide:annotations:4.2.0@jar" level="project" />
@@ -160,7 +162,6 @@
     <orderEntry type="library" exported="" name="com.android.support:support-compat-26.0.1" level="project" />
     <orderEntry type="library" exported="" name="tv.danmaku.ijk.media:ijkplayer-exo-0.6.1" level="project" />
     <orderEntry type="library" exported="" name="com.android.support.constraint:constraint-layout-solver:1.0.0-alpha9@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\Android\Projects\Anew\gzl\app\libs\gifView.jar:unspecified@jar" level="project" />
     <orderEntry type="library" exported="" name="org.greenrobot:greendao-api:3.0.0@jar" level="project" />
     <orderEntry type="library" exported="" name="com.google.android.gms:play-services-tasks-9.6.1" level="project" />
     <orderEntry type="library" exported="" name="com.jiongbull:jlog-1.0.5" level="project" />

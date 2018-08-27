@@ -56,6 +56,7 @@ public class DBManager {
 
     public void deleteAll(){
         userDao.deleteAll();
+        dogDao.deleteAll();
     }
 
     public void updateUser(User user){
