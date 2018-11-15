@@ -123,6 +123,9 @@
         <activity android:name=".activity.X5WebView" />
         <activity android:name=".activity.ShareActivity" />
         <activity android:name=".activity.LzgSocketActivity" />
+        <activity
+            android:name=".activity.ScreenSwitchingActivity"
+            android:configChanges="orientation|screenSize" />
 
         <receiver android:name=".activity.GzlAppWidget">
             <intent-filter>

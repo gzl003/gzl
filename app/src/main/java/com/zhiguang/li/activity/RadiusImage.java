@@ -61,9 +61,9 @@ public class RadiusImage extends Activity {
                 .load("http://tc.sinaimg.cn/maxwidth.2048/tc.service.weibo.com/p/mmbiz_qpic_cn/0dbdb8ca21725696a14d484e02f98a5a.jpg")
                 .into(redius_img4);//
 
-        Glide.with(this)
-                .load("http://images.17173.com/2013/news/2013/12/16/d1216t09.gif")
-                .into(img_gif);
+//        Glide.with(this)
+//                .load("http://images.17173.com/2013/news/2013/12/16/d1216t09.gif")
+//                .into(img_gif);
 
     }
 }

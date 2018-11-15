@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@color/about_gray_color"
+    android:background="@color/gzl_white"
     android:orientation="vertical">
 
     <LinearLayout
@@ -76,6 +76,14 @@
         <ImageView
             android:id="@+id/img_gif"
             android:layout_width="200dp"
-            android:layout_height="200dp" />
+            android:layout_height="200dp"
+            android:src="@drawable/aboutme_logo_red"/>
+
+        <ImageView
+            android:id="@+id/aboutimg_log"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/aboutme_logo_red" />
     </LinearLayout>
 </ScrollView>

@@ -128,8 +128,7 @@ public class MadiaPlayerActivity extends Activity {
             //设置重复播放
             mediaPlayer.setLooping(true);
             // 设置播放的视频源
-            mediaPlayer.setDataSource(/*file.getAbsolutePath()*/"http://hls10.xiankan.com/target/hls/2016/11/14/213_982dc45f1d674b85940aaa1360cb7f7c_10_1920x1080.m3u8");
-//            mediaPlayer.setDataSource(/*file.getAbsolutePath()*/"http://hls2.xiankan.com/target/hls/2015/12/09/213_2287f9efb6784107a4ef99d4eb3e0e94_27_854x480.m3u8");
+            mediaPlayer.setDataSource("https://agmjjzyi.ixibeiren.com/20181022/7MVaVwY9/index.m3u8");
             // 设置显示视频的SurfaceHolder
             mediaPlayer.setDisplay(sv.getHolder());
             Log.i(TAG, "开始装载");
