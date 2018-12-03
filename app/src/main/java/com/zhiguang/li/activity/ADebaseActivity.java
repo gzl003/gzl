@@ -14,6 +14,8 @@ import com.youth.banner.Transformer;
 import com.youth.banner.listener.OnBannerClickListener;
 import com.youth.banner.loader.ImageLoader;
 import com.zhiguang.li.R;
+import com.zhiguang.li.adapter.WebBannerAdapter;
+import com.zhiguang.li.widget.banner.BannerLayout;
 
 import java.util.Arrays;
 
@@ -23,6 +25,7 @@ import java.util.Arrays;
 public class ADebaseActivity extends Activity {
 
     private Banner banner;
+    private BannerLayout bannerrv;
 
     private String[] images = new String[]{"http://img.xiankan.com/c4659e4c9dba480d06c2.jpg",
             "http://img.xiankan.com/32fc897fa6f06e8a21c9.jpg",
@@ -65,6 +68,24 @@ public class ADebaseActivity extends Activity {
                 Toast.makeText(getApplicationContext(), "你点击了：" + titles[position], Toast.LENGTH_LONG).show();
             }//设置点击事件
         });
+
+
+        bannerrv = findViewById(R.id.banner_rv);
+        WebBannerAdapter webBannerAdapter=new WebBannerAdapter(this, Arrays.asList(images));
+        webBannerAdapter.setOnBannerItemClickListener(new BannerLayout.OnBannerItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Toast.makeText(ADebaseActivity.this, "点击了第  " + position+"  项", Toast.LENGTH_SHORT).show();
+            }
+        });
+        bannerrv.setAdapter(webBannerAdapter);
+
+
+
+
+
+
+
     }
 
     public class GlideImageLoader implements ImageLoader {

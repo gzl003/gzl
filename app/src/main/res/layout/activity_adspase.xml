@@ -1,37 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context="com.zhiguang.li.activity.ADebaseActivity">
 
     <com.youth.banner.Banner
         android:id="@+id/my_banner"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:title_height="30dp"
-        app:indicator_width="5dp"
         app:indicator_height="5dp"
-        app:indicator_margin="5dp"/>
+        app:indicator_margin="5dp"
+        app:indicator_width="5dp"
+        app:title_height="30dp" />
 
-    <!--<com.youth.banner.Banner xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/banner"
+
+    <com.zhiguang.li.widget.banner.BannerLayout
+        android:id="@+id/banner_rv"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="高度自己设置"
-        app:default_image="默认加载图片"
-        app:delay_time="轮播间隔时间"
-        app:indicator_drawable_selected="指示器选中效果"
-        app:indicator_drawable_unselected="指示器未选中效果"
-        app:indicator_height="指示器圆形按钮的高度"
-        app:indicator_margin="指示器之间的间距"
-        app:indicator_width="指示器圆形按钮的宽度"
-        app:is_auto_play="是否自动轮播" />-->
-
-
-    <ImageView
-        android:id="@+id/imgview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"/>
-</RelativeLayout>
+        android:layout_height="200dp"
+        app:autoPlaying="true"
+        app:centerScale="1"
+        app:itemSpace="40"
+        app:moveSpeed="1.8" />
+</LinearLayout>
