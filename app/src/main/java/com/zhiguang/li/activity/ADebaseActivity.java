@@ -40,7 +40,6 @@ public class ADebaseActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adspase);
         banner = (Banner) findViewById(R.id.my_banner);
-
         //设置banner样式
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
 //        //设置指示器位置（当banner模式中有指示器时）
@@ -69,7 +68,7 @@ public class ADebaseActivity extends Activity {
             }//设置点击事件
         });
 
-
+/////////////////////////////////////////////////////////////////////////////
         bannerrv = findViewById(R.id.banner_rv);
         WebBannerAdapter webBannerAdapter=new WebBannerAdapter(this, Arrays.asList(images));
         webBannerAdapter.setOnBannerItemClickListener(new BannerLayout.OnBannerItemClickListener() {
@@ -79,9 +78,6 @@ public class ADebaseActivity extends Activity {
             }
         });
         bannerrv.setAdapter(webBannerAdapter);
-
-
-
 
 
 

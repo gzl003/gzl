@@ -93,19 +93,19 @@ public class BannerLayout extends FrameLayout {
         if (mSelectedDrawable == null) {
             //绘制默认选中状态图形
             GradientDrawable selectedGradientDrawable = new GradientDrawable();
-            selectedGradientDrawable.setShape(GradientDrawable.OVAL);
-            selectedGradientDrawable.setColor(Color.RED);
-            selectedGradientDrawable.setSize(dp2px(5), dp2px(5));
-            selectedGradientDrawable.setCornerRadius(dp2px(5) / 2);
+            selectedGradientDrawable.setShape(GradientDrawable.RECTANGLE);
+            selectedGradientDrawable.setColor(Color.WHITE);
+            selectedGradientDrawable.setSize(dp2px(15), dp2px(5));
+            selectedGradientDrawable.setCornerRadius(dp2px(5));
             mSelectedDrawable = new LayerDrawable(new Drawable[]{selectedGradientDrawable});
         }
         if (mUnselectedDrawable == null) {
             //绘制默认未选中状态图形
             GradientDrawable unSelectedGradientDrawable = new GradientDrawable();
-            unSelectedGradientDrawable.setShape(GradientDrawable.OVAL);
-            unSelectedGradientDrawable.setColor(Color.GRAY);
-            unSelectedGradientDrawable.setSize(dp2px(5), dp2px(5));
-            unSelectedGradientDrawable.setCornerRadius(dp2px(5) / 2);
+            unSelectedGradientDrawable.setShape(GradientDrawable.RECTANGLE);
+            unSelectedGradientDrawable.setColor(Color.parseColor("#80ffffff"));
+            unSelectedGradientDrawable.setSize(dp2px(15), dp2px(5));
+            unSelectedGradientDrawable.setCornerRadius(dp2px(5));
             mUnselectedDrawable = new LayerDrawable(new Drawable[]{unSelectedGradientDrawable});
         }
 
@@ -141,9 +141,10 @@ public class BannerLayout extends FrameLayout {
         indicatorContainer.setLayoutManager(indicatorLayoutManager);
         indicatorAdapter = new IndicatorAdapter();
         indicatorContainer.setAdapter(indicatorAdapter);
-        LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+        indicatorContainer.setForegroundGravity(Gravity.CENTER);
+        LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.gravity = Gravity.BOTTOM | gravity;
+        params.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
         params.setMargins(marginLeft, 0, marginRight, marginBottom);
         addView(indicatorContainer, params);
         if (!showIndicator) {
