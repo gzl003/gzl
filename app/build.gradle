@@ -55,7 +55,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'
 
     compile 'com.youth.banner:banner:1.4.1'
-    compile 'com.bigkoo:convenientbanner:2.0.5'
+    compile 'com.bigkoo:ConvenientBanner:2.1.4'
 
     compile 'com.jiongbull:jlog:1.0.5'
     compile 'com.zhy:okhttputils:2.6.2'

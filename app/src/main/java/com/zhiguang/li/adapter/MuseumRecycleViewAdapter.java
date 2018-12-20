@@ -77,11 +77,17 @@ public class MuseumRecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.
                 if (holder instanceof BannerViewHodler) {
                     BannerViewHodler viewHodler = (BannerViewHodler) holder;
                     viewHodler.banner.setPages(
-                            new CBViewHolderCreator<BannerView>() {
+                            new CBViewHolderCreator() {
                                 @Override
-                                public BannerView createHolder() {
-                                    return new BannerView();
+                                public BannerView createHolder(View itemView) {
+                                    return new BannerView(itemView, mContext);
                                 }
+
+                                @Override
+                                public int getLayoutId() {
+                                    return R.layout.banner_layout;
+                                }
+
                             }, museumList.get(0).banner)
                             //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
                             .setPageIndicator(new int[]{R.drawable.focus_un, R.drawable.focus})
