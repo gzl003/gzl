@@ -104,7 +104,7 @@ public class ADebaseActivity extends Activity {
                 //设置指示器的方向
                 .setPageIndicatorAlign(GzlBanner.PageIndicatorAlign.CENTER_HORIZONTAL)
                 .startTurning(3000);
-        gzlbanner.setPagePadding(20);
+        gzlbanner.setPagePadding(5);
         gzlbanner.setShowLeftCardWidth(10);
     }
 

@@ -83,6 +83,12 @@
         <attr name="centerScale" format="float" />
         <attr name="moveSpeed" format="float" />
     </declare-styleable>
-    <!-- ......... banner 轮播图  end ......... -->
 
+    <declare-styleable name="RecyclerViewPager">
+        <attr name="rvp_triggerOffset" format="float" />
+        <attr name="rvp_flingFactor" format="float" />
+        <attr name="rvp_singlePageFling" format="boolean" />
+        <attr name="rvp_inertia" format="boolean" />
+        <attr name="rvp_millisecondsPerInch" format="float" />
+    </declare-styleable>
 </resources>

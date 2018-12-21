@@ -38,7 +38,7 @@ public class BannerLayout extends FrameLayout {
     private Drawable mUnselectedDrawable;
     private IndicatorAdapter indicatorAdapter;
     private int indicatorMargin;//指示器间距
-    private RecyclerView mRecyclerView;
+    private RecyclerViewPager mRecyclerView;
 
     private BannerLayoutManager mLayoutManager;
 
@@ -123,7 +123,7 @@ public class BannerLayout extends FrameLayout {
         }
         a.recycle();
         //轮播图部分
-        mRecyclerView = new RecyclerView(context);
+        mRecyclerView = new RecyclerViewPager(context);
         LayoutParams vpLayoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT);
         addView(mRecyclerView, vpLayoutParams);
