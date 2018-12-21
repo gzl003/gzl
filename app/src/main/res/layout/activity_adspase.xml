@@ -28,10 +28,10 @@
         app:itemSpace="40"
         app:moveSpeed="1.8" />
 
-    <com.loonggg.rvbanner.lib.RecyclerViewBanner
-        android:id="@+id/rv_banner_1"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
-        tools:background="@color/colorPrimaryDark"/>
+   <com.zhiguang.li.widget.GzlBanner
+       android:id="@+id/gzlbanner"
+       android:layout_width="match_parent"
+       android:layout_height="200dp"
+       app:canLoop="true"/>
 
 </LinearLayout>

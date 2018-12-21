@@ -3,9 +3,11 @@ package com.zhiguang.li.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.youth.banner.Banner;
@@ -15,6 +17,8 @@ import com.youth.banner.listener.OnBannerClickListener;
 import com.youth.banner.loader.ImageLoader;
 import com.zhiguang.li.R;
 import com.zhiguang.li.adapter.WebBannerAdapter;
+import com.zhiguang.li.widget.GzlBanner;
+import com.zhiguang.li.widget.GzlBannerItemView;
 import com.zhiguang.li.widget.banner.BannerLayout;
 
 import java.util.Arrays;
@@ -26,6 +30,7 @@ public class ADebaseActivity extends Activity {
 
     private Banner banner;
     private BannerLayout bannerrv;
+    private GzlBanner gzlbanner;
 
     private String[] images = new String[]{"http://img.xiankan.com/c4659e4c9dba480d06c2.jpg",
             "http://img.xiankan.com/32fc897fa6f06e8a21c9.jpg",
@@ -70,18 +75,37 @@ public class ADebaseActivity extends Activity {
 
 /////////////////////////////////////////////////////////////////////////////
         bannerrv = findViewById(R.id.banner_rv);
-        WebBannerAdapter webBannerAdapter=new WebBannerAdapter(this, Arrays.asList(images));
+        WebBannerAdapter webBannerAdapter = new WebBannerAdapter(this, Arrays.asList(images));
         webBannerAdapter.setOnBannerItemClickListener(new BannerLayout.OnBannerItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                Toast.makeText(ADebaseActivity.this, "点击了第  " + position+"  项", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ADebaseActivity.this, "点击了第  " + position + "  项", Toast.LENGTH_SHORT).show();
             }
         });
         bannerrv.setAdapter(webBannerAdapter);
+        bannerrv.setAutoPlayDuration(1000);
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        gzlbanner = findViewById(R.id.gzlbanner);
+        gzlbanner.setPages(
+                new CBViewHolderCreator() {
+                    @Override
+                    public GzlBannerItemView createHolder(View itemView) {
+                        return new GzlBannerItemView(itemView, ADebaseActivity.this);
+                    }
 
+                    @Override
+                    public int getLayoutId() {
+                        return R.layout.banner_layout;
+                    }
 
-
-
+                }, Arrays.asList(images))
+                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
+                .setPageIndicator(new int[]{R.drawable.focus_un, R.drawable.focus})
+                //设置指示器的方向
+                .setPageIndicatorAlign(GzlBanner.PageIndicatorAlign.CENTER_HORIZONTAL)
+                .startTurning(3000);
+        gzlbanner.setPagePadding(20);
+        gzlbanner.setShowLeftCardWidth(10);
     }
 
     public class GlideImageLoader implements ImageLoader {

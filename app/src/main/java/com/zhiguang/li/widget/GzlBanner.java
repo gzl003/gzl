@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.bigkoo.convenientbanner.helper.CBLoopScaleHelper;
+
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.listener.CBPageChangeListener;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
@@ -27,8 +27,7 @@ import java.util.List;
  *  * Created by 智光 on 2018/12/19 11:11
  *  
  */
-
-public class GzlBanner <T> extends RelativeLayout {
+public class GzlBanner<T> extends RelativeLayout {
     private List<T> mDatas;
     private int[] page_indicatorId;
     private ArrayList<ImageView> mPointViews = new ArrayList<ImageView>();
@@ -39,7 +38,7 @@ public class GzlBanner <T> extends RelativeLayout {
     private boolean turning;
     private boolean canTurn = false;
     private boolean canLoop = true;
-    private CBLoopScaleHelper cbLoopScaleHelper;
+    private GzlLoopScaleHeper cbLoopScaleHelper;
     private CBPageChangeListener pageChangeListener;
     private OnPageChangeListener onPageChangeListener;
     private AdSwitchTask adSwitchTask;
@@ -65,14 +64,14 @@ public class GzlBanner <T> extends RelativeLayout {
     private void init(Context context) {
         View hView = LayoutInflater.from(context).inflate(
                 com.bigkoo.convenientbanner.R.layout.include_viewpager, this, true);
-        viewPager = (CBLoopViewPager)hView.findViewById(com.bigkoo.convenientbanner.R.id.cbLoopViewPager);
-        loPageTurningPoint = (ViewGroup)hView
+        viewPager = (CBLoopViewPager) hView.findViewById(com.bigkoo.convenientbanner.R.id.cbLoopViewPager);
+        loPageTurningPoint = (ViewGroup) hView
                 .findViewById(com.bigkoo.convenientbanner.R.id.loPageTurningPoint);
 
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
         viewPager.setLayoutManager(linearLayoutManager);
 
-        cbLoopScaleHelper = new CBLoopScaleHelper();
+        cbLoopScaleHelper = new GzlLoopScaleHeper();
 
         adSwitchTask = new AdSwitchTask(this);
     }
@@ -81,6 +80,7 @@ public class GzlBanner <T> extends RelativeLayout {
         viewPager.setLayoutManager(layoutManager);
         return this;
     }
+
     public GzlBanner setPages(CBViewHolderCreator holderCreator, List<T> datas) {
         this.mDatas = datas;
         pageAdapter = new GzlPagerAdapter<>(holderCreator, mDatas, canLoop);
@@ -95,18 +95,16 @@ public class GzlBanner <T> extends RelativeLayout {
         return this;
     }
 
-    public GzlBanner setCanLoop(boolean canLoop){
+    public GzlBanner setCanLoop(boolean canLoop) {
         this.canLoop = canLoop;
         pageAdapter.setCanLoop(canLoop);
         notifyDataSetChanged();
         return this;
     }
 
-    public boolean isCanLoop(){
+    public boolean isCanLoop() {
         return canLoop;
     }
-
-
 
 
     /**
@@ -143,7 +141,7 @@ public class GzlBanner <T> extends RelativeLayout {
             // 翻页指示的点
             ImageView pointView = new ImageView(getContext());
             pointView.setPadding(5, 0, 5, 0);
-            if (cbLoopScaleHelper.getFirstItemPos()%mDatas.size()==count)
+            if (cbLoopScaleHelper.getFirstItemPos() % mDatas.size() == count)
                 pointView.setImageResource(page_indicatorId[1]);
             else
                 pointView.setImageResource(page_indicatorId[0]);
@@ -194,29 +192,34 @@ public class GzlBanner <T> extends RelativeLayout {
 
     /**
      * 获取当前页对应的position
+     *
      * @return
      */
     public int getCurrentItem() {
         return cbLoopScaleHelper.getRealCurrentItem();
     }
+
     /**
      * 设置当前页对应的position
+     *
      * @return
      */
     public GzlBanner setCurrentItem(int position, boolean smoothScroll) {
-        cbLoopScaleHelper.setCurrentItem(canLoop ? mDatas.size()+position : position, smoothScroll);
+        cbLoopScaleHelper.setCurrentItem(canLoop ? mDatas.size() + position : position, smoothScroll);
         return this;
     }
 
     /**
      * 设置第一次加载当前页对应的position
      * setPageIndicator之前使用
+     *
      * @return
      */
     public GzlBanner setFirstItemPos(int position) {
-        cbLoopScaleHelper.setFirstItemPos(canLoop ? mDatas.size()+position : position);
+        cbLoopScaleHelper.setFirstItemPos(canLoop ? mDatas.size() + position : position);
         return this;
     }
+
     /**
      * 指示器的方向
      *
