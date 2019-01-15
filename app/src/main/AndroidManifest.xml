@@ -137,7 +137,8 @@
                 android:resource="@xml/gzl_app_widget_info" />
         </receiver>
 
-        <activity android:name=".activity.ScrollScreenhotActivity"></activity>
+        <activity android:name=".activity.ScrollScreenhotActivity" />
+        <activity android:name=".activity.ObserverActivity"></activity>
     </application>
 
 </manifest>
