@@ -138,7 +138,8 @@
         </receiver>
 
         <activity android:name=".activity.ScrollScreenhotActivity" />
-        <activity android:name=".activity.ObserverActivity"></activity>
+        <activity android:name=".activity.ObserverActivity"/>
+        <activity android:name=".activity.ThreadCycleActivity" />
     </application>
 
 </manifest>

@@ -78,6 +78,7 @@ import com.zhiguang.li.activity.TabTopActivity;
 import com.zhiguang.li.activity.TabVpScrActivity;
 import com.zhiguang.li.activity.TabswitchActivity;
 import com.zhiguang.li.activity.TextInfoActivity;
+import com.zhiguang.li.activity.ThreadCycleActivity;
 import com.zhiguang.li.activity.VerticalSeekbarActivity;
 import com.zhiguang.li.activity.WatermarkActivity;
 import com.zhiguang.li.activity.WebViewActivity;
@@ -106,14 +107,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             , SuperSwipeRefreshLayoutActivity.class, MadiaPlayerActivity.class, GifActivity.class, MuseumActivity.class, PasswordinputActivity.class, ImageSuoFang.class, SkiddeleteActivity.class, VerticalSeekbarActivity.class
             , WebViewRefshActivity.class, SwichButtonActivity.class, RcycleViewImagetActivity.class, GreenDaoActivity.class, YUyunsuanActivity.class, SlidingCloseActivity.class, PoorVisionActivity.class
             , PaletteActivity.class, WatermarkActivity.class, QRCodeActivity.class, GalleryActivity.class, GalleryTwoActivity.class, RecyclerViewPageActivity.class, PageIntedectorActivity.class,
-            X5WebView.class, ShareActivity.class, LzgSocketActivity.class, ScreenSwitchingActivity.class, ScrollScreenhotActivity.class, ObserverActivity.class
+            X5WebView.class, ShareActivity.class, LzgSocketActivity.class, ScreenSwitchingActivity.class, ScrollScreenhotActivity.class, ObserverActivity.class, ThreadCycleActivity.class
     };
     public String[] strings = {"RecyclerView", "点赞动画", "圆角图片", "分类", "选集", "AdapterViewFlipper", "gps"
             , "信息", "轮播图", "剧集", "drawer侧滑", "跟随动画", "map json", "destest", "贝塞尔曲线"
             , "视频录制", "google自家的刷新View", "服务测试", "webView测试", "加载框", "滚动的Activity", "RecyclerView 实现流式布局", "嵌套滚动", "CodeLayActivity", "TAB切换", "仿照微信左右切换", "TABlayout顶部切换", "闪光字体",
             "上下刷新的RecycleView", "图片和base64之间的转换", "SuperSwipeRefresh", "MediaPlayer测试", "gif图", "典藏馆", "密码输入框", "图片缩放", "侧滑删除item", "垂直进度条", "滑动的webView", "切换开关", "recycleImage",
             "GreenDao", "与 运算", "右滑关闭页面", "滚动视觉差", "Palette", "图片水印", "二维码", "画廊效果", "画廊效果2", "仿照viewpager的recyclerview", "PageIntedector", "x5浏览器", "分享", "Socket", "屏幕切换", "滚动截屏",
-            "观察者"};
+            "观察者", "线程安全"};
     private List<MClassmodle> mClassmodles;
     private Banner banner;
 
