@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.Button;
 
 import com.zhiguang.li.R;
@@ -26,6 +28,7 @@ public class FragmentOne extends Fragment implements View.OnClickListener {
 
     private Button fenlei_one;
     private View rootview;
+    private WebView webview;
 
     private int page;
 
@@ -154,8 +157,23 @@ public class FragmentOne extends Fragment implements View.OnClickListener {
 
     private void init(View view) {
         fenlei_one = (Button) view.findViewById(R.id.fenlei_one);
+        webview = view.findViewById(R.id.webview);
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);  //支持js
+//        webSettings.setSupportZoom(true);  //支持缩放
+        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NORMAL); //支持内容重新布局
+        webSettings.setUseWideViewPort(true);//将图片调整到适合webview的大小
+        webSettings.supportMultipleWindows();  //多窗口
+        webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);  //关闭webview中缓存
+        webSettings.setAllowFileAccess(true);  //设置可以访问文件
+        webSettings.setNeedInitialFocus(true); //当webview调用requestFocus时为webview设置节点
+        webSettings.setBuiltInZoomControls(true); //设置支持缩放
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true); //支持通过JS打开新窗口
+        webSettings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
+        webSettings.setLoadsImagesAutomatically(true);  //支持自动加载图片
         fenlei_one.setText("我是二级分类");
         fenlei_one.setOnClickListener(this);
+        webview.loadUrl("https://m.huanxi.com/h5/ac/static-page/maoyan.html");
     }
 
     @Override

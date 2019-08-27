@@ -65,8 +65,8 @@ public class WebViewActivity extends Activity implements View.OnClickListener {
         loadWeb();
 //        webView.loadUrl("http://www.lmf9.com/");
 //        webView.loadUrl("https://qam.huanxi.com/h5/index/" + new Random());
-        webView.loadUrl("https://m.huanxi.com/h5/ys-nb/#!/index?id=17");
-//        webView.loadUrl("http://sina.com.cn");
+//        webView.loadUrl("https://m.huanxi.com/h5/ys-nb/#!/index?id=17");
+        webView.loadUrl("https://m.huanxi.com/h5/ac/static-page/maoyan.html");
 //        webView.loadUrl("http://m.teteparts.com/discover.html");
     }
 

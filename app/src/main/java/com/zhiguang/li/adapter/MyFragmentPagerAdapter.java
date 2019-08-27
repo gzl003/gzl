@@ -15,7 +15,7 @@ import com.zhiguang.li.Fragment.FragmentOne;
 public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
     private Context context;
-    private String tabTitle[] = new String[]{"哈哈哈", "我是", "一个", "程序猿"};
+    private String tabTitle[] = new String[]{"哈哈哈", "我是", "一个", "程序猿", "哈哈哈", "我是", "一个", "程序猿"};
 
     public MyFragmentPagerAdapter(FragmentManager fm, Context context) {
         super(fm);

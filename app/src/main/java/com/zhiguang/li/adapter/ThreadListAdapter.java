@@ -15,11 +15,10 @@ import java.util.List;
  *  * Created by 智光 on 2019/3/25 12:23
  *  
  */
-
 public class ThreadListAdapter extends RecyclerView.Adapter {
 
     private Context mContext;
-    private List<String> list;
+    private volatile List<String> list;
 
     public ThreadListAdapter(Context mContext, List list) {
         this.mContext = mContext;
