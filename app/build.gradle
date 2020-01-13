@@ -42,33 +42,33 @@ dependencies {
     compile project(':libzxing')
 
     //noinspection GradleCompatible
-    compile 'com.android.support:support-v4:24.2.1'
-    compile 'com.android.support:appcompat-v7:26.0.1'
-    compile 'com.android.support:recyclerview-v7:26.0.1'
-    compile 'com.android.support:cardview-v7:26.0.1'
-    compile 'com.android.support:design:26.0.1'
-    compile 'com.android.support:palette-v7:26.0.1'
-    compile 'com.google.android.gms:play-services-appindexing:9.6.1'
-    compile 'com.github.bumptech.glide:glide:4.2.0'
-    compile 'org.greenrobot:greendao:3.0.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
+    implementation 'com.android.support:support-v4:24.2.1'
+    implementation 'com.android.support:appcompat-v7:26.0.1'
+    implementation 'com.android.support:recyclerview-v7:26.0.1'
+    implementation 'com.android.support:cardview-v7:26.0.1'
+    implementation 'com.android.support:design:26.0.1'
+    implementation 'com.android.support:palette-v7:26.0.1'
+    implementation 'com.google.android.gms:play-services-appindexing:9.6.1'
+    implementation 'com.github.bumptech.glide:glide:4.2.0'
+    implementation 'org.greenrobot:greendao:3.0.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'
 
-    compile 'com.youth.banner:banner:1.4.1'
-    compile 'com.bigkoo:ConvenientBanner:2.1.4'
+    implementation 'com.youth.banner:banner:1.4.1'
+    implementation 'com.bigkoo:ConvenientBanner:2.1.4'
 
-    compile 'com.jiongbull:jlog:1.0.5'
-    compile 'com.zhy:okhttputils:2.6.2'
-    compile 'org.greenrobot:eventbus:3.0.0'
-    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.15'//jif加载框架
+    implementation 'com.jiongbull:jlog:1.0.5'
+    implementation 'com.zhy:okhttputils:2.6.2'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.15'//jif加载框架
 
     //IJKPlayer
     //required, enough for most devices.
-    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.6.1'
-    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.6.1'
+    implementation 'tv.danmaku.ijk.media:ijkplayer-java:0.6.1'
+    implementation 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.6.1'
 
     // ExoPlayer as IMediaPlayer: optional, experimental
-    compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.6.1'
+    implementation 'tv.danmaku.ijk.media:ijkplayer-exo:0.6.1'
     compile('jameson.io.library:library:0.0.1') {
         exclude group: "com.android.support", module: "support-v4"
     }

@@ -19,8 +19,8 @@
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
         <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
-        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res;file://$MODULE_DIR$/build/generated/res/rs/debug;file://$MODULE_DIR$/build/generated/res/resValues/debug" />
-        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/build/generated/res/rs/androidTest/debug;file://$MODULE_DIR$/build/generated/res/resValues/androidTest/debug" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res" />
+        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="" />
         <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
       </configuration>
     </facet>
@@ -106,6 +106,8 @@
     <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout-solver:1.0.0-alpha9@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.3.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.8.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: jameson.io.library:library:0.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:multidex:1.0.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:design:26.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:transition:26.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-appindexing:9.6.1@aar" level="project" />
@@ -114,7 +116,6 @@
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-tasks:9.6.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-basement:9.6.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.jiongbull:jlog:1.0.5@aar" level="project" />
-    <orderEntry type="library" name="Gradle: jameson.io.library:library:0.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:appcompat-v7:26.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-v4:26.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:recyclerview-v7:26.0.1@aar" level="project" />
@@ -128,7 +129,6 @@
     <orderEntry type="library" name="Gradle: tv.danmaku.ijk.media:ijkplayer-exo:0.6.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: tv.danmaku.ijk.media:ijkplayer-java:0.6.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: tv.danmaku.ijk.media:ijkplayer-armv7a:0.6.1@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:multidex:1.0.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:animated-vector-drawable:26.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-vector-drawable:26.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-fragment:26.0.1@aar" level="project" />
