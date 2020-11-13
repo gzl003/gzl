@@ -30,14 +30,15 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
      */
     @Override
     public Fragment getItem(int position) {
-
+//        if (position == 1) {
+//            return CinemaFragment.newInstance(position);
+//        }
         return FragmentOne.newInstance(position);
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        FragmentOne fragment = (FragmentOne) super.instantiateItem(container, position);
-        return fragment;
+        return super.instantiateItem(container, position);
     }
 
 

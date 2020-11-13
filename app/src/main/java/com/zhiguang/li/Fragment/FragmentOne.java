@@ -150,6 +150,8 @@ public class FragmentOne extends Fragment implements View.OnClickListener {
             rootview = inflater.inflate(R.layout.dialog_layput, null);
             Log.e(TabVpScrActivity.TAG, "FragmentOne onCreateView");
             init(rootview);
+            page = getArguments().getInt("page");
+            rootview.setTag(page);
         }
         return rootview;
     }

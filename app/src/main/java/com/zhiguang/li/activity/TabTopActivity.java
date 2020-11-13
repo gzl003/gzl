@@ -30,6 +30,7 @@ public class TabTopActivity extends AppCompatActivity {
         myViewpager = (ViewPager) findViewById(R.id.tab_viewpager);
         mAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager(), this);
         myViewpager.setAdapter(mAdapter);
+        myViewpager.setOffscreenPageLimit(3);
         myTabLayout.setupWithViewPager(myViewpager);//绑定tablayout 和viewpager
         myTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         myTabLayout.setSelectedTabIndicatorHeight(20);

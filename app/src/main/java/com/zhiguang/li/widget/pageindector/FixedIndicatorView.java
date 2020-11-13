@@ -91,6 +91,7 @@ public class FixedIndicatorView extends LinearLayout implements Indicator {
         this.onItemSelectedListener = onItemSelectedListener;
     }
 
+    @Override
     public IndicatorAdapter getIndicatorAdapter() {
         return mAdapter;
     }
@@ -102,6 +103,7 @@ public class FixedIndicatorView extends LinearLayout implements Indicator {
 
     private boolean itemClickable = true;
 
+    @Override
     public void setItemClickable(boolean clickable) {
         this.itemClickable = clickable;
     }
@@ -492,8 +494,9 @@ public class FixedIndicatorView extends LinearLayout implements Indicator {
 
 
     private int measureScrollBar(int position, float selectPercent, boolean needChange) {
-        if (scrollBar == null || mAdapter == null)
+        if (scrollBar == null || mAdapter == null) {
             return 0;
+        }
         View view = scrollBar.getSlideView();
         if (view.isLayoutRequested() || needChange) {
             View selectV = getItemOutView(position);
@@ -685,10 +688,12 @@ public class FixedIndicatorView extends LinearLayout implements Indicator {
         return onItemSelectedListener;
     }
 
+    @Override
     public void setOnIndicatorItemClickListener(OnIndicatorItemClickListener onIndicatorItemClickListener) {
         this.onIndicatorItemClickListener = onIndicatorItemClickListener;
     }
 
+    @Override
     public OnIndicatorItemClickListener getOnIndicatorItemClickListener() {
         return onIndicatorItemClickListener;
     }

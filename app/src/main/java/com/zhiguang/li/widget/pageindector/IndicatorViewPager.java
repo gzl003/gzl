@@ -342,6 +342,7 @@ public class IndicatorViewPager {
             return RecyclingPagerAdapter.POSITION_UNCHANGED;
         }
 
+        @Override
         public abstract int getCount();
 
         public abstract View getViewForTab(int position, View convertView, ViewGroup container);
@@ -466,6 +467,7 @@ public class IndicatorViewPager {
             return pagerAdapter.getCurrentFragment();
         }
 
+        @Override
         public abstract int getCount();
 
         public abstract View getViewForTab(int position, View convertView, ViewGroup container);

@@ -23,7 +23,6 @@ import com.zhiguang.li.widget.pageindector.ScrollBar;
  *  * Created by 智光 on 2018/4/25 16:50
  *  
  */
-
 public class PageIntedectorActivity extends BaseActivity {
 
     private IndicatorViewPager indicatorViewPager;
@@ -50,8 +49,8 @@ public class PageIntedectorActivity extends BaseActivity {
     }
 
     private class MyAdapter extends IndicatorViewPager.IndicatorViewPagerAdapter {
-        private String[] versions = {"Cupcake", "Donut", "Lolipop", "Marshmallow"};
-        private String[] names = {"纸杯蛋糕", "甜甜圈", "闪电泡芙", "冻酸奶"};
+        private String[] versions = {"Cupcake", "Donut", "Lolipop", "Marshmallow","哈哈","我","是","一个","程序员"};
+        private String[] names = {"纸杯蛋糕", "甜甜圈", "闪电泡芙", "冻酸奶","哈哈","我","是","一个","程序员"};
 
         @Override
         public int getCount() {

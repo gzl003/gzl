@@ -210,7 +210,7 @@ public class BaseActivity extends FragmentActivity {
     }
 
     protected boolean enableSliding() {
-        return true;
+        return false;
     }
 
     private void setTopBar() {

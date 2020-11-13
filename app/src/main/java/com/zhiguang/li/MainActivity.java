@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -86,8 +84,8 @@ import com.zhiguang.li.activity.WebViewActivity;
 import com.zhiguang.li.activity.WebViewRefshActivity;
 import com.zhiguang.li.activity.X5WebView;
 import com.zhiguang.li.activity.YUyunsuanActivity;
+import com.zhiguang.li.activity.YkTopTabActivity;
 import com.zhiguang.li.network.NetworkObservable;
-import com.zhiguang.li.utils.CKEven;
 import com.zhiguang.li.utils.GPSUtils;
 
 import java.util.ArrayList;
@@ -96,11 +94,9 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener, Observer {
+public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener, Observer {
 
-    private FragmentManager fragmentManager;
-    private MyFragment myFragment;
-    private FragentTwo fragentTwo;
+
     public Class[] classes = {RecyclerViewActivity.class, LikeAnimationActivity.class, RadiusImage.class, FiltrateActivity.class, SelectMovieActivity.class, AdaptrViewActivity.class, GPSActivity.class
             , TextInfoActivity.class, ADebaseActivity.class, EpisodeActivity.class, DrawerLayoutActivity.class, FollowAnmia.class, HasMapJsonActivity.class, DesTest.class, PathLineActivity.class
             , BasicVideoActivity.class, SwioerefreshActivity.class, MySerActivity.class, WebViewActivity.class, ProgressActivity.class, ScrollingActivity.class, FlowViewActivity.class, NestedScrollingActivity.class
@@ -108,15 +104,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             , SuperSwipeRefreshLayoutActivity.class, MadiaPlayerActivity.class, GifActivity.class, MuseumActivity.class, PasswordinputActivity.class, ImageSuoFang.class, SkiddeleteActivity.class, VerticalSeekbarActivity.class
             , WebViewRefshActivity.class, SwichButtonActivity.class, RcycleViewImagetActivity.class, GreenDaoActivity.class, YUyunsuanActivity.class, SlidingCloseActivity.class, PoorVisionActivity.class
             , PaletteActivity.class, WatermarkActivity.class, QRCodeActivity.class, GalleryActivity.class, GalleryTwoActivity.class, RecyclerViewPageActivity.class, PageIntedectorActivity.class,
-            X5WebView.class, ShareActivity.class, LzgSocketActivity.class, ScreenSwitchingActivity.class, ScrollScreenhotActivity.class, ObserverActivity.class, ThreadCycleActivity.class, TextViewEndActivity.class
+            X5WebView.class, ShareActivity.class, LzgSocketActivity.class, ScreenSwitchingActivity.class, ScrollScreenhotActivity.class, ObserverActivity.class, ThreadCycleActivity.class, TextViewEndActivity.class,
+            YkTopTabActivity.class
     };
     public String[] strings = {"RecyclerView", "点赞动画", "圆角图片", "分类", "选集", "AdapterViewFlipper", "gps"
             , "信息", "轮播图", "剧集", "drawer侧滑", "跟随动画", "map json", "destest", "贝塞尔曲线"
             , "视频录制", "google自家的刷新View", "服务测试", "webView测试", "加载框", "滚动的Activity", "RecyclerView 实现流式布局", "嵌套滚动", "CodeLayActivity", "TAB切换", "仿照微信左右切换", "TABlayout顶部切换", "闪光字体",
             "上下刷新的RecycleView", "图片和base64之间的转换", "SuperSwipeRefresh", "MediaPlayer测试", "gif图", "典藏馆", "密码输入框", "图片缩放", "侧滑删除item", "垂直进度条", "滑动的webView", "切换开关", "recycleImage",
             "GreenDao", "与 运算", "右滑关闭页面", "滚动视觉差", "Palette", "图片水印", "二维码", "画廊效果", "画廊效果2", "仿照viewpager的recyclerview", "PageIntedector", "x5浏览器", "分享", "Socket", "屏幕切换", "滚动截屏",
-            "观察者", "线程安全","TextView末尾添加符号"};
-    private List<MClassmodle> mClassmodles;
+            "观察者", "线程安全","TextView末尾添加符号","仿照优酷TabLayout"};
+    private List<MClassmate> mClassmates;
     private Banner banner;
 
     private String[] images = new String[]{"http://img.xiankan.com/c4659e4c9dba480d06c2.jpg",
@@ -125,16 +122,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             "http://img.xiankan.com/bacee2c41adad8a77e67.jpg",
             "http://img.xiankan.com/116689352ede0a879914.jpg"};
     private String[] titles = new String[]{"捉迷藏", "电影留声机", "地狱宝贝", "亲见爱的", "斗龙战士"};
-//    private PlayerNetworkHelper mNetworkHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView textview = (TextView) findViewById(R.id.textview);
-        textview.setOnClickListener(this);
         GPSUtils.getInstance().onCreate(this);
-        fragmentManager = getSupportFragmentManager();
         initBanner();
         openGPS(this);
         GridView mainListview = (GridView) findViewById(R.id.main_listview);
@@ -142,9 +136,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         mainListview.setAdapter(mainAdapter);
         mainListview.setOnItemClickListener(this);
 
-//        mNetworkHelper = new PlayerNetworkHelper(this);
         NetworkObservable.getInstance(this).addObserver(this);
-//        mNetworkHelper.onCreate();
+    }
+
+    @Override
+    protected boolean enableSliding() {
+        return false;
     }
 
     private void initBanner() {
@@ -185,118 +182,27 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         super.onResume();
         banner.isAutoPlay(true);
         banner.start();
-        if (mClassmodles != null) {
-            mClassmodles.clear();
+        if (mClassmates != null) {
+            mClassmates.clear();
         } else {
-            mClassmodles = new ArrayList<>();
+            mClassmates = new ArrayList<>();
         }
         for (int i = 0; i < classes.length; i++) {
-            MClassmodle mClassmodle = new MClassmodle(strings[i], classes[i]);
-            mClassmodles.add(mClassmodle);
+            MClassmate mClassmate = new MClassmate(strings[i], classes[i]);
+            mClassmates.add(mClassmate);
         }
-//        mNetworkHelper.onResume();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         banner.isAutoPlay(false);
-//        mNetworkHelper.onPause();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        mNetworkHelper.onDestroy();
         NetworkObservable.getInstance(this).deleteObserver(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.textview:
-                switchFragment(0);
-                CKEven.ckEvenStat("选择Fragment", "分类");
-                break;
-        }
-    }
-
-//    private void setListener() {
-//        NetWorkChecker.checkNetWorkPlayer(this, new NetWorkChecker.NetWorkCheckListener() {
-//            @Override
-//            public void onNetWorkOk(boolean is3G) {
-//                if (is3G) {
-//                    //3g 不允许  给出提示
-//                    Toast.makeText(MainActivity.this, "网络存在是运营商网络", Toast.LENGTH_SHORT).show();
-//                } else {
-//                    //不是3g
-//                    Toast.makeText(MainActivity.this, "网络存在是WIFI", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//
-//            @Override
-//            public void onFailed(boolean is3G) {
-//                if (is3G) {
-//                    //网络存在 3g
-//                    Toast.makeText(MainActivity.this, "onFailed 网络存在是运营商网络", Toast.LENGTH_SHORT).show();
-//                } else {
-//                    //网络中断
-//                    Toast.makeText(MainActivity.this, "onFailed 网络断开了", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-//    }
-
-    /**
-     * 将所有的Fragment都置为隐藏状态
-     *
-     * @param transaction 用于对Fragment执行操作的事务
-     */
-    private void hideFragments(FragmentTransaction transaction) {
-        if (myFragment != null) {
-            transaction.hide(myFragment);
-        }
-        if (fragentTwo != null) {
-            transaction.hide(fragentTwo);
-        }
-    }
-
-    /**
-     * 切换fragment页面
-     */
-    public void switchFragment(int index) {
-        // 开启一个Fragment事务
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        // 先隐藏掉所有的Fragment，以防止有多个Fragment显示在界面上的情况
-        hideFragments(transaction);
-        //noinspection ResourceType
-//        transaction.setCustomAnimations(R.anim.slide_right_in, R.anim.fragment_slide_left_out);
-        switch (index) {
-            case 0:
-                // 练习
-                if (myFragment == null) {
-                    myFragment = new MyFragment();
-                    if (!myFragment.isAdded()) {
-                        transaction.add(R.id.bootrem_view, myFragment);
-                    }
-                } else {
-                    transaction.show(myFragment);
-                }
-
-                break;
-            case 1:
-                // 学习
-                if (fragentTwo == null) {
-                    fragentTwo = new FragentTwo();
-                    if (!fragentTwo.isAdded()) {
-                        transaction.add(R.id.bootrem_view, fragentTwo);
-                    }
-                } else {
-                    transaction.show(fragentTwo);
-                }
-                break;
-        }
-        transaction.commit();
     }
 
 
@@ -340,7 +246,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(MainActivity.this, mClassmodles.get(position).aClass);
+        Intent intent = new Intent(MainActivity.this, mClassmates.get(position).aClass);
         startActivity(intent);
     }
 
@@ -368,8 +274,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
         @Override
         public int getCount() {
-            if (mClassmodles != null) {
-                return mClassmodles.size();
+            if (mClassmates != null) {
+                return mClassmates.size();
             } else {
                 return 0;
             }
@@ -377,7 +283,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
         @Override
         public Object getItem(int position) {
-            return mClassmodles.get(position);
+            return mClassmates.get(position);
         }
 
         @Override
@@ -396,7 +302,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             } else {
                 viewHodler = (ViewHodler) convertView.getTag();
             }
-            viewHodler.textView.setText(mClassmodles.get(position).name);
+            viewHodler.textView.setText(mClassmates.get(position).name);
             return convertView;
         }
     }
@@ -405,8 +311,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         TextView textView;
     }
 
-    class MClassmodle {
-        public MClassmodle(String name, Class aClass) {
+    class MClassmate {
+        public MClassmate(String name, Class aClass) {
             this.name = name;
             this.aClass = aClass;
         }
