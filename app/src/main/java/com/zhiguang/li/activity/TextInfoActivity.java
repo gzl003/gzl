@@ -1,5 +1,6 @@
 package com.zhiguang.li.activity;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.content.Context;
@@ -11,8 +12,10 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -93,8 +96,28 @@ public class TextInfoActivity extends BaseActivity {
      * 获取 终端类型
      */
     public void getphoneInfo() {
-        String phoneBornd = "安卓";
+        String phoneBornd = "";
         phoneBornd = phoneBornd + android.os.Build.MODEL + ",版本" + android.os.Build.VERSION.RELEASE;
+       phoneBornd = phoneBornd + "\n BOARD :" + Build.BOARD;
+        phoneBornd = phoneBornd + "\n BOOTLOADER : " + Build.BOOTLOADER;
+        phoneBornd = phoneBornd + "\n BRAND : " + Build.BRAND;
+        phoneBornd = phoneBornd + "\n CPU_ABI : " + Build.CPU_ABI;
+        phoneBornd = phoneBornd + "\n CPU_ABI2 : " + Build.CPU_ABI2;
+        phoneBornd = phoneBornd + "\n DEVICE : " + Build.DEVICE;
+        phoneBornd = phoneBornd + "\n DISPLAY : " + Build.DISPLAY;
+        phoneBornd = phoneBornd + "\n FINGERPRINT : " + Build.FINGERPRINT;
+        phoneBornd = phoneBornd + "\n HARDWARE : " + Build.HARDWARE;
+        phoneBornd = phoneBornd + "\n HOST : " + Build.HOST;
+        phoneBornd = phoneBornd + "\n ID : " + Build.ID;
+        phoneBornd = phoneBornd + "\n MANUFACTURER : " + Build.MANUFACTURER;
+        phoneBornd = phoneBornd + "\n MODEL : " + Build.MODEL;
+        phoneBornd = phoneBornd + "\n PRODUCT : " + Build.PRODUCT;
+        phoneBornd = phoneBornd + "\n RADIO : " + Build.RADIO;
+        phoneBornd = phoneBornd + "\n USER : " + Build.USER;
+        phoneBornd = phoneBornd + "\n VERSION.BASE_OS : " + Build.VERSION.BASE_OS;
+        phoneBornd = phoneBornd + "\n VERSION.CODENAME : " + Build.VERSION.CODENAME;
+
+
         text1.setText(phoneBornd);
     }
 

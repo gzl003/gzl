@@ -1239,7 +1239,7 @@ public class TabLayout extends HorizontalScrollView {
         TabLayout mParent;
         TabView mView;
 
-        Tab() {
+        public Tab() {
             // Private constructor
         }
 

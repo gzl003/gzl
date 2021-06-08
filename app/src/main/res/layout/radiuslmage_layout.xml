@@ -71,7 +71,9 @@
             app:left_bottom_radius="7dip"
             app:left_top_radius="80dip"
             app:right_bottom_radius="7dip"
-            app:right_top_radius="80dip" />
+            app:right_top_radius="80dip"
+            app:sriv_border_width="2dp"
+            app:sriv_border_color="@color/colorPrimary"/>
 
         <ImageView
             android:id="@+id/img_gif"
