@@ -118,6 +118,13 @@
         <activity android:name=".activity.PageIntedectorActivity" />
         <activity android:name=".activity.X5WebView" />
         <activity android:name=".activity.ShareActivity" />
+        <activity
+            android:name=".activity.PipActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|screenLayout"
+            android:excludeFromRecents="true"
+            android:resizeableActivity="true"
+            android:screenOrientation="sensor"
+            android:supportsPictureInPicture="true" />
         <activity android:name=".activity.LzgSocketActivity" />
         <activity
             android:name=".activity.ScreenSwitchingActivity"
@@ -136,7 +143,7 @@
         <activity android:name=".activity.ScrollScreenhotActivity" />
         <activity android:name=".activity.ObserverActivity" />
         <activity android:name=".activity.ThreadCycleActivity" />
-        <activity android:name=".activity.YkTopTabActivity"/>
+        <activity android:name=".activity.YkTopTabActivity" />
         <activity android:name=".activity.TextViewEndActivity" />
     </application>
 
