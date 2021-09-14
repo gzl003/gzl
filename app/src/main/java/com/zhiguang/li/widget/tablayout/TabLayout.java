@@ -16,6 +16,11 @@
 
 package com.zhiguang.li.widget.tablayout;
 
+import static android.support.annotation.RestrictTo.Scope.LIBRARY_GROUP;
+import static android.support.v4.view.ViewPager.SCROLL_STATE_DRAGGING;
+import static android.support.v4.view.ViewPager.SCROLL_STATE_IDLE;
+import static android.support.v4.view.ViewPager.SCROLL_STATE_SETTLING;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
@@ -69,11 +74,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
-
-import static android.support.annotation.RestrictTo.Scope.LIBRARY_GROUP;
-import static android.support.v4.view.ViewPager.SCROLL_STATE_DRAGGING;
-import static android.support.v4.view.ViewPager.SCROLL_STATE_IDLE;
-import static android.support.v4.view.ViewPager.SCROLL_STATE_SETTLING;
 
 /**
  * TabLayout provides a horizontal layout to display tabs.
@@ -358,8 +358,8 @@ public class TabLayout extends HorizontalScrollView {
                 INVALID_WIDTH);
         mTabBackgroundResId = a.getResourceId(R.styleable.HxTabLayout_tabBackground, 0);
         mContentInsetStart = a.getDimensionPixelSize(R.styleable.HxTabLayout_tabContentStart, 0);
-        mMode = a.getInt(R.styleable.HxTabLayout_tabMode, MODE_FIXED);
-        mTabGravity = a.getInt(R.styleable.HxTabLayout_tabGravity, GRAVITY_FILL);
+        mMode = MODE_FIXED;
+        mTabGravity =  GRAVITY_FILL;
         a.recycle();
 
         // TODO add attr for these

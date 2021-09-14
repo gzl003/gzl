@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion rootProject.ext.versions["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.versions["buildToolsVersion"]
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 25
+        minSdkVersion rootProject.ext.versions["minSdkVersion"]
+        targetSdkVersion rootProject.ext.versions["targetSdkVersion"]
         versionCode 2
         versionName "1.1"
     }
@@ -19,6 +19,6 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.google.zxing:core:3.3.0'
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation 'com.google.zxing:core:3.3.0'
 }

@@ -49,6 +49,7 @@ public class YkTopTabActivity extends AppCompatActivity {
         mViewPager.setAdapter(new MyViewPagerAdapter(getSupportFragmentManager(), mFragmentList, mPageTitleList));
 
         mTabLayout = findViewById(R.id.tl_style_one_tab);
+        mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.post(new Runnable() {
             @Override

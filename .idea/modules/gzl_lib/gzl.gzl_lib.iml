@@ -10,7 +10,6 @@
     </facet>
     <facet type="java-gradle" name="Java-Gradle">
       <configuration>
-        <option name="BUILD_FOLDER_PATH" value="$MODULE_DIR$/../../../gzl_lib/build" />
         <option name="BUILDABLE" value="true" />
       </configuration>
     </facet>
@@ -23,6 +22,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../gzl_lib/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../../gzl_lib/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../gzl_lib/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../gzl_lib/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
