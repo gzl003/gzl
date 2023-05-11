@@ -37,7 +37,6 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation files('libs/layoutlib-api.jar')
     implementation files('libs/fastjson-1.1.36.jar')
-    implementation files('libs/tencentX5WebView.jar')
     implementation project(':libzxing')
 
     //noinspection GradleCompatible
@@ -72,4 +71,5 @@ dependencies {
     implementation('jameson.io.library:library:0.0.1') {
         exclude group: "com.android.support", module: "support-v4"
     }
+    implementation 'com.tencent.tbs:tbssdk:44286'
 }

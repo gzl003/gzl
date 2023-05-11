@@ -63,7 +63,7 @@ public class PathView extends View {
         //初始化PathDashPathEffect
         Path p = new Path();
         p.addRect(0, 0, 3, 10, Path.Direction.CW);
-        effects[4] = new PathDashPathEffect(p, 12, phase, PathDashPathEffect.Style.ROTATE);
+        effects[4] = new PathDashPathEffect(p, 12, phase, PathDashPathEffect.Style.TRANSLATE);
         //初始化PathDashPathEffect
         effects[5] = new ComposePathEffect(effects[2], effects[4]);
         effects[6] = new SumPathEffect(effects[4], effects[3]);

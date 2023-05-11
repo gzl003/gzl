@@ -117,12 +117,13 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     private List<MClassmate> mClassmates;
     private Banner banner;
 
-    private String[] images = new String[]{"http://img.xiankan.com/c4659e4c9dba480d06c2.jpg",
-            "http://img.xiankan.com/32fc897fa6f06e8a21c9.jpg",
-            "http://img.xiankan.com/2cb0abb206cc5f2b2d8d.jpg",
-            "http://img.xiankan.com/bacee2c41adad8a77e67.jpg",
-            "http://img.xiankan.com/116689352ede0a879914.jpg"};
-    private String[] titles = new String[]{"捉迷藏", "电影留声机", "地狱宝贝", "亲见爱的", "斗龙战士"};
+    private String[] images = new String[]{"https://pic4.huanxi.com/8a9eb00f76268b1301774784cbfd13c6.png",
+            "https://pic1.huanxi.com/8a9eb00f7fd99caf01809e360a24031d.png",
+            "https://pic4.huanxi.com/ol2ceb63c8978f4cdaae8fe756e19e2f59.png",
+            "https://pic1.huanxi.com/8a9eb00f76268b1301774784c44113c0.png",
+            "https://pic4.huanxi.com/ole9619147a5a74a108f4d72af0d9f937a.png",
+            "https://pic5.huanxi.com/8a9eb00f7fd99caf01809e361ca6031f.png"};
+    private String[] titles = new String[]{"捉迷藏", "电影留声机", "地狱宝贝", "亲见爱的", "斗龙战士", "欢喜欢喜"};
 
 
     @Override

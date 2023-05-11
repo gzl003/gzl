@@ -20,10 +20,9 @@ import com.zhiguang.li.R;
 
 
 /**
- *  * Created by 智光 on 2018/5/31 17:27
- *  
+ * Created by 智光 on 2018/5/31 17:27
+ *
  */
-
 public class X5WebView extends BaseActivity {
     WebView webView;
     Button shuaxin;
@@ -35,8 +34,13 @@ public class X5WebView extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_x5layout);
         webView = (WebView) findViewById(R.id.x5wenview);
+        webView.loadUrl( "javascript:window.location.reload(true)");
+
+
+
+
+
         shuaxin = findViewById(R.id.shuaxin);
-        webView.loadUrl("https://qam.huanxi.com/h5/h5mobile_20180417/");
 
         getWindow().setFormat(PixelFormat.TRANSLUCENT);
 
@@ -50,6 +54,7 @@ public class X5WebView extends BaseActivity {
                 webView.reload();
             }
         });
+        webView.loadUrl("https://www.huanxi.com/player.shtml");
     }
 
     private void setWebView() {
