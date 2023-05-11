@@ -1,18 +1,19 @@
 package com.gzl_lib;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class MyClass {
     //\[\w+\][\u4e00-\u9fa5_a-zA-Z0-9\*]+\[\/\w+\]
     public static void main(String[] args) {
-        int[] numArray = new int[]{5, 3,1,5, 3};
-        int aim = numArray[0];
 
-        for (int i = 1; i < numArray.length; i++) {
-            aim = aim ^ numArray[i];
-            System.out.println(Integer.numberOfLeadingZeros(numArray[i]));
-            System.out.println(Integer.numberOfTrailingZeros(numArray[i]));
-            System.out.println(" I：" + i + " aim: " + aim);
-        }
-        System.out.println("最后：" + aim);
+
+
+        BigDecimal b1 = BigDecimal.valueOf(2);
+        BigDecimal b2 = BigDecimal.valueOf(2);
+        System.out.println(b1.divide(b2, 0, RoundingMode.HALF_DOWN).toString());
+        System.out.println(b1.divide(b2, 0, RoundingMode.FLOOR).toString());
+
 
     }
 

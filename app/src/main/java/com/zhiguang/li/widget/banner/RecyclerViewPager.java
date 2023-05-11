@@ -5,10 +5,6 @@ import android.content.res.TypedArray;
 import android.graphics.PointF;
 import android.os.Build;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.LinearSmoothScroller;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -16,6 +12,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewTreeObserver;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSmoothScroller;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.zhiguang.li.R;
 
@@ -31,7 +32,7 @@ import java.util.List;
 public class RecyclerViewPager extends RecyclerView {
     public static final boolean DEBUG = true;
 
-    private RecyclerViewPagerAdapter<?> mViewPagerAdapter;
+    private RecyclerViewPagerAdapter mViewPagerAdapter;
     private float mTriggerOffset = 0.25f;
     private float mFlingFactor = 0.15f;
     private float mMillisecondsPerInch = 25f;
@@ -328,7 +329,9 @@ public class RecyclerViewPager extends RecyclerView {
      * adjust position before Touch event complete and fling action start.
      */
     protected void adjustPositionX(int velocityX) {
-        if (reverseLayout) velocityX *= -1;
+        if (reverseLayout) {
+            velocityX *= -1;
+        }
 
         int childCount = getChildCount();
         if (childCount > 0) {
@@ -351,11 +354,17 @@ public class RecyclerViewPager extends RecyclerView {
                 View centerXChild = ViewUtils.getCenterXChild(this);
                 if (centerXChild != null) {
                     if (mTouchSpan > centerXChild.getWidth() * mTriggerOffset * mTriggerOffset && targetPosition != 0) {
-                        if (!reverseLayout) targetPosition--;
-                        else targetPosition++;
+                        if (!reverseLayout) {
+                            targetPosition--;
+                        } else {
+                            targetPosition++;
+                        }
                     } else if (mTouchSpan < centerXChild.getWidth() * -mTriggerOffset && targetPosition != getItemCount() - 1) {
-                        if (!reverseLayout) targetPosition++;
-                        else targetPosition--;
+                        if (!reverseLayout) {
+                            targetPosition++;
+                        } else {
+                            targetPosition--;
+                        }
                     }
                 }
             }
@@ -390,7 +399,9 @@ public class RecyclerViewPager extends RecyclerView {
      * adjust position before Touch event complete and fling action start.
      */
     protected void adjustPositionY(int velocityY) {
-        if (reverseLayout) velocityY *= -1;
+        if (reverseLayout) {
+            velocityY *= -1;
+        }
 
         int childCount = getChildCount();
         if (childCount > 0) {
@@ -410,11 +421,17 @@ public class RecyclerViewPager extends RecyclerView {
                 View centerYChild = ViewUtils.getCenterYChild(this);
                 if (centerYChild != null) {
                     if (mTouchSpan > centerYChild.getHeight() * mTriggerOffset && targetPosition != 0) {
-                        if (!reverseLayout) targetPosition--;
-                        else targetPosition++;
+                        if (!reverseLayout) {
+                            targetPosition--;
+                        } else {
+                            targetPosition++;
+                        }
                     } else if (mTouchSpan < centerYChild.getHeight() * -mTriggerOffset && targetPosition != getItemCount() - 1) {
-                        if (!reverseLayout) targetPosition++;
-                        else targetPosition--;
+                        if (!reverseLayout) {
+                            targetPosition++;
+                        } else {
+                            targetPosition--;
+                        }
                     }
                 }
             }
@@ -459,8 +476,9 @@ public class RecyclerViewPager extends RecyclerView {
         if (isInertia) {
             final float x = e.getRawX();
             final float y = e.getRawY();
-            if (touchStartPoint == null)
+            if (touchStartPoint == null) {
                 touchStartPoint = new PointF();
+            }
             switch (MotionEvent.ACTION_MASK & e.getAction()) {
                 case MotionEvent.ACTION_DOWN:
                     touchStartPoint.set(x, y);
@@ -472,10 +490,12 @@ public class RecyclerViewPager extends RecyclerView {
                     if (Math.abs(lastDistance - tempDistance) > minSlideDistance) {
                         float k = Math.abs((touchStartPoint.y - y) / (touchStartPoint.x - x));
                         // prevent tan 90° calc
-                        if (Math.abs(touchStartPoint.y - y) < 1)
+                        if (Math.abs(touchStartPoint.y - y) < 1) {
                             return getLayoutManager().canScrollHorizontally();
-                        if (Math.abs(touchStartPoint.x - x) < 1)
+                        }
+                        if (Math.abs(touchStartPoint.x - x) < 1) {
                             return !getLayoutManager().canScrollHorizontally();
+                        }
                         return k < Math.tan(Math.toRadians(30F));
                     }
                     break;
@@ -528,20 +548,32 @@ public class RecyclerViewPager extends RecyclerView {
                         int spanX = mCurView.getLeft() - mFisrtLeftWhenDragging;
                         // if user is tending to cancel paging action, don't perform position changing
                         if (spanX > mCurView.getWidth() * mTriggerOffset && mCurView.getLeft() >= mMaxLeftWhenDragging) {
-                            if (!reverseLayout) targetPosition--;
-                            else targetPosition++;
+                            if (!reverseLayout) {
+                                targetPosition--;
+                            } else {
+                                targetPosition++;
+                            }
                         } else if (spanX < mCurView.getWidth() * -mTriggerOffset && mCurView.getLeft() <= mMinLeftWhenDragging) {
-                            if (!reverseLayout) targetPosition++;
-                            else targetPosition--;
+                            if (!reverseLayout) {
+                                targetPosition++;
+                            } else {
+                                targetPosition--;
+                            }
                         }
                     } else {
                         int spanY = mCurView.getTop() - mFirstTopWhenDragging;
                         if (spanY > mCurView.getHeight() * mTriggerOffset && mCurView.getTop() >= mMaxTopWhenDragging) {
-                            if (!reverseLayout) targetPosition--;
-                            else targetPosition++;
+                            if (!reverseLayout) {
+                                targetPosition--;
+                            } else {
+                                targetPosition++;
+                            }
                         } else if (spanY < mCurView.getHeight() * -mTriggerOffset && mCurView.getTop() <= mMinTopWhenDragging) {
-                            if (!reverseLayout) targetPosition++;
-                            else targetPosition--;
+                            if (!reverseLayout) {
+                                targetPosition++;
+                            } else {
+                                targetPosition--;
+                            }
                         }
                     }
                 }
@@ -564,9 +596,7 @@ public class RecyclerViewPager extends RecyclerView {
     @SuppressWarnings("unchecked")
     @NonNull
     protected RecyclerViewPagerAdapter ensureRecyclerViewPagerAdapter(Adapter adapter) {
-        return (adapter instanceof RecyclerViewPagerAdapter)
-                ? (RecyclerViewPagerAdapter) adapter
-                : new RecyclerViewPagerAdapter(this, adapter);
+        return (adapter instanceof RecyclerViewPagerAdapter)? (RecyclerViewPagerAdapter) adapter: new RecyclerViewPagerAdapter(this, adapter);
 
     }
 

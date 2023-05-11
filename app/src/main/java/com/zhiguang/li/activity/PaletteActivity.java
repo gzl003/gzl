@@ -3,9 +3,10 @@ package com.zhiguang.li.activity;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v7.graphics.Palette;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.palette.graphics.Palette;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;

@@ -1,14 +1,15 @@
 package com.zhiguang.li.widget.banner;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public class ViewUtils {
 
     /**
      * Get center child in X Axes
      */
-    public static View getCenterXChild(RecyclerView recyclerView) {
+    public static View getCenterXChild(RecyclerViewPager recyclerView) {
         int childCount = recyclerView.getChildCount();
         if (childCount > 0) {
             for (int i = 0; i < childCount; i++) {
@@ -24,7 +25,7 @@ public class ViewUtils {
     /**
      * Get position of center child in X Axes
      */
-    public static int getCenterXChildPosition(RecyclerView recyclerView) {
+    public static int getCenterXChildPosition(RecyclerViewPager recyclerView) {
         int childCount = recyclerView.getChildCount();
         if (childCount > 0) {
             for (int i = 0; i < childCount; i++) {
@@ -56,7 +57,7 @@ public class ViewUtils {
     /**
      * Get position of center child in Y Axes
      */
-    public static int getCenterYChildPosition(RecyclerView recyclerView) {
+    public static int getCenterYChildPosition(RecyclerViewPager recyclerView) {
         int childCount = recyclerView.getChildCount();
         if (childCount > 0) {
             for (int i = 0; i < childCount; i++) {

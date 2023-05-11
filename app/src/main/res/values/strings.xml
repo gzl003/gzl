@@ -113,4 +113,5 @@
     <string name="title_activity_scrolling2">ScrollingActivity2</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="photograp">拍照</string>
 </resources>

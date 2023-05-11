@@ -3,7 +3,6 @@ apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion rootProject.ext.versions["compileSdkVersion"]
-    buildToolsVersion rootProject.ext.versions["buildToolsVersion"]
     defaultConfig {
         applicationId rootProject.ext.versions["applicationId"]
         minSdkVersion rootProject.ext.versions["minSdkVersion"]
@@ -48,17 +47,18 @@ dependencies {
     implementation rootProject.ext.dependencies["cardview-v7"]
     implementation rootProject.ext.dependencies["design"]
     implementation rootProject.ext.dependencies["palette-v7"]
-    implementation 'com.google.firebase:firebase-appindexing:10.2.1'
-    implementation 'com.github.bumptech.glide:glide:4.2.0'
-    implementation 'org.greenrobot:greendao:3.0.1'
-    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'
+    implementation 'com.google.firebase:firebase-appindexing:20.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'org.greenrobot:greendao:3.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 
-    implementation 'com.youth.banner:banner:1.4.1'
+    implementation 'com.youth.banner:banner:1.4.10'
     implementation 'com.bigkoo:ConvenientBanner:2.1.4'
 
     implementation 'com.jiongbull:jlog:1.0.5'
     implementation 'com.zhy:okhttputils:2.6.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
     implementation 'org.greenrobot:eventbus:3.0.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.15'//jif加载框架
 

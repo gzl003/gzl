@@ -97,7 +97,6 @@
         <activity android:name=".activity.SuperSwipeRefreshLayoutActivity" />
         <activity android:name=".activity.MadiaPlayerActivity" />
         <activity android:name=".activity.GifActivity" />
-        <activity android:name=".activity.MuseumActivity" />
         <activity android:name=".activity.PasswordinputActivity" />
         <activity android:name=".activity.ImageSuoFang" />
         <activity android:name=".activity.SkiddeleteActivity" />
@@ -118,6 +117,7 @@
         <activity android:name=".activity.PageIntedectorActivity" />
         <activity android:name=".activity.X5WebView" />
         <activity android:name=".activity.ShareActivity" />
+        <activity android:name=".activity.HoveItemActivity" />
         <activity
             android:name=".activity.PipActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|screenLayout"
@@ -145,6 +145,18 @@
         <activity android:name=".activity.ThreadCycleActivity" />
         <activity android:name=".activity.YkTopTabActivity" />
         <activity android:name=".activity.TextViewEndActivity" />
+        <activity android:name=".activity.PhotographActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.zhiguang.li.fileprovider"
+            android:exported="false"
+
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

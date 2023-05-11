@@ -2,8 +2,8 @@ package com.zhiguang.li.activity;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTabHost;
-import android.support.v7.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTabHost;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;

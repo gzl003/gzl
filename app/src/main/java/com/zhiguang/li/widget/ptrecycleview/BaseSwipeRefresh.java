@@ -4,8 +4,6 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
-import android.support.annotation.ColorRes;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -14,6 +12,9 @@ import android.view.ViewParent;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.ColorRes;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.zhiguang.li.R;
 import com.zhiguang.li.widget.ptrecycleview.internal.ISwipeRefresh;

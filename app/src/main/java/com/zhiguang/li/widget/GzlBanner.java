@@ -2,8 +2,6 @@ package com.zhiguang.li.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -12,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.listener.CBPageChangeListener;
@@ -86,8 +86,9 @@ public class GzlBanner<T> extends RelativeLayout {
         pageAdapter = new GzlPagerAdapter<>(holderCreator, mDatas, canLoop);
         viewPager.setAdapter(pageAdapter);
 
-        if (page_indicatorId != null)
+        if (page_indicatorId != null) {
             setPageIndicator(page_indicatorId);
+        }
 
         cbLoopScaleHelper.setFirstItemPos(canLoop ? mDatas.size() : 0);
         cbLoopScaleHelper.attachToRecyclerView(viewPager);
@@ -112,8 +113,9 @@ public class GzlBanner<T> extends RelativeLayout {
      */
     public void notifyDataSetChanged() {
         viewPager.getAdapter().notifyDataSetChanged();
-        if (page_indicatorId != null)
+        if (page_indicatorId != null) {
             setPageIndicator(page_indicatorId);
+        }
         cbLoopScaleHelper.setCurrentItem(canLoop ? mDatas.size() : 0);
     }
 
@@ -136,23 +138,27 @@ public class GzlBanner<T> extends RelativeLayout {
         loPageTurningPoint.removeAllViews();
         mPointViews.clear();
         this.page_indicatorId = page_indicatorId;
-        if (mDatas == null) return this;
+        if (mDatas == null) {
+            return this;
+        }
         for (int count = 0; count < mDatas.size(); count++) {
             // 翻页指示的点
             ImageView pointView = new ImageView(getContext());
             pointView.setPadding(5, 0, 5, 0);
-            if (cbLoopScaleHelper.getFirstItemPos() % mDatas.size() == count)
+            if (cbLoopScaleHelper.getFirstItemPos() % mDatas.size() == count) {
                 pointView.setImageResource(page_indicatorId[1]);
-            else
+            } else {
                 pointView.setImageResource(page_indicatorId[0]);
+            }
             mPointViews.add(pointView);
             loPageTurningPoint.addView(pointView);
         }
         pageChangeListener = new CBPageChangeListener(mPointViews,
                 page_indicatorId);
         cbLoopScaleHelper.setOnPageChangeListener(pageChangeListener);
-        if (onPageChangeListener != null)
+        if (onPageChangeListener != null) {
             pageChangeListener.setOnPageChangeListener(onPageChangeListener);
+        }
 
         return this;
     }
@@ -170,9 +176,11 @@ public class GzlBanner<T> extends RelativeLayout {
     public GzlBanner setOnPageChangeListener(OnPageChangeListener onPageChangeListener) {
         this.onPageChangeListener = onPageChangeListener;
         //如果有默认的监听器（即是使用了默认的翻页指示器）则把用户设置的依附到默认的上面，否则就直接设置
-        if (pageChangeListener != null)
+        if (pageChangeListener != null) {
             pageChangeListener.setOnPageChangeListener(onPageChangeListener);
-        else cbLoopScaleHelper.setOnPageChangeListener(onPageChangeListener);
+        } else {
+            cbLoopScaleHelper.setOnPageChangeListener(onPageChangeListener);
+        }
         return this;
     }
 
@@ -249,7 +257,9 @@ public class GzlBanner<T> extends RelativeLayout {
      * @return
      */
     public GzlBanner startTurning(long autoTurningTime) {
-        if (autoTurningTime < 0) return this;
+        if (autoTurningTime < 0) {
+            return this;
+        }
         //如果是正在翻页的话先停掉
         if (turning) {
             stopTurning();
@@ -288,10 +298,14 @@ public class GzlBanner<T> extends RelativeLayout {
         int action = ev.getAction();
         if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL || action == MotionEvent.ACTION_OUTSIDE) {
             // 开始翻页
-            if (canTurn) startTurning(autoTurningTime);
+            if (canTurn) {
+                startTurning(autoTurningTime);
+            }
         } else if (action == MotionEvent.ACTION_DOWN) {
             // 停止翻页
-            if (canTurn) stopTurning();
+            if (canTurn) {
+                stopTurning();
+            }
         }
         return super.dispatchTouchEvent(ev);
     }

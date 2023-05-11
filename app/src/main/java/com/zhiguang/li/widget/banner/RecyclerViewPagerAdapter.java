@@ -1,8 +1,9 @@
 package com.zhiguang.li.widget.banner;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * RecyclerViewPagerAdapter </br>
@@ -18,8 +19,9 @@ public class RecyclerViewPagerAdapter<VH extends RecyclerView.ViewHolder> extend
     public RecyclerViewPagerAdapter(RecyclerViewPager viewPager, RecyclerView.Adapter<VH> adapter) {
         mAdapter = adapter;
         mViewPager = viewPager;
-        if (mAdapter != null)
+        if (mAdapter != null) {
             setHasStableIds(mAdapter.hasStableIds());
+        }
     }
 
     @Override

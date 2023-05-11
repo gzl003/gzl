@@ -1,7 +1,7 @@
 package com.zhiguang.li.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.SpannableString;
 
 import com.jiongbull.jlog.JLog;

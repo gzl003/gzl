@@ -1,7 +1,6 @@
 package com.zhiguang.li.widget;
 
 import android.content.Context;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -9,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.zhiguang.li.R;
 
@@ -21,7 +23,7 @@ import java.util.List;
 public class EpisodeWidget extends RelativeLayout {
     private Context context;
     private ViewPager myViewPager;
-    private PagerAdapter pageAdapter;
+    private MyPagerAdapter pageAdapter;
     private RadioGroup myRadioGroup;
     private List<String> list;
 
@@ -65,7 +67,7 @@ public class EpisodeWidget extends RelativeLayout {
         double c = (double) list.size() / 15;
         addRadioButton(myRadioGroup, c);//向RadioGroup中动态添加RadioButton
         cutDatelist(list, c);//分割集合数据
-        pageAdapter = new PagerAdapter();
+        pageAdapter = new MyPagerAdapter();
         myViewPager.setAdapter(pageAdapter);
     }
 
@@ -110,7 +112,7 @@ public class EpisodeWidget extends RelativeLayout {
     }
 
 
-    class PagerAdapter extends android.support.v4.view.PagerAdapter {
+    class MyPagerAdapter extends PagerAdapter {
 
         @Override
         public int getCount() {

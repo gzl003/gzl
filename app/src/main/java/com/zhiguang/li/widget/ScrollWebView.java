@@ -1,9 +1,10 @@
 package com.zhiguang.li.widget;
 
 import android.content.Context;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.AttributeSet;
 import android.webkit.WebView;
+
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 /**
  *  * Created by 智光 on 2017/4/14 11:42

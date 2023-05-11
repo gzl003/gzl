@@ -1,10 +1,11 @@
 package com.zhiguang.li.activity;
 
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
 import com.zhiguang.li.R;
 import com.zhiguang.li.adapter.MyFragmentPagerAdapter;
 

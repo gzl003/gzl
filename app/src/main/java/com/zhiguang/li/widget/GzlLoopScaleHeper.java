@@ -1,11 +1,11 @@
 package com.zhiguang.li.widget;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.PagerSnapHelper;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.PagerSnapHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bigkoo.convenientbanner.listener.OnPageChangeListener;
 import com.bigkoo.convenientbanner.view.CBLoopViewPager;
@@ -50,8 +50,9 @@ public class GzlLoopScaleHeper {
                 }
                 if(onPageChangeListener != null) {
                     onPageChangeListener.onScrollStateChanged(recyclerView, newState);
-                    if(count != 0)
+                    if(count != 0) {
                         onPageChangeListener.onPageSelected(position % count);
+                    }
                 }
             }
 
@@ -59,8 +60,9 @@ public class GzlLoopScaleHeper {
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 //Log.e("TAG", String.format("onScrolled dx=%s, dy=%s", dx, dy));
                 super.onScrolled(recyclerView, dx, dy);
-                if(onPageChangeListener != null)
+                if(onPageChangeListener != null) {
                     onPageChangeListener.onScrolled(recyclerView, dx, dy);
+                }
                 onScrolledChangedCallback();
             }
         });
@@ -127,8 +129,9 @@ public class GzlLoopScaleHeper {
         try {
             RecyclerView.LayoutManager layoutManager = mRecyclerView.getLayoutManager();
             View view = mPagerSnapHelper.findSnapView(layoutManager);
-            if (view != null)
+            if (view != null) {
                 return layoutManager.getPosition(view);
+            }
         }catch (NullPointerException e){e.printStackTrace();}
         return 0;
     }

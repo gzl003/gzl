@@ -19,10 +19,12 @@ package com.zhiguang.li.widget.tablayout;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.design.widget.TabLayout;
-import android.support.v7.widget.TintTypedArray;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.appcompat.widget.TintTypedArray;
+
+import com.zhiguang.li.R;
 
 /**
  * TabItem is a special 'view' which allows you to declare tab items for a {@link android.support.design.widget.TabLayout}
@@ -50,10 +52,10 @@ public final class TabItem extends View {
         super(context, attrs);
 
         final TintTypedArray a = TintTypedArray.obtainStyledAttributes(context, attrs,
-                android.support.design.R.styleable.TabItem);
-        mText = a.getText(android.support.design.R.styleable.TabItem_android_text);
-        mIcon = a.getDrawable(android.support.design.R.styleable.TabItem_android_icon);
-        mCustomLayout = a.getResourceId(android.support.design.R.styleable.TabItem_android_layout, 0);
+                R.styleable.TabItem);
+        mText = a.getText(R.styleable.TabItem_android_text);
+        mIcon = a.getDrawable(R.styleable.TabItem_android_icon);
+        mCustomLayout = a.getResourceId(R.styleable.TabItem_android_layout, 0);
         a.recycle();
     }
 }

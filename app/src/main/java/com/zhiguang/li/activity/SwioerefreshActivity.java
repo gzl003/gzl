@@ -3,13 +3,13 @@ package com.zhiguang.li.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.zhiguang.li.R;
 import com.zhiguang.li.adapter.MyAdapter;

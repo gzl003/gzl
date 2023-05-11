@@ -1,10 +1,11 @@
 package com.zhiguang.li.widget.tablayout;
 
 import android.annotation.SuppressLint;
-import android.support.annotation.NonNull;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import androidx.annotation.NonNull;
+import androidx.viewpager.widget.ViewPager;
 
 import java.util.HashMap;
 

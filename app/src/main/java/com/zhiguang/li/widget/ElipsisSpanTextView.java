@@ -2,7 +2,6 @@ package com.zhiguang.li.widget;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.v7.widget.AppCompatTextView;
 import android.text.DynamicLayout;
 import android.text.Layout;
 import android.text.SpannableString;
@@ -13,6 +12,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import java.lang.reflect.Field;
 

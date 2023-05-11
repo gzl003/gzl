@@ -1,5 +1,6 @@
 package com.zhiguang.li.widget.banner;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -9,13 +10,6 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.ColorRes;
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.PagerSnapHelper;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -24,6 +18,14 @@ import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+
+import androidx.annotation.ColorRes;
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.PagerSnapHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.zhiguang.li.R;
 
@@ -153,7 +155,7 @@ public abstract class RecyclerViewBannerBase<L extends RecyclerView.LayoutManage
         //指示器部分
         indicatorContainer = new RecyclerView(context);
 
-        LinearLayoutManager indicatorLayoutManager = new LinearLayoutManager(context, orientation, false);
+        @SuppressLint("WrongConstant") LinearLayoutManager indicatorLayoutManager = new LinearLayoutManager(context, orientation, false);
         indicatorContainer.setLayoutManager(indicatorLayoutManager);
         indicatorAdapter = new IndicatorAdapter();
         indicatorContainer.setAdapter(indicatorAdapter);

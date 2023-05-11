@@ -1,16 +1,15 @@
 package com.zhiguang.li.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zhiguang.li.R;
+import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
+import com.zhiguang.li.R;
 
 /**
  *  * Created by 智光 on 2017/2/21 16:41
@@ -20,8 +19,6 @@ import java.util.List;
 public class SkiddeleteAdapter extends RecyclerView.Adapter {
 
     private Context mContext;
-    private List mList;
-    private boolean hasOpen = false;
 
     public SkiddeleteAdapter(Context mContext) {
         this.mContext = mContext;
@@ -41,22 +38,24 @@ public class SkiddeleteAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
-
+        SkilddeleteItem skilddeleteItem = (SkilddeleteItem) holder;
+        skilddeleteItem.myitemtext.setText("测试数据第：" + position);
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return 20;
     }
 
 
     class SkilddeleteItem extends RecyclerView.ViewHolder {
         TextView textView;
+        TextView myitemtext;
 
         SkilddeleteItem(View rootview) {
             super(rootview);
             textView = rootview.findViewById(R.id.mybtnDelete);
+            myitemtext = rootview.findViewById(R.id.myitemtext);
         }
 
 

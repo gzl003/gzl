@@ -1,5 +1,7 @@
 package com.zhiguang.li.widget.banner;
 
+import static android.widget.AbsListView.OnScrollListener.SCROLL_STATE_IDLE;
+
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -9,10 +11,6 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -22,11 +20,14 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import androidx.core.view.GravityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.zhiguang.li.R;
 import com.zhiguang.li.widget.banner.layoutmanager.BannerLayoutManager;
 import com.zhiguang.li.widget.banner.layoutmanager.CenterSnapHelper;
-
-import static android.widget.AbsListView.OnScrollListener.SCROLL_STATE_IDLE;
 
 public class BannerLayout extends FrameLayout {
 

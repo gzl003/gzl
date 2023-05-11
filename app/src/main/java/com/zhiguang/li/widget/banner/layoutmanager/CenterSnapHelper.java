@@ -1,10 +1,10 @@
 package com.zhiguang.li.widget.banner.layoutmanager;
 
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.LayoutManager;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Scroller;
+
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Class intended to support snapping for a {@link RecyclerView}
@@ -126,7 +126,7 @@ public class CenterSnapHelper extends RecyclerView.OnFlingListener {
         }
         mRecyclerView = recyclerView;
         if (mRecyclerView != null) {
-            final LayoutManager layoutManager = mRecyclerView.getLayoutManager();
+            final RecyclerView.LayoutManager layoutManager = mRecyclerView.getLayoutManager();
             if (!(layoutManager instanceof BannerLayoutManager)) return;
 
             setupCallbacks();

@@ -8,18 +8,10 @@
         <option name="LAST_KNOWN_AGP_VERSION" />
       </configuration>
     </facet>
-    <facet type="java-gradle" name="Java-Gradle">
-      <configuration>
-        <option name="BUILDABLE" value="true" />
-      </configuration>
-    </facet>
   </component>
-  <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/../../../gzl_lib/build/classes/java/main" />
-    <output-test url="file://$MODULE_DIR$/../../../gzl_lib/build/classes/java/test" />
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../gzl_lib">
-      <sourceFolder url="file://$MODULE_DIR$/../../../gzl_lib/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../../gzl_lib/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../gzl_lib/build" />
       <excludeFolder url="file://$MODULE_DIR$/../../../gzl_lib/out" />

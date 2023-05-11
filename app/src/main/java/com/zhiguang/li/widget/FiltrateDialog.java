@@ -3,11 +3,12 @@ package com.zhiguang.li.widget;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.zhiguang.li.Fragment.FragmentOne;
 import com.zhiguang.li.Fragment.FragmentTwo;

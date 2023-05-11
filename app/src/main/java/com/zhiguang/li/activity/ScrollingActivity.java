@@ -2,7 +2,7 @@ package com.zhiguang.li.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.widget.NestedScrollView;
+import androidx.core.widget.NestedScrollView;
 import android.util.Log;
 
 import com.zhiguang.li.R;

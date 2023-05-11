@@ -4,8 +4,16 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/gzl.iml" filepath="$PROJECT_DIR$/gzl.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/gzl.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/gzl.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/gzl.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/gzl.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/gzl.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/gzl.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/gzl.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/gzl.app.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/gzl_lib/gzl.gzl_lib.iml" filepath="$PROJECT_DIR$/.idea/modules/gzl_lib/gzl.gzl_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gzl_lib/gzl.gzl_lib.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gzl_lib/gzl.gzl_lib.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gzl_lib/gzl.gzl_lib.test.iml" filepath="$PROJECT_DIR$/.idea/modules/gzl_lib/gzl.gzl_lib.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/libzxing/gzl.libzxing.iml" filepath="$PROJECT_DIR$/.idea/modules/libzxing/gzl.libzxing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libzxing/gzl.libzxing.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/libzxing/gzl.libzxing.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libzxing/gzl.libzxing.main.iml" filepath="$PROJECT_DIR$/.idea/modules/libzxing/gzl.libzxing.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libzxing/gzl.libzxing.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/libzxing/gzl.libzxing.unitTest.iml" />
     </modules>
   </component>
 </project>

@@ -1,8 +1,9 @@
 package com.zhiguang.li.utils;
 
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  *  * Created by 智光 on 2017/12/14 15:21

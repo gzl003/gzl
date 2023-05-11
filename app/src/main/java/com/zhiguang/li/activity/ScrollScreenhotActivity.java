@@ -1,15 +1,17 @@
 package com.zhiguang.li.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ScrollView;
 import android.widget.Toast;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.zhiguang.li.R;
 import com.zhiguang.li.utils.ScrollableViewhotUtil;
@@ -26,6 +28,7 @@ public class ScrollScreenhotActivity extends BaseActivity {
     private View view;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

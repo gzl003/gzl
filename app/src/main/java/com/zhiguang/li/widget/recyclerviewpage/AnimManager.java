@@ -1,8 +1,9 @@
 package com.zhiguang.li.widget.recyclerviewpage;
 
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by RyanLee on 2017/12/12.

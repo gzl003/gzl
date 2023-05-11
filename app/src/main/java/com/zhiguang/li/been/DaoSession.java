@@ -47,8 +47,8 @@ public class DaoSession extends AbstractDaoSession {
     }
     
     public void clear() {
-        dogDaoConfig.getIdentityScope().clear();
-        userDaoConfig.getIdentityScope().clear();
+        dogDaoConfig.clearIdentityScope();
+        userDaoConfig.clearIdentityScope();
     }
 
     public DogDao getDogDao() {

@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/Projects/Anew/gzl/app/src/main/res/layout/activity_photograp.xml" value="0.3536458333333333" />
         <entry key="..\:/Android/Projects/Anew/gzl/app/src/main/res/layout/activity_pip_layout.xml" value="0.25092592592592594" />
         <entry key="..\:/Android/Projects/Anew/gzl/app/src/main/res/layout/activity_yk_top_tab.xml" value="0.21666666666666667" />
         <entry key="..\:/Android/Projects/Anew/gzl/app/src/main/res/layout/constraint_activity_layout.xml" value="0.21666666666666667" />
+        <entry key="..\:/Android/Projects/Anew/gzl/app/src/main/res/layout/gzl_app_widget.xml" value="0.3536458333333333" />
+        <entry key="..\:/Android/Projects/Anew/gzl/app/src/main/res/layout/recycle_skild_item.xml" value="0.3536458333333333" />
+        <entry key="..\:/Android/Projects/Anew/gzl/app/src/main/res/layout/recycleview_activity.xml" value="0.3536458333333333" />
+        <entry key="..\:/Android/Projects/Anew/gzl/app/src/main/res/layout/recycleview_hove_item.xml" value="0.3536458333333333" />
       </map>
     </option>
   </component>

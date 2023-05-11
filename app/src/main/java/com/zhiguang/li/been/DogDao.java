@@ -20,12 +20,12 @@ public class DogDao extends AbstractDao<Dog, Long> {
     /**
      * Properties of entity Dog.<br/>
      * Can be used for QueryBuilder and for referencing column names.
-    */
+     */
     public static class Properties {
         public final static Property Id = new Property(0, long.class, "id", true, "_id");
         public final static Property Name = new Property(1, String.class, "name", false, "NAME");
         public final static Property Cretry = new Property(2, String.class, "cretry", false, "CRETRY");
-    };
+    }
 
 
     public DogDao(DaoConfig config) {
@@ -118,6 +118,11 @@ public class DogDao extends AbstractDao<Dog, Long> {
         } else {
             return null;
         }
+    }
+
+    @Override
+    public boolean hasKey(Dog entity) {
+        throw new UnsupportedOperationException("Unsupported for entities with a non-null key");
     }
 
     @Override

@@ -1,10 +1,11 @@
 package com.zhiguang.li.view;
 
 import android.graphics.Matrix;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.zhiguang.li.R;
 

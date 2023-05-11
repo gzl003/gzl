@@ -4,7 +4,7 @@
 //import android.support.v4.view.ViewCompat;
 //import android.support.v4.view.ViewPropertyAnimatorCompat;
 //import android.support.v4.view.ViewPropertyAnimatorListener;
-//import android.support.v7.widget.RecyclerView.ViewHolder;
+//import androidx.recycleview.widget.RecyclerView.ViewHolder;
 //import android.support.v7.widget.SimpleItemAnimator;
 //import android.util.Log;
 //import android.view.View;

@@ -1,11 +1,13 @@
 package com.zhiguang.li.adapter;
 
-import android.support.v7.widget.RecyclerView;
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.zhiguang.li.R;
 import com.zhiguang.li.widget.gallery.CardAdapterHelper;
@@ -33,7 +35,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         mCardAdapterHelper.onBindViewHolder(holder.itemView, position, getItemCount());
         holder.mImageView.setImageResource(mList.get(position));
         holder.mImageView.setOnClickListener(new View.OnClickListener() {

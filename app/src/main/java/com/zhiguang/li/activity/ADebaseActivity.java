@@ -108,7 +108,7 @@ public class ADebaseActivity extends Activity {
         gzlbanner.setShowLeftCardWidth(10);
     }
 
-    public class GlideImageLoader implements ImageLoader {
+    public class GlideImageLoader extends ImageLoader {
         @Override
         public void displayImage(Context context, Object path, ImageView imageView) {
 

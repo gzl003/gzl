@@ -1,15 +1,16 @@
 package com.zhiguang.li.widget.ptrecycleview;
 
 import android.content.Context;
-import android.support.annotation.ColorRes;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.AbsListView;
+
+import androidx.annotation.ColorRes;
+import androidx.core.view.ViewCompat;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 final class MultiSwipeRefreshLayout extends SwipeRefreshLayout {
     // Default offset in dips from the top of the view to where the progress spinner should stop
@@ -36,8 +37,9 @@ final class MultiSwipeRefreshLayout extends SwipeRefreshLayout {
     }
 
     public final void autoRefresh() {
-        if (mColorResIds == null)
+        if (mColorResIds == null) {
             mColorResIds = DEFAULT_COLOR_RES;
+        }
         autoRefresh(mColorResIds);
     }
 

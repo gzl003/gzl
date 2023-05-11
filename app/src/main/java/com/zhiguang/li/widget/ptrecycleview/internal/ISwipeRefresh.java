@@ -1,8 +1,9 @@
 package com.zhiguang.li.widget.ptrecycleview.internal;
 
-import android.support.annotation.ColorRes;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
+
+import androidx.annotation.ColorRes;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 /**
  * Created by hupei on 2016/5/18.

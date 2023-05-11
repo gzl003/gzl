@@ -103,7 +103,7 @@ public class ImagetUtils {
     }
 
     /**
-     * 获得带倒影的图片方法
+     * 获得带倒影的图片方法 遮罩
      */
     public static Bitmap createReflectionImageWithOrigin(Bitmap bitmap) {
         final int reflectionGap = 4;

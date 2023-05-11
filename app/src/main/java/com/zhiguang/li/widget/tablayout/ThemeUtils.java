@@ -16,16 +16,19 @@
 
 package com.zhiguang.li.widget.tablayout;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 
+import com.zhiguang.li.R;
+
 class ThemeUtils {
 
-    private static final int[] APPCOMPAT_CHECK_ATTRS = {
-            android.support.v7.appcompat.R.attr.colorPrimary
+    private static final int[] APPCOMPAT_CHECK_ATTRS = {R.attr.colorPrimary
     };
 
     static void checkAppCompatTheme(Context context) {
+        @SuppressLint("ResourceType")
         TypedArray a = context.obtainStyledAttributes(APPCOMPAT_CHECK_ATTRS);
         final boolean failed = !a.hasValue(0);
         a.recycle();
