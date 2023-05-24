@@ -72,4 +72,5 @@ dependencies {
         exclude group: "com.android.support", module: "support-v4"
     }
     implementation 'com.tencent.tbs:tbssdk:44286'
+    implementation "com.airbnb.android:lottie:6.0.0"
 }

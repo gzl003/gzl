@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
 
-    <androidx.constraintlayout.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/top_img"
         android:layout_width="match_parent"
         android:layout_height="220dp"
@@ -47,7 +47,7 @@
             app:layout_constraintTop_toBottomOf="@id/textView9" />
 
 
-    </androidx.constraintlayout.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <TextView

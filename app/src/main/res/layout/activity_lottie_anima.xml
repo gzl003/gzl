@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/about_gray_color"
+    tools:context=".activity.LottieAnimaActivity">
+<!--  ic_tab_fyt  red_package    -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/red_package_anim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="red_package.json"
+        app:lottie_imageAssetsFolder="images/"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/replay_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="弹窗"
+        android:layout_margin="@dimen/appbar_padding_top"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/replace_pic_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@id/replay_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="替换图片"
+        android:layout_margin="@dimen/appbar_padding_top"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/parabolic_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@id/replace_pic_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="飘红包"
+        android:layout_margin="@dimen/appbar_padding_top"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
