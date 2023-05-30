@@ -37,7 +37,6 @@ public class LottieAnimaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lottie_anima);
         lottieAnimationView = findViewById(R.id.red_package_anim);
         lottieAnimationView.setRenderMode(RenderMode.AUTOMATIC);
-        animSet();
         findViewById(R.id.replace_pic_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +52,7 @@ public class LottieAnimaActivity extends AppCompatActivity {
                 lottieAnimationView.pauseAnimation();
                 lottieAnimationView.clearAnimation();
                 lottieAnimationView.setAnimation("parabolic_amin.json");
+                animSet();
                 lottieAnimationView.playAnimation();
             }
         });
@@ -65,6 +65,7 @@ public class LottieAnimaActivity extends AppCompatActivity {
                 lottieAnimationView.cancelAnimation();
                 lottieAnimationView.clearAnimation();
                 lottieAnimationView.setAnimation("red_package.json");
+                animSet();
                 lottieAnimationView.playAnimation();
             }
         });
@@ -102,7 +103,7 @@ public class LottieAnimaActivity extends AppCompatActivity {
             }
         });
 
-        lottieAnimationView.addValueCallback(new KeyPath( "金额.text_1"), LottieProperty.TEXT, new SimpleLottieValueCallback<CharSequence>() {
+        lottieAnimationView.addValueCallback(new KeyPath("金额.text_1"), LottieProperty.TEXT, new SimpleLottieValueCallback<CharSequence>() {
             @Override
             public CharSequence getValue(LottieFrameInfo<CharSequence> frameInfo) {
                 JLog.d("frameInfo.getStartValue: " + frameInfo.getStartValue());
@@ -118,7 +119,7 @@ public class LottieAnimaActivity extends AppCompatActivity {
                 JLog.d("frameInfo.getStartValue: " + frameInfo.getStartValue());
                 JLog.d("frameInfo.getInterpolatedKeyframeProgress: " + frameInfo.getInterpolatedKeyframeProgress());
                 JLog.d("frameInfo.getEndValue: " + frameInfo.getEndValue());
-                return  "恭喜您获得红包";
+                return "恭喜您获得红包";
             }
         });
 
@@ -131,16 +132,37 @@ public class LottieAnimaActivity extends AppCompatActivity {
                 return "购买连续包";
             }
         });
+        final PointF[] pointF = {new PointF()};
         //3D旋转 红包抛物线动效
         lottieAnimationView.addValueCallback(new KeyPath("小红包.png"), LottieProperty.TRANSFORM_POSITION, new SimpleLottieValueCallback<PointF>() {
             @Override
             public PointF getValue(LottieFrameInfo<PointF> frameInfo) {
+
+
+                JLog.d("TRANSFORM_ROTATION.getStartFrame: " + frameInfo.getStartFrame());
+                JLog.d("TRANSFORM_ROTATION.getEndFrame: " + frameInfo.getEndFrame());
+                JLog.d("TRANSFORM_ROTATION.StartFrame --- EndFrame: " + (frameInfo.getEndFrame() - frameInfo.getStartFrame()));
+
+
                 JLog.d("TRANSFORM_ROTATION.getStartValue: " + frameInfo.getStartValue().x);
                 JLog.d("TRANSFORM_ROTATION.getInterpolatedKeyframeProgress: " + frameInfo.getInterpolatedKeyframeProgress());
                 JLog.d("TRANSFORM_ROTATION.getEndValue: " + frameInfo.getEndValue().x);
-
-                return frameInfo.getStartValue();
+                pointF[0] = frameInfo.getEndValue();
+                pointF[0].x = pointF[0].x - ((frameInfo.getEndValue().x -frameInfo.getStartValue().x) * frameInfo.getInterpolatedKeyframeProgress());
+                pointF[0].y = pointF[0].y + ((frameInfo.getEndValue().y -frameInfo.getStartValue().y)*frameInfo.getInterpolatedKeyframeProgress());
+                return pointF[0];
             }
         });
+
+//        lottieAnimationView.addValueCallback(new KeyPath("小红包.png"), LottieProperty.TRANSFORM_POSITION_X, new SimpleLottieValueCallback<Float>() {
+//            @Override
+//            public Float getValue(LottieFrameInfo<Float> frameInfo) {
+//                JLog.d("TRANSFORM_ROTATION.getStartValue: " + frameInfo.getStartValue());
+//                JLog.d("TRANSFORM_ROTATION.getInterpolatedKeyframeProgress: " + frameInfo.getInterpolatedKeyframeProgress());
+//                JLog.d("TRANSFORM_ROTATION.getEndValue: " + frameInfo.getEndValue());
+//
+//                return frameInfo.getEndValue();
+//            }
+//        });
     }
 }

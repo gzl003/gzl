@@ -15,7 +15,7 @@
         android:scaleType="centerCrop" />
 
 
-    <androidx.core.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/gallery_pager"
         android:layout_width="match_parent"
         android:layout_height="400dp"

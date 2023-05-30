@@ -108,4 +108,12 @@
         <attr name="tabPadding" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="bubble">
+        <attr name="horn_shadowColor" format="color" />
+        <attr name="horn_padding" format="dimension" />
+        <attr name="horn_strokeWidth" format="float" />
+        <attr name="horn_cornerRadius" format="float" />
+        <attr name="horn_halfBaseOfLeg" format="dimension" />
+    </declare-styleable>
+
 </resources>

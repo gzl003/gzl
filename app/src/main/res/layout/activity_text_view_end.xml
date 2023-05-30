@@ -9,6 +9,61 @@
     <com.zhiguang.li.widget.ElipsisSpanTextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/hua_k_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="滑块" />
+
+    <com.zhiguang.li.widget.hornLayout.HornLayout
+        android:id="@+id/horn_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/accent_material_light" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/accent_material_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/horn_layout"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_context"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/radius_vip_activity"
+            android:lines="6"
+            android:text="@string/base64str"
+            android:textColor="@color/black"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="38dp" />
+
+        <ImageView
+            android:id="@+id/img_top"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="60dp"
+            android:src="@drawable/ic_jian_tou"
+            app:layout_constraintBottom_toBottomOf="@id/guideline"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </RelativeLayout>

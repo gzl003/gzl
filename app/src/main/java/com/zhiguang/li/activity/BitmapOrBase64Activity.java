@@ -33,8 +33,12 @@ public class BitmapOrBase64Activity extends AppCompatActivity {
         bit_img = (ImageView) findViewById(R.id.bit_img);
         mytext = (TextView) findViewById(R.id.mytext);
         bitmap = stringtoBitmap(getString(R.string.base64str));
-        bit_img.setImageBitmap(bitmap);
-        mytext.setText("高：" + bitmap.getHeight() + "  宽：" + bitmap.getWidth() + "  大小" + bitmap.getByteCount() / 1024 + "Kb");
+
+        if(bitmap!=null){
+            bit_img.setImageBitmap(bitmap);
+            mytext.setText("高：" + bitmap.getHeight() + "  宽：" + bitmap.getWidth() + "  大小" + bitmap.getByteCount() / 1024 + "Kb");
+        }
+
 
         longtime = System.currentTimeMillis();
 

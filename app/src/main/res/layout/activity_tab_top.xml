@@ -8,14 +8,14 @@
     android:orientation="vertical"
     tools:context="com.zhiguang.li.activity.TabTopActivity">
 
-    <android.support.design.widget.TabLayout
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabIndicatorColor="@color/about_gray_color"
         app:tabSelectedTextColor="@color/xiankan_theme_color"/>
 
-    <androidx.core.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/tab_viewpager"
         android:descendantFocusability="blocksDescendants"
         android:layout_width="match_parent"

@@ -70,6 +70,9 @@ public class LzgApplication extends Application {
         });
         QbSdk.setDownloadWithoutWifi(true);
         QbSdk.initForinitAndNotLoadSo(getAppContext());
+
+//这个需要起一个线程单独去初始化吗？
+        QbSdk.initX5Environment(this, null);
     }
 
     public static LzgApplication getInstance() {

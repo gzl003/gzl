@@ -11,14 +11,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.tencent.smtt.sdk.WebSettings;
+import com.tencent.smtt.sdk.WebView;
 import com.zhiguang.li.R;
 import com.zhiguang.li.activity.TabVpScrActivity;
 
@@ -151,7 +151,9 @@ public class FragmentOne extends Fragment implements View.OnClickListener {
             rootview = inflater.inflate(R.layout.dialog_layput, null);
             Log.e(TabVpScrActivity.TAG, "FragmentOne onCreateView");
             init(rootview);
-            page = getArguments().getInt("page");
+            if(getArguments() !=null){
+                page = getArguments().getInt("page");
+            }
             rootview.setTag(page);
         }
         return rootview;
@@ -176,7 +178,7 @@ public class FragmentOne extends Fragment implements View.OnClickListener {
         webSettings.setLoadsImagesAutomatically(true);  //支持自动加载图片
         fenlei_one.setText("我是二级分类");
         fenlei_one.setOnClickListener(this);
-        webview.loadUrl("https://m.huanxi.com/h5/ac/static-page/maoyan.html");
+        webview.loadUrl("https://m.huanxi.com/");
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.zhiguang.li.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
@@ -30,7 +31,7 @@ import com.zhiguang.li.R;
  * 圆角图片
  * Created by 智光 on 2016/7/6.
  */
-public class RadiusImageWidget extends ImageView {
+public class RadiusImageWidget extends androidx.appcompat.widget.AppCompatImageView {
 
     private int mResource = 0;
 
@@ -344,6 +345,7 @@ public class RadiusImageWidget extends ImageView {
             }
         }
 
+        @SuppressLint("LongLogTag")
         public static Drawable fromDrawable(Drawable drawable, Resources r) {
             if (drawable != null) {
                 if (drawable instanceof SelectableRoundedCornerDrawable) {
@@ -539,8 +541,9 @@ public class RadiusImageWidget extends ImageView {
         }
 
         public void setCornerRadii(float[] radii) {
-            if (radii == null)
+            if (radii == null) {
                 return;
+            }
 
             if (radii.length != 8) {
                 throw new ArrayIndexOutOfBoundsException("radii[] needs 8 values");

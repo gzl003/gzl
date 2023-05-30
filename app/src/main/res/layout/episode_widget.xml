@@ -18,7 +18,7 @@
             android:orientation="horizontal" />
     </HorizontalScrollView>
 
-    <androidx.core.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/my_episode_pager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,5 +26,5 @@
         android:flipInterval="30"
         android:persistentDrawingCache="animation">
 
-    </androidx.core.view.ViewPager>
+    </androidx.viewpager.widget.ViewPager>
 </RelativeLayout>

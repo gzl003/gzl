@@ -10,7 +10,6 @@
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="tip"
         android:textColor="#ff0000"
         android:textIsSelectable="false"
         android:textSize="10sp" />

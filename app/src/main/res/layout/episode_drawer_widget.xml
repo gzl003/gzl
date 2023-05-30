@@ -35,7 +35,7 @@
             android:text="花絮" />
     </RadioGroup>
 
-    <androidx.core.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/episode_pager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

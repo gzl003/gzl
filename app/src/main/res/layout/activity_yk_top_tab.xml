@@ -15,7 +15,7 @@
     <!--
      app:tabIndicatorColor="@color/colorAccent"
             app:tabIndicatorHeight="3dp"-->
-    <androidx.core.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp_style_one_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

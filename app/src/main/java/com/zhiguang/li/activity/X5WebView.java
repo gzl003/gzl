@@ -1,12 +1,15 @@
 package com.zhiguang.li.activity;
 
+import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.PixelFormat;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.widget.Button;
 
 import com.tencent.smtt.export.external.interfaces.HttpAuthHandler;
@@ -36,7 +39,7 @@ public class X5WebView extends BaseActivity {
         webView = (WebView) findViewById(R.id.x5wenview);
         webView.loadUrl( "javascript:window.location.reload(true)");
 
-
+        new WebViewFactory().init(webView,"javascript:window.location.reload(true)",true,this);
 
 
 
@@ -54,7 +57,7 @@ public class X5WebView extends BaseActivity {
                 webView.reload();
             }
         });
-        webView.loadUrl("https://www.huanxi.com/player.shtml");
+        webView.loadUrl("https://m.huanxi.com");
     }
 
     private void setWebView() {
@@ -161,5 +164,42 @@ public class X5WebView extends BaseActivity {
         }
 
     }
+
+
+    public class WebViewFactory {
+
+        public void init(com.tencent.smtt.sdk.WebView webView, String url, boolean flag, Context context) {
+
+            com.tencent.smtt.sdk.WebSettings settings = webView.getSettings();
+            settings.setBuiltInZoomControls(true);
+            settings.setLayoutAlgorithm(com.tencent.smtt.sdk.WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+            settings.setBlockNetworkImage(false);
+            settings.setSupportZoom(true);
+            settings.setSupportMultipleWindows(true);
+            settings.setAppCacheEnabled(true);
+            //居中
+            settings.setUseWideViewPort(true);
+            settings.setLoadWithOverviewMode(true);
+            settings.setSavePassword(false);
+            settings.setSaveFormData(false);
+            settings.setJavaScriptEnabled(true);
+            settings.setAllowFileAccess(true);
+            settings.setGeolocationEnabled(true);
+            settings.setAppCacheMaxSize(Long.MAX_VALUE);
+            settings.setDomStorageEnabled(true);
+            settings.setPluginState(com.tencent.smtt.sdk.WebSettings.PluginState.ON_DEMAND);
+            settings.setCacheMode(com.tencent.smtt.sdk.WebSettings.LOAD_NO_CACHE);
+            String dir = context.getDir("database", Context.MODE_PRIVATE).getPath();
+            //设置定位的数据库路径
+            settings.setGeolocationDatabasePath(dir);
+            settings.setJavaScriptCanOpenWindowsAutomatically(true);
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                settings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+            }
+            webView.requestFocus();
+            webView.loadUrl(url);
+        }
+    }
+
 
 }

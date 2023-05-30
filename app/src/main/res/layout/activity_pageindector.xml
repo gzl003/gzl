@@ -13,7 +13,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.core.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/moretab_viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
