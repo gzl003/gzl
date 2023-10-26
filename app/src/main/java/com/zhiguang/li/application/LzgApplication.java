@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.jiongbull.jlog.BuildConfig;
 import com.jiongbull.jlog.JLog;
 import com.tencent.smtt.export.external.TbsCoreSettings;
@@ -42,6 +43,7 @@ public class LzgApplication extends Application {
 
         OkHttpUtils.initClient(okHttpClient);
         x5init();
+        Fresco.initialize(getApplicationContext());
     }
 
     private void x5init() {

@@ -4,6 +4,7 @@
     <color name="gzl_gray1">#dedede</color>
     <color name="gzl_white">#ffffffff</color>
     <color name="gzl_to_gray">#667f7f7f</color>
+    <color name="gzl_transparent">#00ffffff</color>
 
 
     <color name="red">#FF0000</color>

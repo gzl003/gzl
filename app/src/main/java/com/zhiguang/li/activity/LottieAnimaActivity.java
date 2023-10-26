@@ -5,6 +5,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.PointF;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.AbsoluteSizeSpan;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -109,7 +112,9 @@ public class LottieAnimaActivity extends AppCompatActivity {
                 JLog.d("frameInfo.getStartValue: " + frameInfo.getStartValue());
                 JLog.d("frameInfo.getInterpolatedKeyframeProgress: " + frameInfo.getInterpolatedKeyframeProgress());
                 JLog.d("frameInfo.getEndValue: " + frameInfo.getEndValue());
-                return "原价30元现20元";
+                SpannableStringBuilder stringBuilder = new SpannableStringBuilder().append("￥555");
+                stringBuilder.setSpan(new AbsoluteSizeSpan(10),0,1, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+                return stringBuilder.toString();
             }
         });
 

@@ -1,6 +1,8 @@
 package com.zhiguang.li.activity;
 
+import android.app.ActivityManager;
 import android.app.PictureInPictureParams;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
@@ -10,10 +12,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 
 import com.zhiguang.li.R;
+
+import java.util.List;
 
 /**
  * @author :智光
@@ -54,6 +58,13 @@ public class PipActivity extends BaseActivity {
         });
 //        constraintSet.clone(layout);
 //        setRequestedOrientation(Configuration.ORIENTATION_LANDSCAPE);
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PipActivity.this, LottieAnimaActivity.class));
+            }
+        });
     }
 
     @Override
@@ -68,12 +79,7 @@ public class PipActivity extends BaseActivity {
 
         if (isInPictureInPictureMode) {
             textView.setVisibility(View.GONE);
-            textView.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    startActivity(new Intent(getBaseContext(), PipActivity.class));
-                }
-            }, 3000);
+
         } else {
             textView.setVisibility(View.VISIBLE);
         }
@@ -93,6 +99,16 @@ public class PipActivity extends BaseActivity {
 
     }
 
+
+    @Override
+    protected void onUserLeaveHint() {
+        super.onUserLeaveHint();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            enterPictureInPictureMode(pipBuild.build());
+        }
+    }
+
+
     private void toSmall() {
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(layout);
@@ -102,13 +118,13 @@ public class PipActivity extends BaseActivity {
 //        layout.setLayoutParams(params);
 
         Toast.makeText(this, "toSmall", Toast.LENGTH_SHORT).show();
-        constraintSet.connect(textView8.getId(), ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.TOP, 16);
-        constraintSet.connect(textView8.getId(), ConstraintSet.BOTTOM, textView9.getId(), ConstraintSet.TOP, 16);
-        constraintSet.connect(textView9.getId(), ConstraintSet.TOP, textView8.getId(), ConstraintSet.BOTTOM, 16);
-        constraintSet.connect(textView9.getId(), ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM, 16);
-        constraintSet.clear(textView10.getId(), ConstraintSet.TOP);
-        constraintSet.connect(textView10.getId(), ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM, 16);
-        constraintSet.applyTo(layout);
+//        constraintSet.connect(textView8.getId(), ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.TOP, 16);
+//        constraintSet.connect(textView8.getId(), ConstraintSet.BOTTOM, textView9.getId(), ConstraintSet.TOP, 16);
+//        constraintSet.connect(textView9.getId(), ConstraintSet.TOP, textView8.getId(), ConstraintSet.BOTTOM, 16);
+//        constraintSet.connect(textView9.getId(), ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM, 16);
+//        constraintSet.clear(textView10.getId(), ConstraintSet.TOP);
+//        constraintSet.connect(textView10.getId(), ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM, 16);
+//        constraintSet.applyTo(layout);
     }
 
     private void toFull() {
@@ -120,15 +136,43 @@ public class PipActivity extends BaseActivity {
 //        layout.setLayoutParams(params);
 
         Toast.makeText(this, "toFull", Toast.LENGTH_SHORT).show();
-        constraintSet.connect(textView8.getId(), ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.TOP, 16);
-        constraintSet.connect(textView8.getId(), ConstraintSet.BOTTOM, textView9.getId(), ConstraintSet.TOP, 16);
-        constraintSet.connect(textView9.getId(), ConstraintSet.TOP, textView8.getId(), ConstraintSet.BOTTOM, 16);
-        constraintSet.connect(textView9.getId(), ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM, 16);
-        constraintSet.connect(textView10.getId(), ConstraintSet.TOP, textView9.getId(), ConstraintSet.BOTTOM, 16);
-        constraintSet.connect(textView10.getId(), ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM, 16);
-        int[] child = {textView8.getId(), textView9.getId(), textView10.getId()};
-        float[] weights = {1, 1, 1};
-        constraintSet.createVerticalChain(ConstraintSet.PARENT_ID, ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM, child, weights, ConstraintSet.VERTICAL);
-        constraintSet.applyTo(layout);
+//        constraintSet.connect(textView8.getId(), ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.TOP, 16);
+//        constraintSet.connect(textView8.getId(), ConstraintSet.BOTTOM, textView9.getId(), ConstraintSet.TOP, 16);
+//        constraintSet.connect(textView9.getId(), ConstraintSet.TOP, textView8.getId(), ConstraintSet.BOTTOM, 16);
+//        constraintSet.connect(textView9.getId(), ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM, 16);
+//        constraintSet.connect(textView10.getId(), ConstraintSet.TOP, textView9.getId(), ConstraintSet.BOTTOM, 16);
+//        constraintSet.connect(textView10.getId(), ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM, 16);
+//        int[] child = {textView8.getId(), textView9.getId(), textView10.getId()};
+//        float[] weights = {1, 1, 1};
+//        constraintSet.createVerticalChain(ConstraintSet.PARENT_ID, ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM, child, weights, ConstraintSet.VERTICAL);
+//        constraintSet.applyTo(layout);
+    }
+
+    private boolean isAppRunningForeground(Context context) {
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+
+        assert activityManager != null;
+        List<ActivityManager.RunningAppProcessInfo> runningAppProcessList = activityManager.getRunningAppProcesses();
+
+        for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : runningAppProcessList) {
+            if (runningAppProcessInfo.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND
+                    && runningAppProcessInfo.processName.equals(context.getApplicationInfo().processName)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private void moveAppToFront(Context context) {
+        final ActivityManager activityManager = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
+        assert activityManager != null;
+        List<ActivityManager.RunningTaskInfo> runningTasks = activityManager.getRunningTasks(100);
+        for (final ActivityManager.RunningTaskInfo runningTask : runningTasks) {
+            assert runningTask.topActivity != null;
+            if (runningTask.topActivity.getPackageName().equals(context.getPackageName())) {
+                activityManager.moveTaskToFront(runningTask.id, 0);
+            }
+        }
     }
 }

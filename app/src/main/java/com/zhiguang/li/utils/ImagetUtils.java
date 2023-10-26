@@ -1,6 +1,8 @@
 package com.zhiguang.li.utils;
 
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -14,11 +16,21 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.Typeface;
+import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+
+import androidx.annotation.DrawableRes;
+
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.controller.BaseControllerListener;
+import com.facebook.drawee.interfaces.DraweeController;
+import com.facebook.drawee.view.SimpleDraweeView;
+import com.facebook.imagepipeline.image.ImageInfo;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -382,5 +394,63 @@ public class ImagetUtils {
     }
     public static int clamp(int x, int a, int b) {
         return (x < a) ? a : (x > b) ? b : x;
+    }
+
+
+    /**
+     * Fresco 加载本地webp图片
+     * @param draweeView
+     * @param resId
+     */
+    public static void loadDrawable(SimpleDraweeView draweeView, @DrawableRes int resId) {
+        DraweeController controller = (DraweeController) Fresco.newDraweeControllerBuilder()
+                .setAutoPlayAnimations(true)
+                .setUri(Uri.parse(imageTranslateUri(draweeView.getContext(), resId)))
+                .setControllerListener(new BaseControllerListener<ImageInfo>(){
+                    @Override
+                    public void onFinalImageSet(String id, ImageInfo imageInfo, Animatable animatable) {
+                        super.onFinalImageSet(id, imageInfo, animatable);
+//                        com.facebook.fresco.animation.drawable.AnimatedDrawable2
+//                            if(animatable instanceof AnimatedDrawable2){
+//
+//                            }
+                    }
+                }).build();
+
+//        Uri uri = Uri.parse(imageTranslateUri(draweeView.getContext(), resId));
+//        DraweeController controller = Fresco.newDraweeControllerBuilder()
+//                .setUri(uri)
+//                .setAutoPlayAnimations(true)
+//                .setOldController(draweeView.getController())
+//                .build();
+        draweeView.setController(controller);
+    }
+
+    /**
+     * Fresco 加载webp图片
+     * @param draweeView
+     * @param imageUrl
+     */
+    public static void loadWebpImage(SimpleDraweeView draweeView, String imageUrl) {
+        DraweeController controller = Fresco.newDraweeControllerBuilder()
+                .setUri(imageUrl)
+                .setAutoPlayAnimations(true)
+                .setOldController(draweeView.getController())
+                .build();
+        draweeView.setController(controller);
+    }
+
+
+    /**
+     * drawable路径转换成 url
+     * @param context
+     * @param resId
+     * @return
+     */
+    public static String imageTranslateUri(Context context, int resId) {
+        Resources r = context.getResources();
+        Uri uri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +"://" + r.getResourcePackageName(resId) +"/" + r.getResourceTypeName(resId) +"/" + r.getResourceEntryName(resId));
+        return uri.toString();
+
     }
 }

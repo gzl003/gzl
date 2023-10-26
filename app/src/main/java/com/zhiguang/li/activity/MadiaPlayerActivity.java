@@ -9,6 +9,8 @@ import android.media.MediaPlayer.OnErrorListener;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
@@ -16,7 +18,10 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Toast;
 
+import androidx.core.view.GestureDetectorCompat;
+
 import com.zhiguang.li.R;
+import com.zhiguang.li.widget.gallery.LogUtils;
 
 /**
  * 测试mediaplayer
@@ -29,6 +34,7 @@ public class MadiaPlayerActivity extends Activity {
     private SeekBar seekBar;
     private int currentPosition = 0;
     private boolean isPlaying;
+    private GestureDetectorCompat mGestureDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +53,35 @@ public class MadiaPlayerActivity extends Activity {
 
         // 为进度条添加进度更改事件
         seekBar.setOnSeekBarChangeListener(change);
+        // 创建GestureDetectorCompat对象，并为其设置OnGestureListener监听器（重写相关方法）
+        mGestureDetector = new GestureDetectorCompat(this, new GestureDetector.SimpleOnGestureListener() {
+            @Override
+            public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+                // 当用户手指在屏幕上向左或向右滑动时，根据滑动距离更新播放进度
+                int currentPosition = mediaPlayer.getCurrentPosition();
+                int totalDuration = mediaPlayer.getDuration();
+                if (distanceX < 0) {
+                    currentPosition += 1000; // 快进 5 秒
+                } else {
+                    currentPosition -= 1000; // 快退 5 秒
+                }
+                if (currentPosition < 0) {
+                    currentPosition = 0;
+                } else if (currentPosition > totalDuration) {
+                    currentPosition = totalDuration;
+                }
+                mediaPlayer.seekTo(currentPosition);
+                LogUtils.d("currentPosition: " + currentPosition);
+                return true;
+            }
+        });
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        // 将触摸事件传递给GestureDetectorCompat对象
+        mGestureDetector.onTouchEvent(event);
+        return super.onTouchEvent(event);
     }
 
     private Callback callback = new Callback() {
@@ -128,7 +163,7 @@ public class MadiaPlayerActivity extends Activity {
             //设置重复播放
             mediaPlayer.setLooping(true);
             // 设置播放的视频源
-            mediaPlayer.setDataSource("https://agmjjzyi.ixibeiren.com/20181022/7MVaVwY9/index.m3u8");
+            mediaPlayer.setDataSource("https://vd2.bdstatic.com/mda-pek3kx1zzt6etrm3/720p/h264/1684636975397957585/mda-pek3kx1zzt6etrm3.mp4?v_from_s=bdapp-unicomment-hbf");
             // 设置显示视频的SurfaceHolder
             mediaPlayer.setDisplay(sv.getHolder());
             Log.i(TAG, "开始装载");

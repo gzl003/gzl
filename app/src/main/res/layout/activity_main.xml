@@ -1,26 +1,70 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/account_text_grey"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
     <com.youth.banner.Banner
         android:id="@+id/main_banner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         app:indicator_height="5dp"
         app:indicator_margin="5dp"
         app:indicator_width="5dp"
-        app:title_height="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title_height="30dp" />
 
     <GridView
         android:id="@+id/main_listview"
         android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:numColumns="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_banner" />
+
+    <View
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="3" />
+        android:background="@color/gzl_to_gray" />
 
+    <ImageView
+        android:id="@+id/webp_amin"
+        android:layout_width="292dp"
+        android:layout_height="354dp"
+        android:background="@color/gzl_transparent"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
 
-</LinearLayout>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/aperture_amin_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="false"
+        app:lottie_fileName="aperture_amin.json"
+        app:lottie_imageAssetsFolder="images/" />
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gzl_to_gray" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

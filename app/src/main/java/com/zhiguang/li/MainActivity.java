@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
@@ -44,6 +45,7 @@ import com.zhiguang.li.activity.HasMapJsonActivity;
 import com.zhiguang.li.activity.ImageSuoFang;
 import com.zhiguang.li.activity.LikeAnimationActivity;
 import com.zhiguang.li.activity.LottieAnimaActivity;
+import com.zhiguang.li.activity.LottieStreamAnimaActivity;
 import com.zhiguang.li.activity.LzgSocketActivity;
 import com.zhiguang.li.activity.MadiaPlayerActivity;
 import com.zhiguang.li.activity.MySerActivity;
@@ -108,14 +110,14 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
             , WebViewRefshActivity.class, SwichButtonActivity.class, RcycleViewImagetActivity.class, GreenDaoActivity.class, YUyunsuanActivity.class, SlidingCloseActivity.class, PoorVisionActivity.class
             , PaletteActivity.class, WatermarkActivity.class, QRCodeActivity.class, GalleryActivity.class, GalleryTwoActivity.class, RecyclerViewPageActivity.class, PageIntedectorActivity.class,
             X5WebView.class, ShareActivity.class, LzgSocketActivity.class, ScreenSwitchingActivity.class, ScrollScreenhotActivity.class, ObserverActivity.class, ThreadCycleActivity.class, TextViewEndActivity.class,
-            YkTopTabActivity.class, PipActivity.class, PhotographActivity.class, LottieAnimaActivity.class, ParabolaActivity.class
+            YkTopTabActivity.class, PipActivity.class, PhotographActivity.class, LottieAnimaActivity.class, ParabolaActivity.class, LottieStreamAnimaActivity.class
     };
     public String[] strings = {"RecyclerView", "点赞动画", "圆角图片", "分类", "选集", "AdapterViewFlipper", "gps"
             , "信息", "轮播图", "剧集", "drawer侧滑", "跟随动画", "map json", "destest", "贝塞尔曲线"
             , "视频录制", "google自家的刷新View", "服务测试", "webView测试", "加载框", "滚动的Activity", "RecyclerView 实现流式布局", "嵌套滚动", "CodeLayActivity", "TAB切换", "仿照微信左右切换", "TABlayout顶部切换", "闪光字体",
             "上下刷新的RecycleView", "图片和base64之间的转换", "SuperSwipeRefresh", "MediaPlayer测试", "gif图", "密码输入框", "图片缩放", "侧滑删除item", "垂直进度条", "滑动的webView", "切换开关", "recycleImage",
             "GreenDao", "与 运算", "右滑关闭页面", "滚动视觉差", "Palette", "图片水印", "二维码", "画廊效果", "画廊效果2", "仿照viewpager的recyclerview", "PageIntedector", "x5浏览器", "分享", "Socket", "屏幕切换", "滚动截屏",
-            "观察者", "线程安全", "TextView末尾添加符号", "仿照优酷TabLayout", "画中画", "拍照", "LottieAnima", "抛物线"};
+            "观察者", "线程安全", "TextView末尾添加符号", "仿照优酷TabLayout", "画中画", "拍照", "LottieAnima", "抛物线", "清晰度切换效果"};
     private List<MClassmate> mClassmates;
     private Banner banner;
 
@@ -178,6 +180,61 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 Toast.makeText(getApplicationContext(), "你点击了：" + titles[position - 1], Toast.LENGTH_LONG).show();
             }//设置点击事件
         });
+
+//        LottieAnimationView apertureAmin = findViewById(R.id.aperture_amin_view);
+//
+//
+//
+////        SimpleDraweeView simpleDraweeView = findViewById(R.id.webp_amin);
+////        ImagetUtils.loadDrawable(simpleDraweeView,R.drawable.red_package);
+//
+//        //webp动图
+//        ImageView imageView = findViewById(R.id.webp_amin);
+//        Transformation<Bitmap> transformation = new CenterInside();
+//        Glide.with(this)
+//                .load(R.drawable.red_package)//不是本地资源就改为url即可
+//                .optionalTransform(transformation)
+//                .optionalTransform(WebpDrawable.class, new WebpDrawableTransformation(transformation))
+//                .addListener(new RequestListener<Drawable>() {
+//                    @Override
+//                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+//                        return false;
+//                    }
+//
+//                    @Override
+//                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+//                        WebpDrawable webpDrawable = (WebpDrawable) resource;
+//                        webpDrawable.setLoopCount(1);
+//                        apertureAmin.postDelayed(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                apertureAmin.playAnimation();
+//                            }
+//                        },500);
+//                        webpDrawable.registerAnimationCallback(new Animatable2Compat.AnimationCallback() {
+//                            @Override
+//                            public void onAnimationEnd(Drawable drawable) {
+//                                super.onAnimationEnd(drawable);
+//                                webpDrawable.unregisterAnimationCallback(this);
+////aperture_amin
+//                            }
+//                        });
+//                        return false;
+//                    }
+//                })
+//                .into(imageView);
+
+        WebView webView = findViewById(R.id.webview);
+//        webView.getSettings().setJavaScriptEnabled(true);
+//        webView.setBackgroundColor(0); // 设置背景色
+//        webView.getBackground().setAlpha(0); // 设置透明度 范围：0-255
+//        //设置可以访问file
+//        webView.getSettings().setAllowFileAccess(true);
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED, WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
+//        webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+//        webView.loadUrl("file:///android_asset/demo.html");
+
+        webView.setVisibility(View.GONE);
     }
 
 
